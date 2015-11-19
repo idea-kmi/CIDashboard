@@ -1,0 +1,381 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>CIDashboard Documentation</title>
+<style>
+<!--
+body {
+	font-family:"Arial";
+	font-size:12.0pt;
+	font-family:"Arial";
+}
+li {
+	margin-bottom: 15px;
+}
+p {
+	margin:0cm;
+	margin-bottom:10px;
+}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=blue style='tab-interval:36.0pt;margin:30px;'>
+<a name="top"></a>
+
+<center><h1>CIDashboard Documentation</h1></center>
+
+<br/>
+<b>NOTE:</b> We realize that these notes are not complete or very detailed.
+We hope it is enough to get you started and we hope to supply more extensive documentation in the future.
+
+<br/>
+<h2><a name="contents">Contents</a></h2>
+<ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#requirements">System Requirements</a></li>
+<li><a href="#folders">A Quick What's Where</a></li>
+<li><a href="#setup">Setting up a CIDashboard website</a></li>
+<li><a href="#config">Config Settings</a></li>
+<li><a href="#language">Language</a></li>
+<li><a href="#tailor">Tailoring your CIDashboard instance</a></li>
+<li><a href="#dev">Additional Developer Notes</a></li>
+</ul>
+
+<h2><a name="intro">Intro</a></h2>
+<p>This is a really quick overview of the site structure with some
+instructions further down on setting up the database and config file.</p>
+
+<p><b>NOTE:</b> The CIDashboard code base is released under the LGPL license: <a href="http://www.fsf.org/licensing/licenses/lgpl.html">http://www.fsf.org/licensing/licenses/lgpl.html</a>.<br>
+It includes third party code which should all have licenses which are compatible with LGPL (see <b>/core/lib</b> and <b>/ui/lib</b> folders to view third party libraries used)</p>
+
+<!-- p>If you need more help at present, please ask your questions through our <a href="http://evidence-hub.net/support/">CIDashboard Reporting System</a></p -->
+
+<h2><a name="requirements">System Requirements</a></h2>
+The CIDashboard code has been developed and tested on a Red Hat Enterprise Linux server using:
+<br>
+<h3 style="font-style:italic;font-size:12pt;text-decoration:underline">Apache 2.4.6.</h3>
+Please add the following in your Apache config:<br><br>
+	<code>Options All -Indexes -MultiViews
+    <br>RewriteEngine on
+    <br>AllowOverride FileInfo AuthConfig</code>
+
+<br>Our main .htaccess file has the following:
+<br>
+
+<pre>
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE text/x-js
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/json
+AddOutputFilterByType DEFLATE application/ld+json
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE font/truetype
+AddOutputFilterByType DEFLATE font/opentype
+AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+</IfModule>
+
+#RewriteEngine on
+#RewriteCond %{REQUEST_URI} !/index-maintenance.php$
+#RewriteRule $ /index-maintenance.php [R=302,L]
+
+ErrorDocument 404 /404-error-page.php
+ErrorDocument 403 /403-error-page.php
+</pre>
+
+<br>So we use it to compress files to speed up the website and for having site specific 404 and 403 pages.
+<br>We also uncomment the  'Rewrite' lines if we want to put the site into maintenace mode
+and display a holding page to the user (index-maintenace.php)
+
+<br><br>
+<h3 style="font-style:italic;font-size:12pt;text-decoration:underline">PHP version 5.4</h3>
+Modules installed:
+<br>
+<code>core mod_so http_core mod_access_compat mod_actions mod_alias
+mod_allowmethods mod_auth_basic mod_auth_digest mod_authn_anon mod_authn_core
+mod_authn_dbd mod_authn_dbm mod_authn_file mod_authn_socache mod_authz_core
+mod_authz_dbd mod_authz_dbm mod_authz_groupfile mod_authz_host mod_authz_owner
+mod_authz_user mod_autoindex mod_cache mod_cache_disk mod_data mod_dbd
+mod_deflate mod_dir mod_dumpio mod_echo mod_env mod_expires mod_ext_filter
+mod_filter mod_headers mod_include mod_info mod_log_config mod_logio
+mod_mime_magic mod_mime mod_negotiation mod_remoteip mod_reqtimeout mod_rewrite mod_setenvif
+mod_slotmem_plain mod_slotmem_shm mod_socache_dbm mod_socache_memcache mod_socache_shmcb
+mod_status mod_substitute mod_suexec mod_unique_id mod_unixd mod_userdir mod_version
+mod_vhost_alias mod_dav mod_dav_fs mod_dav_lock mod_lua prefork mod_proxy
+mod_lbmethod_bybusyness mod_lbmethod_byrequests mod_lbmethod_bytraffic
+mod_lbmethod_heartbeat mod_proxy_ajp mod_proxy_balancer mod_proxy_connect
+mod_proxy_express mod_proxy_fcgi mod_proxy_fdpass mod_proxy_ftp mod_proxy_http
+mod_proxy_scgi mod_ssl mod_systemd mod_cgi mod_perl mod_php5 mod_apreq2</code>
+
+<br><br>CIDashboard is not necessarily dependent on all these modules. These are just what are installed on the server CIDashboard was developed on.
+I am unsure at this stage if any of them are non standard, or if the CIDashboard code in anyway replies on them. So, just in case, I am listing them.
+<br>
+<br/>NOTE: In your php.ini make sure allow-url-fopen = on.
+For importing and handling large CIF files, you may also want to set generous memory and timouts in PHP.
+
+<p>
+
+<br>
+<h2><a name="folders">A Quick What's Where</a></h2>
+<p>The top level of the file structure has the main base config.php file and the setup.php file and the main index.php file.
+</p>
+
+<p><b>The Folders:</b></p>
+
+<ul style="list-style:none;">
+
+<li><b>core </b> - This is where the server side code resides.
+	<ul>
+	<li><b>formats </b> - This holds the files that process the api return data into the correct format, e.g. jsonld, json, xml etc..</li>
+	<li><b>io </b> - This folder holds the code to handle the import options in CIDashboard: Currently just from <a href="http://catalyst-fp7.eu/" target="_blank">Catalyst</a> and its
+	<a href="http://catalyst-fp7.eu/wp-content/uploads/2014/03/D3.1-Software-Architecture-and-Cross-Platform-Interoperability-Specification.pdf" target="_blank"> Catalyst Interchange Format</a>.</li>
+	<li><b>lib </b> - This holds all the external libraries that CIDashboard is using in the server side code.</li>
+	</ul>
+</li>
+<li><b>docs </b> - This is where there are some additional develop docs.
+<br><b>Once you have finished the install process you may want to remove this folder from your website code.</b>
+</li>
+<li><b>images </b> - This is where most of the graphics for the site are. Some are also in the themes (see below)</li>
+<li><b>language </b> - This folder holds the language files for all the interface text.
+By changing the $CFG->language property (see below) you can override the default language
+of 'en' and add a different folder and then convert all the language files to another
+language if you want to. For more details on how this works see <a href='#lang'>Language</a> below.
+	<ul>
+	<li><b>en </b> - This holds the default English language version of all interface text shown to the user. Please never remove this folder.
+	</li>
+	</ul>
+</li>
+
+<li><b>themes</b> - This is where you can setup alternative themes. We supply the Default theme.
+It has a sub-folder for images and one for the stylesheets.
+Please see the README.txt file that is in the themes folder for more details about setitng up themes.</li>
+
+<li><b>ui</b> - This folder has most of the client side code e.g. header, footer, homepage etc...
+	<ul>
+	<li><b>admin  </b> - This folder has various files for the Administrator option pages.
+		If you are a user who has the 'IsAdministrator' field in the Users table set to 'Y', you will see an
+		extra menu item when logged in at the top of the screen called 'admin' which will take you to the Administrator options.
+	</li>
+	<li><b>lib </b> - This holds all the external libraries that the CIDashboard is using in the client side code.</li>
+	<li><b>minis </b> - This holds the code files for the mini visualisations.</li>
+	<li><b>movies </b> - This holds all the help movies.</li>
+	<li><b>networkmaps </b> - This holds the files that create all the visualisations used on the Dashboards.</li>
+	<li><b>pages </b> - This holds the secondary page files, like privacy, conditionsofuse, cookies etc..</li>
+	<li><b>visualisations </b> - This holds the code files for the large visualisations.</li>
+	</ul>
+</li>
+</ul>
+
+<br>
+<h2><a name="setup">Setting up a CIDashboard website</a></h2>
+
+<ol>
+
+<li>Copy config-sample.php to config.php.
+You will need to edit the config.php file and set properties as explained in the <a href="#config"> Config Setting</a> section below
+</li>
+
+<li>At this point you should be able to surf to the website and check it comes up OK.</li>
+<li>If you want to use a different Metrics server, you should edit the url variable '$serviceRootAnalytics' pointing to the Metrics server in<br>
+core/io/catalyst/analyticsservices.php</li>
+
+</ol>
+
+<br>
+<h2><a name="config">Config Settings</a></h2>
+
+All setting have comments explaining their use. There are setting is the config file that you should not change.
+The setting you should or can edit are grouped together in the file and clearly spearated and labelled.
+Below is a list of the ones you should or can edit.
+<br>The ones in red you need to change, and the others are optional:
+
+<br/><br/><b><span style="color:red">$CFG-&gt;SITE_TITLE = &quot;The title of your instance of CIDashboard&quot;;</span></b>
+<br/>( This is used in the header title as well as being displayed to the user in various places. )
+
+<br/><br/>
+<h3 style="font-style:italic;font-size:12pt;text-decoration:underline">URL Setup</h3>
+<b><span style="color:red">$CFG-&gt;baseDomain = &quot;&quot;;</span></b>
+<br/>( The domain for your instance of CIDashboard. E.g. cidashboardtesting.kmi.open.ac.uk )
+
+<br/><br/><b><span style="color:red">$CFG-&gt;dirAddress = &quot;http://web/path/to/website/&quot;;</span></b>
+<br/>( The file path on the server to get to the top level code folder. It must end with trailing '/' )
+
+<br/><br/><b><span style="color:red">$CFG-&gt;homeAddress = &quot;http://web/path/to/website/&quot;;</span></b>
+<br/>( The url for your version of the CIDashboard. E.g. http://cidashboardtesting.kmi.open.ac.uk/. It must end with trailing '/' )
+
+<br/><br/>
+<h3 style="font-style:italic;font-size:12pt;text-decoration:underline">Emailing</h3>
+<b><span style="color:red">$CFG-&gt;EMAIL_REPLY_TO = "";</span></b>
+<br/> (The email address to sent system error alerts to. Usually your developer.)
+
+<br><br>
+<h3 style="font-style:italic;font-size:12pt;text-decoration:underline">Google</h3>
+
+<b><span >$CFG-&gt;GOOGLE_ANALYTICS_ON = false;</span></b>
+<br/> (If you want to use Google Analytics set this to 'true. ('true' or 'false'))
+<br/>If this is set to 'true' you must also complete the GOOGLE_ANALYTICS_KEY below.
+
+<br/><br/><b><span>$CFG-&gt;GOOGLE_ANALYTICS_KEY = &quot;&quot;;</span></b>
+<br/> (Google analytics key: You will need to go and get a Google analytics key for your site, if you want the analytics to work)
+
+<br><br><b><span>$CFG-&gt;GOOGLE_ANALYTICS_DOMAIN = &quot;&quot;;</span></b>
+<br/> (Google analytics domain: This is the domain you specified against the key above on Google Analytics.)
+
+<br/><br/>
+<h3 style="font-style:italic;font-size:12pt;text-decoration:underline">Language</h3>
+<b>$CFG-&gt;language = 'en';</b>
+<br/> (This string indicates what language the interface text should use. The name must correspnd to a folder in the 'language' folder where the translated texts should exist.)
+<br/> For more information about the language system please see <a href="#language">Language</a> below.
+
+<br/><br/>
+<h3 style="font-style:italic;font-size:12pt;text-decoration:underline">Interface Theme</h3>
+<b>$CFG-&gt;uitheme = "default";</b>
+<br/> (This string indicates what theme the interface should use.
+The name must correspond to a folder in the 'theme' folder where the theme specific style sheets, images and pages should exist.
+The default theme is 'deault'. Make sure this is never deleted as it is the fall back position.)
+
+<br/><br/>
+<h3 style="font-style:italic;font-size:12pt;text-decoration:underline">Background colours used in visualisations.</h3>
+They have the same names as styles in the styles.css file,
+ but we found we needed slightly darker shades than their stylesheet equivalents.
+<br/><br/>
+<b>$CFG-&gt;challengebackpale = '#6FCBF5';</b>
+<br/><b>$CFG-&gt;issuebackpale = '#DFC7EB';</b>
+<br/><b>$CFG-&gt;solutionbackpale = '#B9C1DD';</b>
+<br/><b>$CFG-&gt;probackpale = '#C3D6BC';</b>
+<br/><b>$CFG-&gt;conbackpale = '#DE9898';</b>
+<br/><b>$CFG-&gt;peoplebackpale = '#C6ECFE';</b>
+<br/><b>$CFG-&gt;resourcebackpale = '#E1F1C9';</b>
+<br/><b>$CFG-&gt;plainbackpale = '#D0D0D0';</b>
+<br/><b>$CFG-&gt;groupbackpale = '#F4F5F7';</b>
+<br/><b>$CFG-&gt;argumentbackpale = '#F0F1AD';</b>
+<br/><b>$CFG-&gt;votebackpale = '#F9B257';</b>
+<br/><b>$CFG-&gt;commentpale = '#FAB8DA';</b>
+<br/><b>$CFG-&gt;ideabackpale = '#D0D0D0';</b>
+<br/><b>$CFG-&gt;mapbackpale = '#F9B257';</b>
+
+<br/><br/>
+<b>$CFG-&gt;challengeback = '#067EB0';</b>
+<br/><b>$CFG-&gt;issueback = '#DFC7EB';</b>
+<br/><b>$CFG-&gt;solutionback = '#A4AED4';</b>
+<br/><b>$CFG-&gt;proback = '#A9C89E';</b>
+<br/><b>$CFG-&gt;conback = '#D46A6A';</b>
+<br/><b>$CFG-&gt;peopleback = '#0000C0';</b>
+<br/><b>$CFG-&gt;resourceback = '#BCE482';</b>
+<br/><b>$CFG-&gt;plainback = '#D0D0D0';</b>
+<br/><b>$CFG-&gt;groupback = '#F4F5F7';</b>
+<br/><b>$CFG-&gt;argumentback = '#E1E353';</b>
+<br/><b>$CFG-&gt;voteback = '#F9B257';</b>
+<br/><b>$CFG-&gt;commentback = '#F777B9';</b>
+<br/><b>$CFG-&gt;ideaback = '#D0D0D0';</b>
+<br/><b>$CFG-&gt;mapback = '#F9B257';</b>
+
+<br/><br/><b>$CFG-&gt;unknowntypeback = '#000000';</b>
+
+
+
+<br><br>
+<h2><a name="language">Language</a></h2>
+
+<p>The current language system allows you to add another language for two reasons::
+<ol>
+<li>To add a new language that can be used for embedded visualisations to call.</li>
+<li>To add a new language for the CIDashboard interface to be seen in.</li>
+</ol>
+Basically the process for both is the same, but different language files are translated for each case.
+</p>
+<p>If you want to add a new language set to the CIDashboard you need to:
+<ol>
+<li>Create a new folder inside the 'language' folder whose name the two letter abbreviation for the language you are providing a translation for.
+These codes are specified by the <a href="http://www.ics.uci.edu/pub/ietf/http/related/iso639.txt">ISO 639</a> standard, e.g.</p>
+<table style="width: 216px; height: 205px;" bgcolor="#cccccc" border="1" bordercolor="#000000" cellpadding="7" cellspacing="2">
+<tbody>
+<tr bgcolor="#3366ff">
+<td valign="top"><em>Language Code</em></td>
+<td valign="top"><em>Language</em></td>
+</tr>
+<tr>
+<td><code>en</code></td>
+<td>English</td>
+</tr>
+<tr>
+<td><code>fr</code></td>
+<td>French</td>
+</tr>
+<tr>
+<td><code>it</code></td>
+<td>Italian</td>
+</tr>
+<tr>
+<td><code>de</code></td>
+<td>German</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</li>
+<li>Copy the language files from inside the default 'en' language folder into you new folder.
+	<ul>
+		<li>For adding a new options only for embedded visualisations you need to translate: <code>stats.php</code></li>
+		<li>For adding a new option for the CIDashboard interface you need to translate: <code>All files EXCEPT stats.php.</code></li>
+	</ul>
+</li>
+<li>Inside any given language file, each item is set up as a key/value pair, in the form key='value'.
+You must translate/change only the values on the right hand side, NEVER change the key name on the left.</li>
+<li>Change the language variables in the config file: <b>$CFG-&gt;language = 'en';</b> to reflect your new language of choice.
+The <b>$CFG-&gt;language</b> setting must match the folder name for your new language.
+
+</li>
+</ol>
+<p>NB: Some HTML is mixed up in the language files especially in the language heavy areas like the About and the Help pages.
+</p>
+
+<br>
+<h2><a name="lang">Tailoring your CIDashboard</a></h2>
+At present, if you want to change the look and feel or text of your CIDashboard site,these are the main places you should look at making changes:
+<ul>
+<li><b>Themes:</b> The style sheets for the ui can be found in 'themes/default/styles/'. Please don't edit those ones.
+If you want to create your own theme you should copy the 'default' folder, rename it and edit the styles there.
+In the images folder you will see some image files like the header logo etc, that you will also probably want to replace.
+Just make sure the files names and sizes stay the same. In addition you can override themes for a given domain or the default domain in the 'sites' folder.
+For more information see the README.txt file in the 'themes' folder.
+<li><b>Language:</b> All text displayed in CIDashboard has been placed in various files in the 'language' folder system.
+So you can override all the default texts your specific site needs.
+You may especially like to add to or redo the <b>about</b> page (language/en/about.php and help.php pages).
+(See the <a href="#language">Language</a> section of these notes for more details and there is also a README.txt file in the 'language' folder).</li>
+<li><b>Homepage:</b> The file that draws the homepage (ui/homepage.php) is in the 'ui' folder. While all the text can be
+changed through the language files, you may want to completely redo this page for your specific version of CIDashboard.</li>
+<li><b>Images:</b> The theme specific images can be found in the themes as mentioned above.
+All other icons and images can be found in the 'images' folder. If you want to replace an image make sure the size and file name stay the same
+and you will not need to edit any code. We suggest you backup the images folder before you make changes.</li>
+<li><b>Headers and Footers:</b> The header and footer files can be found in the 'ui' folder.
+The main 'header.php' and 'footer.php' do the base site pages, but you will see there are also specific header and footer pages
+for other parts of the site, like dialogs and the embeds etc., so you may want to look at all of them when making any changes.
+</li>
+</ul>
+</p>
+
+
+<br/>
+<h2><a name="dev">Additional Developer Notes</a></h2>
+
+<p>In addition to this document the 'language' and 'theme' folders have a README.txt file and the file <a href="Language-File-Translation-Help.docx">Language-File-Translation-Help.docx</a>
+has more details about translating the language files.
+
+</p>
+
+<br/>
+<br/>
+
+</body>
+
+</html>

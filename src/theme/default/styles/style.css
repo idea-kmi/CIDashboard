@@ -1,0 +1,398 @@
+/********************************************************************************
+ *                                                                              *
+ *  (c) Copyright 2015 The Open University UK                                   *
+ *                                                                              *
+ *  This software is freely distributed in accordance with                      *
+ *  the GNU Lesser General Public (LGPL) license, version 3 or later            *
+ *  as published by the Free Software Foundation.                               *
+ *  For details see LGPL: http://www.fsf.org/licensing/licenses/lgpl.html       *
+ *               and GPL: http://www.fsf.org/licensing/licenses/gpl-3.0.html    *
+ *                                                                              *
+ *  This software is provided by the copyright holders and contributors "as is" *
+ *  and any express or implied warranties, including, but not limited to, the   *
+ *  implied warranties of merchantability and fitness for a particular purpose  *
+ *  are disclaimed. In no event shall the copyright owner or contributors be    *
+ *  liable for any direct, indirect, incidental, special, exemplary, or         *
+ *  consequential damages (including, but not limited to, procurement of        *
+ *  substitute goods or services; loss of use, data, or profits; or business    *
+ *  interruption) however caused and on any theory of liability, whether in     *
+ *  contract, strict liability, or tort (including negligence or otherwise)     *
+ *  arising in any way out of the use of this software, even if advised of the  *
+ *  possibility of such damage.                                                 *
+ *                                                                              *
+ ********************************************************************************/
+ /** Author: Michelle Bachler, KMi, The Open University **/
+
+a {
+ 	color: #7FAE0E; 
+ 	font-weight: bold;
+ 	text-decoration: none;
+}
+
+h1 {
+	margin-top:5px;
+	margin-bottom: 10px;
+	font-size: 150%;
+	color: #4E725F; 
+}
+
+h2 {
+	margin: 0px;
+	font-size: 130%;	
+	margin-bottom:10px;
+	color: #4E725F; 
+}
+
+h3 {
+	margin: 0px;
+	font-size: 130%;	
+	margin-bottom:10px;
+	color: #4E725F; 
+}
+	
+ol li {
+	vertical-align:top;	
+}
+
+#dialoglogo {
+	font-size: 10pt; 
+	float:left;
+	margin-bottom:3px;
+	margin-top:3px;
+	margin-left:3px;
+}
+
+#logo {
+	float: left;
+	padding-top:0px;
+	margin:15px;	
+	margin-bottom:0px;
+}
+
+#header {
+	width:98%;
+	height: 60px;
+}
+
+#footer {
+	clear: both;
+	float: left;
+	width: 98%;
+	height: 100px;
+	margin-bottom: 5px;
+}
+
+#menu {
+	float: right;
+	padding-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#search {
+	clear: both;
+	float: right;
+	margin-bottom: 5px;	
+}
+
+#main {
+	clear: both;
+  	width: 98%;
+}
+
+#contentwrapper {
+	float: left;
+	width: 100%;
+	padding:0px;
+}
+
+#content {
+	margin-left: 10px; 	
+	margin-right:5px;	
+	min-height:400px;
+}
+
+.bodymain {
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	margin: 0px;
+	font-size: 10pt;
+	color: DimGrey; 
+	background:#F4F5F7;
+}
+
+.bodyembed {
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	margin: 0px;
+	font-size: 10pt;
+	color: DimGrey; 
+	background:#F4F5F7; 
+}
+
+.mainfont {
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+
+.active {
+	color:#7FAE0E;
+	cursor:pointer;		
+	font-weight: bold;
+}
+
+.messagediv {
+	padding:5px; 
+	width: 250px; 
+	height: 80px; 
+	position: absolute; 
+	left:0px; 
+	top:0px; 
+	overflow: auto; 
+	display: none; 
+	color: white; 
+	background-color: DimGray; 
+	font-face: Arial; 
+	font-weight:bold;
+}
+
+.c_innertube{
+	margin-top: 0;
+	float:left;
+	border-bottom: 2px solid #E8E8E8;
+	width:100%
+}
+
+.toConnectionsTable {
+	padding: 0px; 
+	margin: 0px;
+	border-collapse: collapse;
+}
+
+.hintRollover {
+	position: absolute; 
+	z-index: 20; 
+	visibility: hidden; 
+	padding: 0px;
+	left: 0px; 
+	top: 0px;
+	border: 1px solid #308D88;
+}
+
+/** Dashboard **/
+
+.plainback {
+	background: #B0B0B0;
+}
+.plainborder {
+	border: 1px solid #D0D0D0;
+}
+.plainbackgradient {
+	background: #D0D0D0;
+    background: -o-linear-gradient(top, #D0D0D0, #ffffff);
+    background: -moz-linear-gradient(top, #D0D0D0, #ffffff);
+    background: -webkit-gradient(linear,
+                left top, left bottom, from(#D0D0D0), to(#ffffff));
+    filter: progid:DXImageTransform.Microsoft.Gradient(
+                StartColorStr='#D0D0D0  ', EndColorStr='#ffffff', GradientType=0);
+    background: linear-gradient(to bottom, #D0D0D0, #ffffff);
+}
+
+.homebutton1 {
+	color: #4e247b; 
+	font-size: 10pt;
+}
+
+.curvedBorder {
+	border-radius: 8px; 
+	-o-border-radius: 8px; 
+	-icab-border-radius: 8px; 
+	-khtml-border-radius: 8px; 
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+
+/** end Dashboard **/
+
+/** showmulticonns **/
+
+ol.conn-list-ol {
+	margin-left:0px;
+	padding-left:0px;
+	margin-top:0px;
+	padding-top:0px;
+	list-style:none;
+}
+
+li.conn-list-li {
+	margin-left:0px;
+	padding-left:0px;
+	float:left;
+}
+
+div.conn-li-wrapper{
+	width:100%;
+	clear:both;
+}
+
+.conn-blob {  
+    margin-left:50px;
+    margin-bottom:20px; 
+    padding: 0px;
+    border: 1px solid transparent;
+}
+
+.conn-blob-sm {  
+    margin-left:0px;
+    margin-bottom:20px; 
+    padding: 0px;
+    border: 1px solid transparent;
+}
+
+.conn-link-text {
+    position:relative;
+    left:30px;
+    top:0px;
+    width:155px;
+    height:20px;
+	text-align: left;
+}
+
+.connlink-horiz-slim  {
+    float:left;   
+    width:238px;
+    height:21px;
+    margin-top:15px;
+    background-repeat:no-repeat;
+    background-position: 0px 0px;  
+ }
+
+.fromidea-horiz { 
+    width: 250px;
+    float: left;
+    margin-bottom:10px;  
+}
+
+.toidea-horiz {
+    margin-bottom:10px; 
+    width: 250px; 
+    float:left; 
+}
+
+.link-type-wrapper {
+	float: left;
+	padding-top: 3px;
+	font-size: 8pt;	
+	width:160px;
+}
+
+.link-type-text {
+	float:left;
+	text-align: center;
+	width:120px;
+	font-weight: bold;
+}
+/** END showmulticonns **/
+
+div.toolbarrow {
+	float:left;
+	clear: both;
+	padding:6px;
+	padding-top:0px;
+	margin: 0px;
+	width: 99%;
+}
+
+div.loading {
+	width:100%;
+	text-align:center;
+}
+
+.paraindent1 {
+	margin-left:36.0pt;
+	text-indent:-18.0pt
+}
+.paraindent2 {
+	margin-left:72.0pt;
+	text-indent:-18.0pt
+}
+
+.nodetable {
+	display: table;
+	height:100%;
+	width:100%;
+}
+
+.nodetablerow {
+	display: table-row;
+	width:100%;
+}
+
+.nodetablecellbottom {
+	display: table-cell;
+	vertical-align: bottom;
+}
+
+.nodetablecelltop {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.nodetablecellmid {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.boxborder {
+    border:1px solid #E1E1E1;
+}
+.boxbackground {
+    background-color: #ffffff;
+}
+
+.boxshadow {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #EDEDED #E1E1E1 #EDEDED #D4D4D4;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: #FAFAFA;
+    color: #414141;
+    border-radius: 8px;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 0.5em;
+    padding: 0.5em 9px;
+}
+
+.boxshadowsquare {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #EDEDED #E1E1E1 #EDEDED #D4D4D4;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: #FAFAFA;
+    color: #414141;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 0.5em;
+    padding: 0.5em 9px;
+}
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+[draggable] * {
+  -moz-user-drag: none;
+  -khtml-user-drag: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
