@@ -42,6 +42,15 @@ if ($dashboard) {
 } else {
 	include_once($HUB_FLM->getCodeDirPath("ui/headerembed.php"));
 }
+
+// need to call for the visualisation data first to create the userid for the second call for litemap and debatehub.
+// As results are cashed the first time it is not too wasteful to call it again from the vis
+// But probably need to rethink this really.
+require_once($HUB_FLM->getCodeDirPath("core/io/catalyst/catalyst_jsonld_reader.class.php"));
+$withhistory = optional_param('withhistory',false,PARAM_BOOL);
+$withvotes = optional_param('withvotes',false,PARAM_BOOL);
+$reader = new catalyst_jsonld_reader();
+$reader = $reader->load($url,$timeout,$withhistory,$withvotes,$withposts);
 ?>
 
 <script type='text/javascript'>
@@ -55,13 +64,13 @@ var frameheight=<?php echo $height; ?>;
 var framewidth=<?php echo $width; ?>;
 
 function processCIFUserData(json) {
-	//alert('processCIFUserData');
 	if(json.error) {
 		alert(json.error[0].message);
 		return;
 	} else {
 		var userArray = loadUserUnobfuscationData(json);
 		NODE_ARGS['userdata'] = userArray;
+		//alert(userArray.toSource());
 		var bObj = new JSONscriptRequest('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-social.js.php"); ?>');
 		bObj.buildScriptTag();
 		bObj.addScriptTag();

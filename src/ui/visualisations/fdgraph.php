@@ -37,6 +37,15 @@ $withtitle = optional_param('withtitle', true, PARAM_BOOL);
 $withdesc = optional_param('withdesc', true, PARAM_BOOL);
 $dashboard = optional_param('dashboard', false, PARAM_BOOL);
 
+// need to call for the visualisation data first to create the userid for the second call for litemap and debatehub.
+// As results are cashed the first time it is not too wasteful to call it again from the vis
+// But probably need to rethink this really.
+require_once($HUB_FLM->getCodeDirPath("core/io/catalyst/catalyst_jsonld_reader.class.php"));
+$withhistory = optional_param('withhistory',false,PARAM_BOOL);
+$withvotes = optional_param('withvotes',false,PARAM_BOOL);
+$reader = new catalyst_jsonld_reader();
+$reader = $reader->load($url,$timeout,$withhistory,$withvotes,$withposts);
+
 if ($dashboard) {
 	include_once($HUB_FLM->getCodeDirPath("ui/headerdashboard.php"));
 } else {

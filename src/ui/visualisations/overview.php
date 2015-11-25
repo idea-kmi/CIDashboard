@@ -30,7 +30,7 @@ require_once($HUB_FLM->getCodeDirPath("core/embedlib.php"));
 $url = required_param('url', PARAM_URL);
 $langurl = optional_param('langurl', '', PARAM_URL);
 $timeout = optional_param('timeout', 60, PARAM_INT);
-//$withtitle = optional_param('withtitle', true, PARAM_BOOL);
+$withtitle = optional_param('withtitle', true, PARAM_BOOL);
 //$withdesc = optional_param('withdesc', true, PARAM_BOOL);
 $dashboard = optional_param('dashboard', false, PARAM_BOOL);
 
