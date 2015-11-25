@@ -25,13 +25,24 @@
  /** Author: Michelle Bachler, KMi, The Open University **/
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+
 $url = required_param('url', PARAM_URL);
 $userurl = optional_param('userurl', "", PARAM_URL);
 $networkonly = optional_param('networkonly', false, PARAM_BOOL);
 $dashboard = optional_param('dashboard', false, PARAM_BOOL);
 
+if ($dashboard) {
+	include_once($HUB_FLM->getCodeDirPath("ui/headerdashboard.php"));
+} else {
+	include_once($HUB_FLM->getCodeDirPath("ui/headerembed.php"));
+}
+
 $base_url = 'https://discussions.bluenove.com/edgesense/catalyst_embed.html?url=';
 $base_url2 = 'https://discussions.bluenove.com/edgesense/catalyst_embed_network.html?url=';
+
+if (gettype($networkonly) === 'string') {
+	$networkonly = $networkonly === 'true'? true: false;
+}
 if ($networkonly) {
 	$base_url = $base_url2;
 }
@@ -41,4 +52,16 @@ if ($userurl != "") {
 	$finalurl = $finalurl.'&userurl='.urlencode($userurl);
 }
 ?>
-<meta http-equiv="refresh" content="0; URL='<?php echo $finalurl; ?>'" />
+<!-- meta http-equiv="refresh" content="0; URL='<?php echo $finalurl; ?>'" / -->
+
+<div style="float:left;margin-top:10px;">
+	<iframe src="<?php echo $finalurl; ?>" width="600" height="1000"  style="overflow:auto" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<?php
+if ($dashboard) {
+	include_once($HUB_FLM->getCodeDirPath("ui/footerdashboard.php"));
+} else {
+	include_once($HUB_FLM->getCodeDirPath("ui/footerembed.php"));
+}
+?>
