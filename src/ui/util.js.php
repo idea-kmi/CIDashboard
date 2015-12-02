@@ -887,7 +887,7 @@ function unobfuscateUser(user) {
 /**
  * Post a message from the CIDashboard IFrame code to the parent page
  *
- * @param source the uniqur name of the visualisation posting the message
+ * @param source the unique name of the visualisation posting the message
  * @param eventname click/moueover/mouseout
  * @param action collapse/expand/showinfo/hideinfo/collapseall/expandall (see docs fo up-to-date list)
  * @param tartgettype node/user/global
@@ -904,6 +904,6 @@ function postMessageToPage(source,eventname,action,targettype,target) {
 		message += '"target":"' + target + '",';
 		message += '}';
 
-		top.postMessage(message,URL_ROOT);
+		top.postMessage(message,"*");
 	}
 }
