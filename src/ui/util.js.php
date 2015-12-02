@@ -487,7 +487,7 @@ function isValidURI(uri) {
     if (!uri) uri = "";
 
    	var schemeRE = /^([-a-z0-9]|%[0-9a-f]{2})*$/i;
-   	var authorityRE = /^([-a-z0-9.]|%[0-9a-f]{2})*$/i;
+   	var authorityRE = /^([-a-z0-9.:]|%[0-9a-f]{2})*$/i;
    	var pathRE = /^([-a-z0-9._~:@!$&'()*+,;=\//#]|%[0-9a-f]{2})*$/i;
     var qqRE = /^([-a-z0-9._~:@!$&'\[\]()*+,;=?\/]|%[0-9a-f]{2})*$/i;
     var qfRE = /^([-a-z0-9._~:@!$&#'\[\]()*+,;=?\/]|%[0-9a-f]{2})*$/i;
