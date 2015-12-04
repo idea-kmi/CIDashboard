@@ -358,6 +358,7 @@ function displayUserActivityCrossFilterD3Vis(data, width, userdata) {
 				if (!found) {
 					nameuseridArray.push(d.userid);
 					d.username = name+" ("+(nameuseridArray.length)+")";
+					checkDuplicateNames[name] = nameuseridArray;
 				}
 			} else {
 				d.username = name;
