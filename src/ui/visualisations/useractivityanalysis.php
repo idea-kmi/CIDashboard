@@ -115,7 +115,7 @@ Event.observe(window, 'load', function() {
 			<span class="filter-count"></span> <?php echo $LNG->STATS_ACTIVITY_SELECTED_COUNT_MESSAGE_PART1; ?> <span class="total-count"></span> <?php echo $LNG->STATS_ACTIVITY_SELECTED_COUNT_MESSAGE_PART2; ?> | <a
 				href="javascript:dc.filterAll(); dc.renderAll();"><?php echo $LNG->STATS_ACTIVITY_RESET_ALL_BUTTON; ?></a>
 		</div>
-		<div style="clear:both;float:left;overflow:auto;height:220px;width:940px">
+		<div style="clear:both;float:left;overflow:auto;height:175px;width:940px">
 			<table id="data-table" class="table table-hover dc-data-table" style="clear:both;float:left;width:900px">
 				<thead>
 				<tr class="header">

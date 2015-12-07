@@ -318,13 +318,9 @@ function displayActivityCrossFilterD3Vis(data, width) {
 
 function displayUserActivityCrossFilterD3Vis(data, width, userdata) {
 
-	//alert(data.toSource());
-
 	if (userdata === undefined) {
 		userdata = "";
 	}
-
-	//alert(userdata.toSource());
 
 	var formatDateGroup = d3.time.format("%B %Y");
 	var formatDate = d3.time.format("%B %d, %Y");
@@ -333,6 +329,31 @@ function displayUserActivityCrossFilterD3Vis(data, width, userdata) {
 	var checkDuplicateNames = {};
 
 	data.forEach(function(d, i) {
+		if (!d.color) {
+			if (d.nodetype == "Pro") {
+				d.color = proback;
+			} else if (d.nodetype == "Con") {
+				d.color = conback;
+			} else if (d.nodetype == "Solution") {
+				d.color = solutionback;
+			} else if (d.nodetype == "Idea") {
+				d.color = ideaback;
+			} else if (d.nodetype == "Issue") {
+				d.color = issueback;
+			} else if (d.nodetype == "Group") {
+				d.color = groupback;
+			} else if (d.nodetype == "Argument") {
+				d.color = argumentback;
+			} else if (d.nodetype == "Comment") {
+				d.color = commentback;
+			} else if (d.nodetype == "Map") {
+				d.color = mapback;
+			} else if (d.nodetype == "<?php echo $LNG->STATS_ACTIVITY_VOTE; ?>") {
+				d.color = voteback;
+			} else {
+				d.color = d.children ? color(d.depth) : null;
+			}
+		}
 		d.index = i;
 		d.date = new Date(d.date*1000);
 		if (userdata != "" && userdata[d.userid]) {
@@ -387,7 +408,7 @@ function displayUserActivityCrossFilterD3Vis(data, width, userdata) {
 			if (v.nodetype == "Issue") {
 				p.totalIssue++;
 			} else if (v.nodetype == "Solution") {
-				p.totalIdea++;
+				p.totalSolution++;
 			} else if (v.nodetype == "Pro") {
 				p.totalPro++;
 			} else if (v.nodetype == "Con") {
@@ -410,7 +431,7 @@ function displayUserActivityCrossFilterD3Vis(data, width, userdata) {
 			if (v.nodetype == "Issue") {
 				p.totalIssue--;
 			} else if (v.nodetype == "Solution") {
-				p.totalIdea--;
+				p.totalSolution--;
 			} else if (v.nodetype == "Pro") {
 				p.totalPro--;
 			} else if (v.nodetype == "Con") {
@@ -432,7 +453,7 @@ function displayUserActivityCrossFilterD3Vis(data, width, userdata) {
 			return {
 				totalAll:0,
 				totalIssue:0,
-				totalIdea:0,
+				totalSolution:0,
 				totalPro:0,
 				totalCon:0,
 				totalArgument:0,
@@ -462,7 +483,7 @@ function displayUserActivityCrossFilterD3Vis(data, width, userdata) {
 		.margins({top: 10, right: 30, bottom: 100, left: 40})
 		.group(usersGrouped, getNodeTitleAntecedence("Issue", false))
 		.valueAccessor(function(d) { return d.value.totalIssue;	})
-		.stack(usersGrouped, getNodeTitleAntecedence("Solution", false), function(d){return d.value.totalIdea;})
+		.stack(usersGrouped, getNodeTitleAntecedence("Solution", false), function(d){return d.value.totalSolution;})
 		.stack(usersGrouped, getNodeTitleAntecedence("Pro", false), function(d){return d.value.totalPro;})
 		.stack(usersGrouped, getNodeTitleAntecedence("Con", false), function(d){return d.value.totalCon;})
 		.stack(usersGrouped, getNodeTitleAntecedence("Argument", false), function(d){return d.value.totalArgument;})
@@ -483,54 +504,6 @@ function displayUserActivityCrossFilterD3Vis(data, width, userdata) {
 		.title(function(d){ return "";})
 		.renderTitle(false);
 
-		/*
-		.x(d3.scale.ordinal().domain(user))
-		.x(d3.scale.ordinal().domain(data.map( function(d){ return d.username;})))
-		*/
-
-		//.xAxisLabel("Users")
-		//.legend(dc.legend().x(10).y(10).itemHeight(13).gap(5));
-
-		/*.title(function(d) {
-			//alert(d.toSource());
-			var title=d.data.value.y;
-			if (d.data.y == d.data.value.totalIssue) {
-				title=getNodeTitleAntecedence(d.data.value.nodetype, true)+" "+d.data.value.totalIssue;
-			} else if (d.data.value.nodetype == "Solution") {
-				title=getNodeTitleAntecedence(d.data.value.nodetype, true)+" "+d.data.value.totalIdea;
-			} else if (d.data.value.nodetype == "Pro") {
-				title=getNodeTitleAntecedence(d.data.value.nodetype, true)+" "+d.data.value.totalPro;
-			} else if (d.data.value.nodetype == "Con") {
-				title=getNodeTitleAntecedence(d.data.value.nodetype, true)+" "+d.data.value.totalCon;
-			} else if (d.data.value.nodetype == "Argument") {
-				title=getNodeTitleAntecedence(d.data.value.nodetype, true)+" "+d.data.value.totalArgument;
-			} else if (d.data.value.nodetype == "Idea") {
-				title=getNodeTitleAntecedence(d.data.value.nodetype, true)+" "+d.data.value.totalIdea;
-			} else if (d.data.value.nodetype == "<?php echo $LNG->STATS_ACTIVITY_VOTE; ?>") {
-				title=getNodeTitleAntecedence(d.data.value.nodetype, true)+" "+d.data.value.totalVote;
-			} else if (d.data.value.nodetype == "<?php echo $LNG->STATS_ACTIVITY_VOTED_FOR; ?>") {
-				title=getNodeTitleAntecedence(d.data.value.nodetype, true)+" "+d.data.value.totalVoteFor;
-			} else if (d.data.value.nodetype == "<?php echo $LNG->STATS_ACTIVITY_VOTED_AGAINST; ?>") {
-				title=getNodeTitleAntecedence(d.data.value.nodetype, true)+" "+d.data.value.totalVoteAgainst;
-			}
-
-			return title;
-
-		})
-		.renderTitle(true);
-		*/
-
-	// Hide labels.
-	//userChart.xAxis().tickFormat(function(v) { return ""; });
-
-	//	.mouseZoomable(true)
-
-	//d3.select("#user-chart")
-    //	.selectAll("text")
-	//    .attr("transform", function(d) {
-    //    	return "rotate(-90)"
-    //	});
-
 	/*** NODE TYPES ***/
 	var nodetype = activities.dimension(function(d) {
 		var type = d.nodetype;
@@ -542,13 +515,12 @@ function displayUserActivityCrossFilterD3Vis(data, width, userdata) {
 			case "Argument": return "4.<?php echo $LNG->STATS_ACTIVITY_ADDED; ?> "+getNodeTitleAntecedence(d.nodetype, false);
 			case "Idea": return "5.<?php echo $LNG->STATS_ACTIVITY_ADDED; ?> "+getNodeTitleAntecedence(d.nodetype, false);
 			case "<?php echo $LNG->STATS_ACTIVITY_VOTE; ?>": return "6."+d.nodetype;
-			default: return "7."+type;
 		}
 	});
 	var nodetypeGroup = nodetype.group();
 
-	var colorChoice = d3.scale.ordinal().domain([0,1,2,3,4,5,6,7])
-          .range([issueback,solutionback,proback,conback,argumentback,ideaback,voteback,unknowntypeback]);
+	var colorChoice = d3.scale.ordinal().domain([0,1,2,3,4,5,6])
+          .range([issueback,solutionback,proback,conback,argumentback,ideaback,voteback]);
 
 	dc.rowChart("#nodetype-chart")
 		.width(350)
@@ -639,10 +611,8 @@ function displayUserActivityCrossFilterD3Vis(data, width, userdata) {
 	*/
 
 	/** LEGEND **/
-	var colorrange = [issueback,solutionback,proback,conback,argumentback,ideaback,voteback,unknowntypeback];
 	var legend = d3LegendInactive();
 	legend
-		.color(colorrange)
 		.width(width)
 		.height(20)
         .margin({top: 0, right: 0, bottom: 0, left: 15});
