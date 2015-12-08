@@ -901,7 +901,7 @@ function postMessageToPage(source,eventname,action,targettype,target) {
 		message += '"event":"' + eventname + '",';
 		message += '"action":"' + action + '",';
 		message += '"target_type":"' + targettype + '",';
-		message += '"target":"' + target + '",';
+		message += '"target":"' + target + '"';
 		message += '}';
 
 		top.postMessage(message,"*");
