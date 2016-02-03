@@ -30,28 +30,28 @@
 	<div style="clear:both;float:left; margin-top:20px;width:480px">
 	<h2><?php echo $LNG->HELP_MOVIES_TITLE_INTRO;?><span style="font-size:9pt;padding-left:5px;color:gray">(11m 55s)</span></h2>
 	<video poster="<?php echo $CFG->homeAddress; ?>ui/movies/cidashboard-intro.png" style="border:2px solid #E8E8E8" width="480px" height="360px" autobuffer="autobuffer" controls="controls">
-	<source src="<?php echo $CFG->homeAddress; ?>ui/movies/cidashboard-intro.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+	<source src="<?php echo $CFG->homeAddress; ?>ui/movies/cidashboard-intro.mp4" type="video/mp4;" codecs="avc1.42E01E, mp4a.40.2">
 	</video>
 	</div>
 
 	<div style="float:left; margin-top:20px;width:480px;margin-left:20px;">
 	<h2><?php echo $LNG->HELP_MOVIES_TITLE_LARGEVIS;?><span style="font-size:9pt;padding-left:5px;color:gray">(11m 55s)</span></h2>
 	<video poster="<?php echo $CFG->homeAddress; ?>ui/movies/cidashboard-large-visualisations.png" style="border:2px solid #E8E8E8" width="480px" height="360px" autobuffer="autobuffer" controls="controls">
-	<source src="<?php echo $CFG->homeAddress; ?>ui/movies/cidashboard-large-visualisations.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+	<source src="<?php echo $CFG->homeAddress; ?>ui/movies/cidashboard-large-visualisations.mp4" type="video/mp4;" codecs="avc1.42E01E, mp4a.40.2">
 	</video>
 	</div>
 
 	<div style="clear:both;float:left; margin-top:20px;width:480px">
 	<h2><?php echo $LNG->HELP_MOVIES_TITLE_MINIVIS;?><span style="font-size:9pt;padding-left:5px;color:gray">(11m 55s)</span></h2>
 	<video poster="<?php echo $CFG->homeAddress; ?>ui/movies/cidashboard-minis.png" style="border:2px solid #E8E8E8" width="480px" height="360px" autobuffer="autobuffer" controls="controls">
-	<source src="<?php echo $CFG->homeAddress; ?>ui/movies/cidashboard-minis.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+	<source src="<?php echo $CFG->homeAddress; ?>ui/movies/cidashboard-minis.mp4" type="video/mp4;" codecs="avc1.42E01E, mp4a.40.2">
 	</video>
 	</div>
 
 	<div style="float:left; margin-top:20px;width:480px;margin-left:20px;">
 	<h2><?php echo $LNG->HELP_MOVIES_TITLE_ALERTS;?><span style="font-size:9pt;padding-left:5px;color:gray">(11m 55s)</span></h2>
 	<video poster="<?php echo $CFG->homeAddress; ?>ui/movies/cidashboard-alerts.png" style="border:2px solid #E8E8E8" width="480px" height="360px" autobuffer="autobuffer" controls="controls">
-	<source src="<?php echo $CFG->homeAddress; ?>ui/movies/cidashboard-alerts.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+	<source src="<?php echo $CFG->homeAddress; ?>ui/movies/cidashboard-alerts.mp4" type="video/mp4;" codecs="avc1.42E01E, mp4a.40.2">
 	</video>
 	</div>
 
