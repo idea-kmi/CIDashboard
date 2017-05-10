@@ -60,12 +60,12 @@ $CFG->dirAddress = "";
  */
 $CFG->homeAddress = "";
 
-// The url of the analytics service being used - including trailing slash
+// The url of the analytics service being used - including trailing '/'
 // Sepcifically this is the one developed by Mark Klein on the Catalyst FP7 project (http://catalyst-fp7.eu/)
 // https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2962524
 $CFG->analyticsServiceUrl = "";
 
-// The url where you are getting an edgesense service - including trailing slash
+// The url where you are getting an edgesense service - including trailing '/'
 // The serice is expected to deliver the services as per code base: https://github.com/Wikitalia/edgesense
 $CFG->edgesenseServiceUrl = "";
 
