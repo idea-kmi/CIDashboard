@@ -37,8 +37,8 @@ if ($dashboard) {
 	include_once($HUB_FLM->getCodeDirPath("ui/headerembed.php"));
 }
 
-$base_url = 'https://discussions.bluenove.com/edgesense/catalyst_embed.html?url=';
-$base_url2 = 'https://discussions.bluenove.com/edgesense/catalyst_embed_network.html?url=';
+$base_url = $CFG->edgesenseServiceUrl.'catalyst_embed.html?url=';
+$base_url2 = $CFG->edgesenseServiceUrl.'catalyst_embed_network.html?url=';
 
 if (gettype($networkonly) === 'string') {
 	$networkonly = $networkonly === 'true'? true: false;
