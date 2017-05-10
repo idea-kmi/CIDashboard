@@ -60,6 +60,11 @@ $CFG->dirAddress = "";
  */
 $CFG->homeAddress = "";
 
+// The url of the analytics service being used.
+// Sepcifically this is the one developed by Mark Klein on the Catalyst FP7 project (http://catalyst-fp7.eu/)
+// https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2962524
+$CFG->analyticsServiceUrl = "";
+
 /**
  * The email address to use to contact the people running this site.
  * Used in the Contacts link and privacy and conditions of use pages.
