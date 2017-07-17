@@ -28,7 +28,7 @@ $LNG->HELP_CIF_INTRO = 'The Catalyst Interchange Format (CIF) is a jsonld schema
 
 $LNG->HELP_CIF_DOCS_MESSAGE = 'There are two key documents for understanding the Catalyst Interchange Format (CIF):';
 $LNG->HELP_CIF_ARCHITECTURE = '<a target="_blank" href="http://catalyst-fp7.eu/wp-content/uploads/2014/03/D3.1-Software-Architecture-and-Cross-Platform-Interoperability-Specification.pdf">Software Architecture and Cross-Platform Interoperability Specification</a>';
-$LNG->HELP_CIF_SCHEMA = '<a target="_blank" href="purl.org/catalyst/jsonld">The jsonld RDF schema</a>';
+$LNG->HELP_CIF_SCHEMA = '<a target="_blank" href="https://purl.org/catalyst/jsonld">The jsonld RDF schema</a>';
 
 
 $LNG->HELP_CIF_MESSAGE = 'Below are some key concepts extracted from the interoperability specification:';
