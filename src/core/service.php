@@ -28,7 +28,7 @@
  * All the methods listed are are available to users through REST-style URL calls
  */
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+include_once('../config.php');
 
 global $USER,$CFG,$LNG,$HUB_CACHE,$HUB_FLM;
 

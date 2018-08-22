@@ -24,7 +24,7 @@
  ********************************************************************************/
  /** Author: Michelle Bachler, KMi, The Open University **/
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+require_once('../../config.php');
 
 // override lang if supplied.
 $langurl = optional_param('langurl', '', PARAM_URL);

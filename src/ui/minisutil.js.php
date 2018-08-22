@@ -23,7 +23,7 @@
  *                                                                              *
  ********************************************************************************/
 header('Content-Type: text/javascript;');
-include_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+include_once('../config.php');
 ?>
 
 function loadUserContributionData(url, timeout, withPosts, withVotes) {

@@ -25,7 +25,7 @@
 /**
  * @author Michelle Bachler
  */
-require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+require_once('../../config.php');
 
 $url = required_param('url', PARAM_URL);
 $userurl = optional_param('userurl', '', PARAM_URL);

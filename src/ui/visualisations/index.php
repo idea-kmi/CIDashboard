@@ -24,8 +24,8 @@
  ********************************************************************************/
  /** Author: Michelle Bachler, KMi, The Open University **/
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/ui/visdata.php');
+require_once('../../config.php');
+include_once('../../ui/visdata.php');
 
 $width = optional_param("width",1000,PARAM_INT);
 $height = optional_param("height",1000,PARAM_INT);

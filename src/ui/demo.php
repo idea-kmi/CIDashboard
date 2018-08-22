@@ -23,7 +23,7 @@
  *                                                                              *
  ********************************************************************************/
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+include_once('../config.php');
 
 $url = required_param("url",PARAM_URL);
 $title = required_param("title",PARAM_TEXT);

@@ -24,7 +24,7 @@
  ********************************************************************************/
  /** Author: Michelle Bachler, KMi, The Open University **/
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+include_once('../../../cidashboard/config.php');
 
 class catalyst_jsonld_reader {
 
@@ -385,7 +385,7 @@ class catalyst_jsonld_reader {
 			return $this;
 		} else {
 			global $ERROR;
-			$ERROR = new error;
+			$ERROR = new Hub_Error;
 			$ERROR->createInvalidJSONLDError(json_last_error());
 			return $ERROR;
 		}
@@ -522,7 +522,7 @@ class catalyst_jsonld_reader {
 					default:
 						//error as method not defined.
 						//global $ERROR;
-						//$ERROR = new error;
+						//$ERROR = new Hub_Error;
 						//$ERROR->createInvalidMethodError();
 						//include($HUB_FLM->getCodeDirPath("core/formaterror.php"));
 						//die;

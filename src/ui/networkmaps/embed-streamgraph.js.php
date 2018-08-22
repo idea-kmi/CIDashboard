@@ -24,7 +24,7 @@
  ********************************************************************************/
 
 header('Content-Type: text/javascript;');
-include_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+require_once('../../config.php');
 ?>
 
 function loadStreamGraph(){

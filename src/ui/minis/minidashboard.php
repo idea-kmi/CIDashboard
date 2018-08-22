@@ -24,7 +24,7 @@
  ********************************************************************************/
  /** Author: Michelle Bachler, KMi, The Open University **/
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+require_once('../../config.php');
 require_once($HUB_FLM->getCodeDirPath('ui/minisdata.php'));
 
 $url = required_param("url",PARAM_URL);

@@ -23,7 +23,7 @@
  *                                                                              *
  ********************************************************************************/
 header('Content-Type: text/javascript;');
-include_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+require_once('../../../config.php');
 ?>
 var FD_MOST_CONNECTED_NODE = "";
 var FD_MOST_CONNECTED_COUNT = 0;

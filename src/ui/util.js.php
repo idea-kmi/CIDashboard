@@ -25,7 +25,7 @@
  /** @author Michelle Bachler, KMi, The Open University */
 
 header('Content-Type: text/javascript;');
-include_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+include_once('../config.php');
 
 // Colours for the vis node types
 echo "var challengebackpale = '".$CFG->challengebackpale."';";

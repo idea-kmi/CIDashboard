@@ -26,7 +26,7 @@
 /* Author: Michelle Bachler, Kmi, The Open University UK. */
 
 header('Content-Type: text/javascript;');
-include_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+require_once('../../../config.php');
 ?>
 /** REQUIRES: graphlib.js.php **/
 

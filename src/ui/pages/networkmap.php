@@ -22,7 +22,7 @@
  *  possibility of such damage.                                                 *
  *                                                                              *
  ********************************************************************************/
-include_once("../config.php");
+include_once("../../config.php");
 
 $me = substr($_SERVER["PHP_SELF"], 1); // remove initial '/'
 if ($HUB_FLM->hasCustomVersion($me)) {

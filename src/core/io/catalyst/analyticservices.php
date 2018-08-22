@@ -24,9 +24,10 @@
  ********************************************************************************/
  /** Author: Michelle Bachler, KMi, The Open University **/
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/config.php');
+include_once('../../../cidashboard/config.php');
 
 global $serviceRootAnalytics;
+
 $serviceRootAnalytics = $CFG->analyticsServiceUrl.'accept';
 
 function getCannedResults($url) {
