@@ -26,7 +26,7 @@
  * @author Michelle Bachler
  */
 require_once('../../config.php');
-require_once($HUB_FLM->getCodeDirPath("core/embedlib.php"));
+require_once($HUB_FLM->getEmbedLib());
 
 $url = required_param('url', PARAM_URL);
 $userurl = optional_param('userurl', '', PARAM_URL);

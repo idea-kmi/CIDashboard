@@ -30,7 +30,7 @@
 
 include_once('../config.php');
 
-global $USER,$CFG,$LNG,$HUB_CACHE,$HUB_FLM;
+global $USER,$CFG,$LNG,$HUB_FLM;
 
 //send the header info
 set_service_header();
@@ -67,7 +67,7 @@ switch($method) {
 		break;
 
 	case "getinterestnetworkdata" :
-		require_once($HUB_FLM->getCodeDirPath("core/embedlib.php"));
+		require_once($HUB_FLM->getEmbedLib());
 		$url = required_param('url', PARAM_URL);
 		$withposts = optional_param('withposts',false,PARAM_BOOL);
 		$timeout = optional_param('timeout',60,PARAM_INT);
@@ -75,7 +75,7 @@ switch($method) {
 		$response = getInterestNetworkData($url,$timeout,$withposts);
 		break;
 	case "getcommunitiesnetworkdata" :
-		require_once($HUB_FLM->getCodeDirPath("core/embedlib.php"));
+		require_once($HUB_FLM->getEmbedLib());
 		$url = required_param('url', PARAM_URL);
 		$withposts = optional_param('withposts',false,PARAM_BOOL);
 		$timeout = optional_param('timeout',60,PARAM_INT);
@@ -84,7 +84,7 @@ switch($method) {
 		break;
 
 	case "getminiusercontributions" :
-		require_once($HUB_FLM->getCodeDirPath("core/embedlib.php"));
+		require_once($HUB_FLM->getEmbedLib());
 		$url = required_param('url', PARAM_URL);
 		$withvotes = optional_param('withvotes',false,PARAM_BOOL);
 		$withposts = optional_param('withposts',false,PARAM_BOOL);
@@ -93,7 +93,7 @@ switch($method) {
 		$response = getMiniUserContributions($url,$timeout,$withvotes,$withposts);
 		break;
 	case "getminiuserviewings" :
-		require_once($HUB_FLM->getCodeDirPath("core/embedlib.php"));
+		require_once($HUB_FLM->getEmbedLib());
 		$url = required_param('url', PARAM_URL);
 		$withposts = optional_param('withposts',false,PARAM_BOOL);
 		$timeout = optional_param('timeout',60,PARAM_INT);
@@ -109,7 +109,7 @@ switch($method) {
 		$response = getMiniHealthParticipation($url,$timeout,$withposts);
 		break;
 	case "getminihealthviewing" :
-		require_once($HUB_FLM->getCodeDirPath("core/embedlib.php"));
+		require_once($HUB_FLM->getEmbedLib());
 		$url = required_param('url', PARAM_URL);
 		$withposts = optional_param('withposts',false,PARAM_BOOL);
 		$timeout = optional_param('timeout',60,PARAM_INT);
@@ -117,7 +117,7 @@ switch($method) {
 		$response = getMiniHealthViewing($url,$timeout,$withposts);
 		break;
 	case "getminihealthcontribution" :
-		require_once($HUB_FLM->getCodeDirPath("core/embedlib.php"));
+		require_once($HUB_FLM->getEmbedLib());
 		$url = required_param('url', PARAM_URL);
 		$withposts = optional_param('withposts',false,PARAM_BOOL);
 		$withvotes = optional_param('withvotes',false,PARAM_BOOL);
@@ -126,7 +126,7 @@ switch($method) {
 		$response = getMiniHealthContribution($url,$timeout,$withvotes,$withposts);
 		break;
 	case "getminiwordstats" :
-		require_once($HUB_FLM->getCodeDirPath("core/embedlib.php"));
+		require_once($HUB_FLM->getEmbedLib());
 		$url = required_param('url', PARAM_URL);
 		$withposts = optional_param('withposts',false,PARAM_BOOL);
 		$timeout = optional_param('timeout',60,PARAM_INT);
@@ -134,7 +134,7 @@ switch($method) {
 		$response = getMiniWordStats($url,$timeout,$withposts);
 		break;
 	case "getminialerts" :
-		require_once($HUB_FLM->getCodeDirPath("core/embedlib.php"));
+		require_once($HUB_FLM->getEmbedLib());
 		$url = required_param('url', PARAM_URL);
 		$timeout = optional_param('timeout',60,PARAM_INT);
 		$alerts = optional_param('alerts',"",PARAM_TEXT);
@@ -145,7 +145,7 @@ switch($method) {
     default:
         //error as method not defined.
         global $ERROR;
-        $ERROR = new error;
+        $ERROR = new Hub_Error;
         $ERROR->createInvalidMethodError();
         include($HUB_FLM->getCodeDirPath("core/formaterror.php"));
         die;

@@ -87,8 +87,10 @@ $CFG->VERSION = '1.0';
 
 
 /** SETUP THE CACHE MANAGER **/
-	unset($HUB_CACHE);
-	require_once("core/memcachemanager.class.php");
-	$HUB_CACHE = new MemcacheManager();
-    global $HUB_CACHE;
+	if ($CFG->hasMemcacheManager) {
+		unset($HUB_CACHE);
+		require_once("core/memcachemanager.class.php");
+		$HUB_CACHE = new MemcacheManager();
+		global $HUB_CACHE;
+	}
 ?>

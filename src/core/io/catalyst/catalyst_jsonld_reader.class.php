@@ -143,12 +143,16 @@ class catalyst_jsonld_reader {
 		$this->nodeSet = new NodeSet();
 		$this->userSet = new UserSet();
 
-		$doc = $HUB_CACHE->getStringData($url);
-		if ($doc === FALSE) {
-			$doc = loadJsonLDFromURL($url);
-			$HUB_CACHE->setStringData($url, $doc, $timeout);
+		if (isset($HUB_CACHE)) {
+			$doc = $HUB_CACHE->getStringData($url);
+			if ($doc === FALSE) {
+				$doc = loadJsonLDFromURL($url);
+				$HUB_CACHE->setStringData($url, $doc, $timeout);
+			} else {
+				//error_log("URL DATA FOUND: catalyst reader");
+			}
 		} else {
-			//error_log("URL DATA FOUND: catalyst reader");
+			$doc = loadJsonLDFromURL($url);
 		}
 
 		try {

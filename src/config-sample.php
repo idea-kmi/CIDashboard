@@ -70,11 +70,15 @@ $CFG->analyticsServiceUrl = "";
 $CFG->edgesenseServiceUrl = "";
 
 /**
+ * If you want to use MemcacheManager to cache files and speed stuff up, set this to true
+ */
+$CFG->hasMemcacheManager = false;
+
+/**
  * The email address to use to contact the people running this site.
  * Used in the Contacts link and privacy and conditions of use pages.
  */
 $CFG->EMAIL_REPLY_TO = "";
-
 
 /** OPTINALLY EDIT THESE NEXT SETTINGS **/
 

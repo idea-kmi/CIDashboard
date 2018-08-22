@@ -25,7 +25,7 @@
  /** Author: Michelle Bachler, KMi, The Open University **/
 
 require_once('../../config.php');
-require_once($HUB_FLM->getCodeDirPath("core/embedlib.php"));
+require_once($HUB_FLM->getEmbedLib());
 
 $url = required_param('url', PARAM_URL);
 $langurl = optional_param('langurl', '', PARAM_URL);

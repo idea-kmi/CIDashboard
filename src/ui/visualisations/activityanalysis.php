@@ -32,7 +32,7 @@ if ($langurl != '') {
 	overrideLanguageCore($langurl);
 }
 
-require_once($HUB_FLM->getCodeDirPath("core/embedlib.php"));
+require_once($HUB_FLM->getEmbedLib());
 
 $url = required_param('url', PARAM_URL);
 $withposts = optional_param('withposts', false, PARAM_BOOL);

@@ -173,4 +173,13 @@ class FileLocationManager {
 		$path = $CFG->dirAddress.$file;
 		return $path;
 	}
+
+	function getEmbedLib() {
+		global $HUB_CACHE;
+		if (isset($HUB_CACHE)) {
+			return $this->getCodeDirPath("core/embedlib.php");
+		} else {
+			return $this->getCodeDirPath("core/embedlibnocache.php");
+		}
+	}
 }
