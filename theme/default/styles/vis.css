@@ -1,0 +1,169 @@
+/********************************************************************************
+ *                                                                              *
+ *  (c) Copyright 2015 The Open University UK                                   *
+ *                                                                              *
+ *  This software is freely distributed in accordance with                      *
+ *  the GNU Lesser General Public (LGPL) license, version 3 or later            *
+ *  as published by the Free Software Foundation.                               *
+ *  For details see LGPL: http://www.fsf.org/licensing/licenses/lgpl.html       *
+ *               and GPL: http://www.fsf.org/licensing/licenses/gpl-3.0.html    *
+ *                                                                              *
+ *  This software is provided by the copyright holders and contributors "as is" *
+ *  and any express or implied warranties, including, but not limited to, the   *
+ *  implied warranties of merchantability and fitness for a particular purpose  *
+ *  are disclaimed. In no event shall the copyright owner or contributors be    *
+ *  liable for any direct, indirect, incidental, special, exemplary, or         *
+ *  consequential damages (including, but not limited to, procurement of        *
+ *  substitute goods or services; loss of use, data, or profits; or business    *
+ *  interruption) however caused and on any theory of liability, whether in     *
+ *  contract, strict liability, or tort (including negligence or otherwise)     *
+ *  arising in any way out of the use of this software, even if advised of the  *
+ *  possibility of such damage.                                                 *
+ *                                                                              *
+ ********************************************************************************/
+ /** Author: Michelle Bachler, KMi, The Open University **/
+
+.trafficlight {
+    float:left;
+    background-color: #000;
+    box-shadow: 0 0 5px rgba(0,0,0, .8);
+    overflow: hidden;
+    padding: 0 0 4px;
+    width: 40px;
+    margin:5px;
+    margin-top:10px;
+}
+
+.trafficlight span {
+    border-radius: 40px;
+    display: block;
+    height: 30px;
+    margin: 4px auto 0;
+    opacity: .3;
+    width: 30px;
+}
+
+.trafficlightsmall {
+    float:left;
+    background-color: #000;
+    box-shadow: 0 0 5px rgba(0,0,0, .8);
+    overflow: hidden;
+    padding: 0 0 4px;
+    width: 28px;
+    margin:5px;
+    margin-top:10px;
+}
+
+.trafficlightsmall span {
+    border-radius: 20px;
+    display: block;
+    height: 20px;
+    margin: 4px auto 0;
+    opacity: .3;
+    width: 20px;
+}
+
+.trafficlightacross {
+    float:left;
+    background-color: #000;
+    box-shadow: 0 0 5px rgba(0,0,0, .8);
+    overflow: hidden;
+    padding-top:4px;
+    padding-bottom:4px;
+    padding-left:2px;
+    width: 64px;
+    margin-top:5px;
+    margin-right:5px;
+}
+
+.trafficlightacross span {
+    border-radius: 15px;
+    float:left;
+    display: block;
+    height: 15px;
+    margin-left:4px;
+    opacity: .3;
+    width: 15px;
+}
+
+/*! Light colours */
+.trafficlightred    { background-color: #FF0000; }
+.trafficlightorange { background-color: #FCBD36; }
+.trafficlightgreen  { background-color: #1AC81A; }
+
+.trafficlightredon    { background-color: #FF0000; box-shadow: 0 0 10px #FF0000; }
+.trafficlightorangeon { background-color: #FCBD36; box-shadow: 0 0 10px #FCBD36; }
+.trafficlightgreenon  { background-color: #1AC81A; box-shadow: 0 0 10px #1AC81A; }
+
+/*! Active states */
+.trafficlight span.trafficlightredon    { opacity: 1; }
+.trafficlight span.trafficlightorangeon    { opacity: 1; }
+.trafficlight span.trafficlightgreenon    { opacity: 1; }
+
+.trafficlightsmall span.trafficlightredon    { opacity: 1; }
+.trafficlightsmall span.trafficlightorangeon    { opacity: 1; }
+.trafficlightsmall span.trafficlightgreenon    { opacity: 1; }
+
+.trafficlightacross span.trafficlightredon    { opacity: 1; }
+.trafficlightacross span.trafficlightorangeon    { opacity: 1; }
+.trafficlightacross span.trafficlightgreenon    { opacity: 1; }
+
+.trafficlightbutton {
+	background: #E8E8E8;
+	border:2px outset #C0C0C0;
+	float:left;
+	clear:both;
+	margin-top:5px;
+	width:185px;
+	text-align: center;
+}
+
+.trafficlightbutton:hover {
+	border:2px inset #C0C0C0;
+}
+
+
+.vishelpdiv {
+	float:left;
+	margin:5px;
+	margin-left:10px;
+}
+
+.vishelpdivgraph {
+	float:left;
+	width:99%;
+	margin:5px;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+.vishelpheading {
+	margin:0px;
+	margin-bottom:5px;
+}
+
+.vishelparrow {
+	padding-left:10px;
+	vertical-align:middle;
+}
+
+.vishelpmessage {
+	float:left;
+	font-size:10pt;
+}
+
+.vismaindiv {
+	clear:both;
+	float:left;
+	width:99%;
+	height:99%;
+}
+
+.selectedback {
+	background-color: #FBFCB4; 
+}
+
+#user-chart .x.axis text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}

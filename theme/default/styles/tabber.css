@@ -1,0 +1,229 @@
+/********************************************************************************
+ *                                                                              *
+ *  (c) Copyright 2015 The Open University UK                                   *
+ *                                                                              *
+ *  This software is freely distributed in accordance with                      *
+ *  the GNU Lesser General Public (LGPL) license, version 3 or later            *
+ *  as published by the Free Software Foundation.                               *
+ *  For details see LGPL: http://www.fsf.org/licensing/licenses/lgpl.html       *
+ *               and GPL: http://www.fsf.org/licensing/licenses/gpl-3.0.html    *
+ *                                                                              *
+ *  This software is provided by the copyright holders and contributors "as is" *
+ *  and any express or implied warranties, including, but not limited to, the   *
+ *  implied warranties of merchantability and fitness for a particular purpose  *
+ *  are disclaimed. In no event shall the copyright owner or contributors be    *
+ *  liable for any direct, indirect, incidental, special, exemplary, or         *
+ *  consequential damages (including, but not limited to, procurement of        *
+ *  substitute goods or services; loss of use, data, or profits; or business    *
+ *  interruption) however caused and on any theory of liability, whether in     *
+ *  contract, strict liability, or tort (including negligence or otherwise)     *
+ *  arising in any way out of the use of this software, even if advised of the  *
+ *  possibility of such damage.                                                 *
+ *                                                                              *
+ ********************************************************************************/
+ /** Author: Michelle Bachler, KMi, The Open University **/
+
+#tabber {
+	width:100%;
+}
+
+#tabber .tabcontent{
+	clear: both;
+	float:left;
+	height: 100%;	
+	min-height:400px;
+	margin: 0px;
+	width:100%; 
+}
+
+#tabber .currentpage {
+   color: #27318B; 
+   padding: 3px; 
+   border: 1px solid #84B839; 
+   font-weight: bold;
+}
+
+.tabline {
+	background: #80B906;
+}
+
+/** MAIN OUTER TAB BAR **/
+
+#tabber ul.tab {
+	clear:both;
+	float:left;
+	width:100%;
+	margin:0;
+	padding:0px 0px 0px 0px;
+	list-style:none;
+	background:#4E725F
+}
+
+#tabber li.tab {
+	font-weight: bold;
+	display:inline;
+	padding:0;
+	margin:0px;
+}
+
+#tabber a.tab {
+	font-size: 10pt;
+	padding: 0px;
+}
+
+#tabber span.tab {
+	float: left;
+	display:block;
+	padding:6px;
+	padding-left:12px;
+	padding-right:12px;
+	font-size: 12pt;
+	cursor:pointer;
+}
+
+#tabber a.current {
+	color: #4e247b;	
+}
+
+#tabber a.unselected span.tab {
+	color: white; 
+	background: #4E725F;
+}
+
+#tabber a.current span.tab {
+	color: white; 
+	background: #7FAE0E;
+}
+
+#tabber a.tab:hover span.tabouter {
+	background:#7FAE0E;
+	color:white;
+}
+
+#tabber a.current span.tabouter {
+	background:#7FAE0E;
+	color:white;
+}
+
+/** INNER TAB BAR **/
+
+#tabber ul.tab2 {
+	clear:both;
+	float:left;
+	width:100%;		
+	margin:0;
+	padding:0px 0px 0px 0px;
+	list-style:none;
+}
+
+#tabber li.tab2 {
+	font-weight: bold;
+	display:inline;
+	padding:0;
+	margin:0px;
+}
+
+#tabber span.tab2 {
+	float: left;
+	display:block;
+	padding:3px;
+	padding-left:6px;
+	padding-right:6px;
+	cursor:pointer;
+	margin-right:6px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-toprifght: 6px;
+}
+
+#tabber a.tab:hover span.tab2 {
+	font-size: 11pt;
+	color: #7FAE0E;	
+}
+
+#tabber a.unselected span.tab2 {
+	font-size: 11pt;
+	color: #4E725F; 
+	background: #E1E5E1; /*#4E725F;*/
+}
+
+#tabber a.current span.tab2 {
+	font-size: 11pt;
+	color: white; 
+	background: #4E725F;
+}
+
+#tabber a.tab:hover span.tabinner {
+	font-size: 11pt;
+	background:#7FAE0E;
+	color:white;
+}
+
+#tabber a.current span.tabinner {
+	font-size: 11pt;
+	background:#7FAE0E;
+	color:white;
+}
+
+/** CIDASHBOARD **/
+#tabber ul.tab3 {
+	clear:both;
+	float:left;
+	width:100%;
+				
+	background: #E8E8E8;
+	background: -o-linear-gradient(top, #ffffff, #E8E8E8);
+	background: -moz-linear-gradient(top, #ffffff, #E8E8E8);
+	background: -webkit-gradient(linear,
+                left top, left bottom, from(#ffffff), to(#E8E8E8));
+	filter: progid:DXImageTransform.Microsoft.Gradient(
+                StartColorStr='#ffffff  ', EndColorStr='#E8E8E8', GradientType=0);
+	background: linear-gradient(to bottom, #ffffff, #E8E8E8);
+
+	margin:0;
+	padding:0px 0px 0px 0px;
+	list-style:none;
+}
+
+#tabber li.tab3 {
+	font-weight: bold;
+	display:inline;
+	padding:0;
+	margin:0px;
+}
+
+#tabber span.tab3 {
+	float: left;
+	display:block;
+
+	padding:6px;
+	padding-left:10px;
+	padding-right:10px;
+	font-size: 10pt;
+	
+	background: #E8E8E8;
+	background: -o-linear-gradient(top, #ffffff, #E8E8E8);
+	background: -moz-linear-gradient(top, #ffffff, #E8E8E8);
+	background: -webkit-gradient(linear,
+                left top, left bottom, from(#ffffff), to(#E8E8E8));
+	filter: progid:DXImageTransform.Microsoft.Gradient(
+                StartColorStr='#ffffff  ', EndColorStr='#E8E8E8', GradientType=0);
+	background: linear-gradient(to bottom, #ffffff, #E8E8E8);
+		
+	cursor:pointer;
+}
+
+#tabber a.unselected span.tab3 {
+	color: dimgray; 
+}
+
+#tabber a.current span.tab3 {
+	text-decoration:underline;
+	color: #4e247b; 
+}
+
+#tabber a.tab3:hover span.tab3 {
+	text-decoration:underline;
+	color: #4e247b;	
+}

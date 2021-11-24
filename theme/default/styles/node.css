@@ -1,0 +1,118 @@
+/********************************************************************************
+ *                                                                              *
+ *  (c) Copyright 2015 The Open University UK                                   *
+ *                                                                              *
+ *  This software is freely distributed in accordance with                      *
+ *  the GNU Lesser General Public (LGPL) license, version 3 or later            *
+ *  as published by the Free Software Foundation.                               *
+ *  For details see LGPL: http://www.fsf.org/licensing/licenses/lgpl.html       *
+ *               and GPL: http://www.fsf.org/licensing/licenses/gpl-3.0.html    *
+ *                                                                              *
+ *  This software is provided by the copyright holders and contributors "as is" *
+ *  and any express or implied warranties, including, but not limited to, the   *
+ *  implied warranties of merchantability and fitness for a particular purpose  *
+ *  are disclaimed. In no event shall the copyright owner or contributors be    *
+ *  liable for any direct, indirect, incidental, special, exemplary, or         *
+ *  consequential damages (including, but not limited to, procurement of        *
+ *  substitute goods or services; loss of use, data, or profits; or business    *
+ *  interruption) however caused and on any theory of liability, whether in     *
+ *  contract, strict liability, or tort (including negligence or otherwise)     *
+ *  arising in any way out of the use of this software, even if advised of the  *
+ *  possibility of such damage.                                                 *
+ *                                                                              *
+ ********************************************************************************/
+ /** Author: Michelle Bachler, KMi, The Open University **/
+
+ol.idea-list-ol {
+	clear:both;
+	list-style:none;
+	margin: 0px; 
+	padding: 0px;
+	margin-top:10px;
+}
+
+li.idea-list-li {
+	margin-left:0px;
+	padding-left:0px;
+	margin-top:0px;
+	padding-top:0px;
+}
+
+.idea-blob-list {
+	margin-left:5px;
+	padding-left:5px; 
+	clear:both;
+	float:left;
+	margin:0px;
+	padding:0px;
+	width:100%;
+}
+
+div.idea-menus {
+	float: left;
+	margin-left: 2px;
+	margin-right: 2px;
+	background: transparent; 
+}
+
+.idea-menus button.active {
+	border: none;
+	padding:0;
+	margin:0;
+	background:transparent;
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div.idea-container {
+	font-size: 8pt;
+	padding: 2px;
+	background: #d3e8e8;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px; 
+	-icab-border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+}
+
+div.idea-header {
+	background: #d3e8e8;
+}
+
+div.idea-title {
+	clear:both;
+	padding: 3px;
+	float: left;
+	overflow: hidden;
+}
+
+div.idea-user {
+	padding: 5px 5px 5px 5px;
+	text-align: right;
+}
+
+div.idea-user img {
+	border:0px;
+}
+
+div.idea-wrapper{
+	padding: 2px;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-o-border-radius: 8px; 
+	-icab-border-radius: 8px; 
+	-khtml-border-radius: 8px; 
+}
+
+div.idea-main {
+	width: 100%;
+}
+
+.wordwrap {
+	word-break:     break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens:    auto;
+	hyphens:         auto;
+}
