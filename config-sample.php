@@ -86,14 +86,12 @@ $CFG->EMAIL_REPLY_TO = "";
 
 /** GOOGLE **/
 // Do you want to use Google analytics. ('true' or 'false')
-// If this is set to 'true' you must also complete the GOOGLE_ANALYTICS_KEY below.
 $CFG->GOOGLE_ANALYTICS_ON = false;
-
-// Google analytics key.
-// You must get this from the Google Analytics website.
-// If you set the GOOGLE_ANALYTICS_ON to 'true' you must add a key for it to work.
-$CFG->GOOGLE_ANALYTICS_KEY = "";
+$CFG->GOOGLE_ANALYTICS_KEY = ";
 $CFG->GOOGLE_ANALYTICS_DOMAIN = "";
+// Google Analytics 4
+$CFG->GOOGLE_SITE_TAG = "";
+
 
 /** LANGUAGE **/
 // This string indicates what language the interface text should use.
