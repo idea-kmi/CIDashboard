@@ -1,7 +1,7 @@
 <?php
 /********************************************************************************
  *                                                                              *
- *  (c) Copyright 2015 The Open University UK                                   *
+ *  (c) Copyright 2015 - 2024 The Open University UK                            *
  *                                                                              *
  *  This software is freely distributed in accordance with                      *
  *  the GNU Lesser General Public (LGPL) license, version 3 or later            *
@@ -876,11 +876,11 @@ function displayTreemapNetworkTopDownD3Vis(container, json, width, height) {
 	}
 
 	// Compute the treemap layout recursively such that each group of siblings
-	// uses the same size (1×1) rather than the dimensions of the parent cell.
+	// uses the same size (1ï¿½1) rather than the dimensions of the parent cell.
 	// This optimizes the layout for the current zoom state. Note that a wrapper
 	// object is created for the parent node for each group of siblings so that
-	// the parent’s dimensions are not discarded as we recurse. Since each group
-	// of sibling was laid out in 1×1, we must rescale to fit using absolute
+	// the parentï¿½s dimensions are not discarded as we recurse. Since each group
+	// of sibling was laid out in 1ï¿½1, we must rescale to fit using absolute
 	// coordinates. This lets us use a viewport to zoom.
 	function layout(d) {
 		if (d._children) {
@@ -1186,11 +1186,11 @@ function displayTreemapNetworkTopDownByTypeD3Vis(container, json, width, height)
 	}
 
 	// Compute the treemap layout recursively such that each group of siblings
-	// uses the same size (1×1) rather than the dimensions of the parent cell.
+	// uses the same size (1ï¿½1) rather than the dimensions of the parent cell.
 	// This optimizes the layout for the current zoom state. Note that a wrapper
 	// object is created for the parent node for each group of siblings so that
-	// the parent’s dimensions are not discarded as we recurse. Since each group
-	// of sibling was laid out in 1×1, we must rescale to fit using absolute
+	// the parentï¿½s dimensions are not discarded as we recurse. Since each group
+	// of sibling was laid out in 1ï¿½1, we must rescale to fit using absolute
 	// coordinates. This lets us use a viewport to zoom.
 	function layout(d) {
 		if (d._children) {
