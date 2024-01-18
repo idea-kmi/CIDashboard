@@ -37,7 +37,7 @@
 	<p style="margin-top:10px;margin-bottom:10px;"><?php echo $LNG->HELP_CIF_MESSAGE; ?>
 
 	<p style="margin-top:10px;margin-bottom:10px;">
-		<blockquote cite="http://catalyst-fp7.eu/wp-content/uploads/2014/03/D3.1-Software-Architecture-and-Cross-Platform-Interoperability-Specification.pdf">
+		<blockquote cite="https://catalyst-fp7.idea.kmi.open.ac.uk/catalyst-data/uploads/2014/03/D3.1-Software-Architecture-and-Cross-Platform-Interoperability-Specification.pdf">
 		<cite><?php echo $LNG->HELP_CIF_QUOTE1; ?>
 		<ul>
 		<li><?php echo $LNG->HELP_CIF_QUOTE1_POINT1; ?></li>
@@ -49,7 +49,7 @@
 	</p>
 
 	<p style="margin-top:10px;margin-bottom:10px;"><?php echo $LNG->HELP_CIF_MESSAGE2; ?>
-		<blockquote cite="http://catalyst-fp7.eu/wp-content/uploads/2014/03/D3.1-Software-Architecture-and-Cross-Platform-Interoperability-Specification.pdf">
+		<blockquote cite="https://catalyst-fp7.idea.kmi.open.ac.uk/catalyst-data/uploads/2014/03/D3.1-Software-Architecture-and-Cross-Platform-Interoperability-Specification.pdf">
 		<cite>
 		<?php echo $LNG->HELP_CIF_QUOTE2; ?>
 		<p><?php echo $LNG->HELP_CIF_QUOTE3; ?></p>

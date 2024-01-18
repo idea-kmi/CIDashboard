@@ -91,23 +91,23 @@ Event.observe(window, 'load', function() {
 
 	if($('largeexample')) {
 		iframeLoadingMessage('largeexample', 'vis');
-		$('largeexample').src='<?php echo $CFG->homeAddress; ?>ui/visualisations/circlepacking.php?width=1000&height=900&withposts=false&lang=en&userurl&url=https%3A%2F%2Flitemap.net%2Fapi%2Fconversations%2F6d417f98-39b5-4d52-8759-90a297d7dd0e&langurl=&timeout=60';
+		$('largeexample').src='<?php echo $CFG->homeAddress; ?>ui/visualisations/circlepacking.php?width=1000&height=900&withposts=false&lang=en&userurl&url=https%3A%2F%2Fcidashboard.net%2Fcif%2Fconversations%2F6d417f98-39b5-4d52-8759-90a297d7dd0e&langurl=&timeout=60';
 	}
 	if($('largedashexample')) {
 		iframeLoadingMessage('largedashexample', 'visdash');
-		$('largedashexample').src='<?php echo $CFG->homeAddress; ?>ui/visualisations/index.php?width=1000&height=1000&vis=p7%2C8%2Cp1%2C16%2C21%2C23lang=en&userurl&title=Test%20Dashboard%20of%20Large%20Visualisations&url=https%3A%2F%2Flitemap.net%2Fapi%2Fconversations%2F6d417f98-39b5-4d52-8759-90a297d7dd0e&timeout=60';
+		$('largedashexample').src='<?php echo $CFG->homeAddress; ?>ui/visualisations/index.php?width=1000&height=1000&vis=p7%2C8%2Cp1%2C16%2C21%2C23lang=en&userurl&title=Test%20Dashboard%20of%20Large%20Visualisations&url=https%3A%2F%2Fcidashboard.net%2Fcif%2Fconversations%2F6d417f98-39b5-4d52-8759-90a297d7dd0e&timeout=60';
 	}
 	if($('miniexample')) {
 		iframeLoadingMessage('miniexample', 'mini');
-		$('miniexample').src='<?php echo $CFG->homeAddress; ?>ui/minis/usercontributions.php?miniwithposts=false&lang=en&url=https%3A%2F%2Flitemap.net%2Fapi%2Fviews%2Fb6f0374d-da86-4b13-9fc7-a16f154a5ff0&langurl=&timeout=60';
+		$('miniexample').src='<?php echo $CFG->homeAddress; ?>ui/minis/usercontributions.php?miniwithposts=false&lang=en&url=https%3A%2F%2Fcidashboard.net%2Fcif%2Fviews%2Fb6f0374d-da86-4b13-9fc7-a16f154a5ff0&langurl=&timeout=60';
 	}
 	if($('minidashexample')) {
 		iframeLoadingMessage('minidashexample', 'minidash');
-		$('minidashexample').src='<?php echo $CFG->homeAddress; ?>ui/minis/minidashboard.php?vis=1%2C3%2C6&lang=en&title=Test%20Dashboard%20of%20Mini%20Visualisations&url=https%3A%2F%2Flitemap.net%2Fapi%2Fviews%2Fb6f0374d-da86-4b13-9fc7-a16f154a5ff0&timeout=60';
+		$('minidashexample').src='<?php echo $CFG->homeAddress; ?>ui/minis/minidashboard.php?vis=1%2C3%2C6&lang=en&title=Test%20Dashboard%20of%20Mini%20Visualisations&url=https%3A%2F%2Fcidashboard.net%2Fcif%2Fviews%2Fb6f0374d-da86-4b13-9fc7-a16f154a5ff0&timeout=60';
 	}
 	if($('alertsexample')) {
 		iframeLoadingMessage('alertsexample', 'alerts');
-		$('alertsexample').src='<?php echo $CFG->homeAddress; ?>ui/minis/alerts.php?userids=false&lang=en&url=https%3A%2F%2Flitemap.net%2Fapi%2Fviews%2Fb6f0374d-da86-4b13-9fc7-a16f154a5ff0&userurl=&langurl=&timeout=60&alerts=24%2C25%2C15%2C16%2C19%2C7%2C8%2C9%2C14%2C17%2C18%2C20%2C23';
+		$('alertsexample').src='<?php echo $CFG->homeAddress; ?>ui/minis/alerts.php?userids=false&lang=en&url=https%3A%2F%2Fcidashboard.net%2Fcif%2Fviews%2Fb6f0374d-da86-4b13-9fc7-a16f154a5ff0&userurl=&langurl=&timeout=60&alerts=24%2C25%2C15%2C16%2C19%2C7%2C8%2C9%2C14%2C17%2C18%2C20%2C23';
 	}
 });
 
