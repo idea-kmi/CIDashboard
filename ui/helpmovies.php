@@ -1,7 +1,7 @@
 <?php
 /********************************************************************************
  *                                                                              *
- *  (c) Copyright 2015 The Open University UK                                   *
+ *  (c) Copyright 2015 - 2024 The Open University UK                            *
  *                                                                              *
  *  This software is freely distributed in accordance with                      *
  *  the GNU Lesser General Public (LGPL) license, version 3 or later            *
@@ -25,7 +25,8 @@
  /** Author: Michelle Bachler, KMi, The Open University **/
  ?>
 
-<div style="background:transparent;clear:both; float:left; width: 100%;">
+
+<div style="background:transparent;clear:both; float:left; width: 100%;">
 
 	<div style="clear:both;float:left; margin-top:20px;width:480px">
 	<h2><?php echo $LNG->HELP_MOVIES_TITLE_INTRO;?><span style="font-size:9pt;padding-left:5px;color:gray">(11m 55s)</span></h2>
