@@ -25,30 +25,36 @@
  /** Author: Michelle Bachler, KMi, The Open University **/
  ?>
 
-<div style="background:transparent;clear:both; float:left; width: 100%;">
+<div class="py-3">
 
-	<div style="float:left;margin-bottom:10px;margin-top:10px;"><?php echo $LNG->HELP_ALERT_INTRO; ?>
-		<a href="http://cci.mit.edu/klein/deliberatorium.html" target="_blank" title="http://cci.mit.edu/klein/deliberatorium.html">
-		<span style="vertical-align:middle; font-size:12pt;font-style:italic;">powered by Deliberatorium Analytics</span>
-		<img src="http://cidashboarddev.kmi.open.ac.uk/images/deliberatorium-analytics-logo.png" style="vertical-align:middle;width:40px; height:40px;" border="0">
-		</a>
+	<div class="mb-3">
+		<p>
+			<?php echo $LNG->HELP_ALERT_INTRO; ?>
+				<a href="http://cci.mit.edu/klein/deliberatorium.html" target="_blank" title="http://cci.mit.edu/klein/deliberatorium.html">
+				<i class="active">powered by Deliberatorium Analytics</i>
+				<img src="<?php echo $HUB_FLM->getImagePath('deliberatorium-analytics-logo.png'); ?>" style="vertical-align:middle;width:30px; height:30px;" alt="" />
+			</a>
+		</p>
 	</div>
 
-	<div style="clear:both;float:left;margin-bottom:10px;"><?php echo $LNG->HELP_EMBED_ALERT_TABLE; ?></div>
+	<p><?php echo $LNG->HELP_EMBED_ALERT_TABLE; ?></p>
 
-	<table cellpadding="5" style="clear:both;float:left;width:100%;border-collapse:collapse;border:1px solid #C0C0C0" border="1">
+	<table class="table table-sm table-bordered table-striped">
 		<tr>
-		<td width="20%"><b><?php echo $LNG->HELP_EMBED_TABLE_ALERT_HEADING1; ?></b></td>
-		<td width="40%"><b><?php echo $LNG->HELP_EMBED_TABLE_ALERT_HEADING2; ?></b></td>
-		<td width="5%"><b><?php echo $LNG->HELP_EMBED_TABLE_ALERT_HEADING3; ?></b></td>
-		<td width="10%"><b><?php echo $LNG->HELP_EMBED_TABLE_ALERT_HEADING4; ?></b></td>
-		<td width="25%"><b><?php echo $LNG->HELP_EMBED_TABLE_ALERT_HEADING5; ?></b></td>
+			<td width="20%"><b><?php echo $LNG->HELP_EMBED_TABLE_ALERT_HEADING1; ?></b></td>
+			<td width="40%"><b><?php echo $LNG->HELP_EMBED_TABLE_ALERT_HEADING2; ?></b></td>
+			<td width="5%"><b><?php echo $LNG->HELP_EMBED_TABLE_ALERT_HEADING3; ?></b></td>
+			<td width="10%"><b><?php echo $LNG->HELP_EMBED_TABLE_ALERT_HEADING4; ?></b></td>
+			<td width="25%"><b><?php echo $LNG->HELP_EMBED_TABLE_ALERT_HEADING5; ?></b></td>
 		</tr>
 
 		<?php
 			include('alertdata.php');
 
-			$count = count($alertdata);
+			$count = 0;
+			if (is_countable($alertdata)) {
+				$count = count($alertdata);
+			}
 			for ($i=0; $i<$count; $i++) {
 				$item = $alertdata[$i];
 				if ($item[5] == 'true') {
@@ -64,72 +70,81 @@
 		?>
 	</table>
 
-	<div style="clear:both;float:left;margin-bottom:10px;margin-top:30px;"><?php echo $LNG->HELP_EMBED_ALERT_IFRAME; ?>
-	<b><pre style="padding:0px;margin:0px;">&lt;iframe src="<?php echo $CFG->homeAddress; ?>ui/minis/alerts.php?</pre>
-	<pre style="padding:0px;margin:0px;">userids=&lang=en&url=https%3A%2F%2Flitemap.net%2Fapi%2Fviews%2Fb6f0374d-da86-4b13-9fc7-a16f154a5ff0</pre>
-	<pre style="padding:0px;margin:0px;">&userurl=&langurl=&timeout=60&alerts=24%2C25%2C15%2C16%2C19%2C7%2C8%2C9%2C14%2C17%2C18%2C20%2C23" width="500" height="300" </pre>
-	<pre style="padding:0px;margin:0px;">style="overflow:auto" scrolling="auto" frameborder="0"&gt;&lt;/iframe&gt;</pre></b>
+	<div class="mt-3 py-2">
+		<p><?php echo $LNG->HELP_EMBED_ALERT_IFRAME; ?></p>
+			
+		<div class="bg-light border border-1 mb-3">
+			<pre class="mt-4 px-2 font-monospace">
+ &lt;iframe src="<?php echo $CFG->homeAddress; ?>ui/minis/alerts.php? userids=&lang=en&url=https%3A%2F%2Flitemap.net%2Fapi%2Fviews%2Fb6f0374d-da86-4b13-9fc7-a16f154a5ff0&userurl=&langurl=&timeout=60&alerts=24%2C25%2C15%2C16%2C19%2C7%2C8%2C9%2C14%2C17%2C18%2C20%2C23" width="500" height="300" style="overflow:auto" scrolling="auto" frameborder="0"&gt;&lt;/iframe&gt; 
+			</pre>
+		</div>
 	</div>
 
-	<div style="clear:both;float:left;margin-bottom:10px;"><?php echo $LNG->HELP_EMBED_ALERT_PAGE; ?>
-	<b><pre style="padding:0px;margin:0px;"><?php echo $CFG->homeAddress; ?>ui/minis/alerts.php?</pre>
-	<pre style="padding:0px;margin:0px;">userids=false&lang=en&url=https%3A%2F%2Flitemap.net%2Fapi%2Fviews%2Fb6f0374d-da86-4b13-9fc7-a16f154a5ff0</pre>
-	<pre style="padding:0px;margin:0px;">&userurl=&langurl=&timeout=60&alerts=24%2C25%2C15%2C16%2C19%2C7%2C8%2C9%2C14%2C17%2C18%2C20%2C23"</pre></b>
+	<div class="mt-3 py-2">
+		<p><?php echo $LNG->HELP_EMBED_ALERT_PAGE; ?></p>
+		<div class="bg-light border border-1 mb-3">
+			<pre class="mt-4 px-2 font-monospace">
+ <?php echo $CFG->homeAddress; ?>ui/minis/alerts.php?userids=false&lang=en&url=https%3A%2F%2Flitemap.net%2Fapi%2Fviews%2Fb6f0374d-da86-4b13-9fc7-a16f154a5ff0&userurl=&langurl=&timeout=60&alerts=24%2C25%2C15%2C16%2C19%2C7%2C8%2C9%2C14%2C17%2C18%2C20%2C23
+			</pre>
+		</div>
 	</div>
 
-	<div style="clear:both;float:left;margin-bottom:10px;"><?php echo $LNG->HELP_EMBED_ALERT_PARA1; ?></div>
-
-	<div style="clear:both;float:left;margin-top:10px;margin-bottom:10px;"><?php echo $LNG->HELP_ALERT_PARAMS_TABLE; ?>
-	<b><pre style="padding:0px;margin:0px;"><?php echo $CFG->homeAddress; ?>ui/minis/alerts.php?</pre></b>
+	<p class="mt-3"><?php echo $LNG->HELP_EMBED_ALERT_PARA1; ?></p>
+	<p class="mt-3"><?php echo $LNG->HELP_ALERT_PARAMS_TABLE; ?></p>
+		<div class="bg-light border border-1 mb-3">
+			<pre class="mt-4 px-2 font-monospace">
+ <?php echo $CFG->homeAddress; ?>ui/minis/alerts.php?
+			</pre>
+		</div>
 	</div>
 
-	<table cellpadding="2" style="clear:both;float:left;width:100%;border-collapse:collapse;border:1px solid #C0C0C0" border="1">
+	<table class="table table-sm table-bordered table-striped">
 		<tr>
-		<td><b><?php echo $LNG->HELP_EMBED_TABLE_PARAMS_HEADING1; ?></b></td>
-		<td><b><?php echo $LNG->HELP_EMBED_TABLE_PARAMS_HEADING2; ?></b></td>
-		<td><b><?php echo $LNG->HELP_EMBED_TABLE_PARAMS_HEADING3; ?></b></td>
+			<td><b><?php echo $LNG->HELP_EMBED_TABLE_PARAMS_HEADING1; ?></b></td>
+			<td><b><?php echo $LNG->HELP_EMBED_TABLE_PARAMS_HEADING2; ?></b></td>
+			<td><b><?php echo $LNG->HELP_EMBED_TABLE_PARAMS_HEADING3; ?></b></td>
 		</tr>
 
 		<tr>
-		<td>url</td>
-		<td><?php echo $LNG->HELP_EMBED_TABLE_URL_USE; ?></td>
-		<td><span class="active" onclick="setTabPushed($('tab-help-cif'),'help-cif');"><?php echo $LNG->HELP_EMBED_TABLE_URL_INFO; ?></span></td>
+			<td>url</td>
+			<td><?php echo $LNG->HELP_EMBED_TABLE_URL_USE; ?></td>
+			<td><span class="active" onclick="setTabPushed($('tab-help-cif'),'help-cif');"><?php echo $LNG->HELP_EMBED_TABLE_URL_INFO; ?></span></td>
 		</tr>
 
 		<tr>
-		<td>userurl</td>
-		<td><?php echo $LNG->HELP_EMBED_TABLE_USERURL_USE; ?></td>
-		<td><span class="active" onclick="setTabPushed($('tab-help-user'),'help-user');"><?php echo $LNG->HELP_EMBED_TABLE_USERURL_INFO; ?></span></td>
+			<td>userurl</td>
+			<td><?php echo $LNG->HELP_EMBED_TABLE_USERURL_USE; ?></td>
+			<td><span class="active" onclick="setTabPushed($('tab-help-user'),'help-user');"><?php echo $LNG->HELP_EMBED_TABLE_USERURL_INFO; ?></span></td>
 		</tr>
 
 		<tr>
-		<td>langurl</td>
-		<td><?php echo $LNG->HELP_EMBED_TABLE_LANGURL_USE; ?></td>
-		<td><span class="active" onclick="setTabPushed($('tab-help-lang'),'help-lang');"><?php echo $LNG->HELP_EMBED_TABLE_LANGURL_INFO; ?></span></td>
+			<td>langurl</td>
+			<td><?php echo $LNG->HELP_EMBED_TABLE_LANGURL_USE; ?></td>
+			<td><span class="active" onclick="setTabPushed($('tab-help-lang'),'help-lang');"><?php echo $LNG->HELP_EMBED_TABLE_LANGURL_INFO; ?></span></td>
 		</tr>
 
 		<tr>
-		<td>timeout</td>
-		<td><?php echo $LNG->HELP_EMBED_TABLE_TIMEOUT_USE; ?></td>
-		<td>&nbsp;</td>
+			<td>timeout</td>
+			<td><?php echo $LNG->HELP_EMBED_TABLE_TIMEOUT_USE; ?></td>
+			<td>&nbsp;</td>
 		</tr>
 
 		<tr>
-		<td>userids</td>
-		<td><?php echo $LNG->HELP_ALERT_TABLE_USERIDS_USE; ?></td>
-		<td>&nbsp;</td>
+			<td>userids</td>
+			<td><?php echo $LNG->HELP_ALERT_TABLE_USERIDS_USE; ?></td>
+			<td>&nbsp;</td>
 		</tr>
 
 		<tr>
-		<td>alerts</td>
-		<td><?php echo $LNG->HELP_ALERT_TABLE_ALERTS_USE; ?></td>
-		<td>&nbsp;</td>
+			<td>alerts</td>
+			<td><?php echo $LNG->HELP_ALERT_TABLE_ALERTS_USE; ?></td>
+			<td>&nbsp;</td>
 		</tr>
 	</table>
 
-	<div style="clear:both;float:left;margin-top:20px;">
-	<h3><?php echo $LNG->HELP_EMBED_ALERTS_EXAMPLE; ?></h3>
-	<div id="tab-content-alerts-message"></div>
-	<iframe id="alertsexample" src="" width="500" height="300"  style="overflow:auto" scrolling="auto" frameborder="0"></iframe>
+	<div class="mt-3 py-3">
+		<h3><?php echo $LNG->HELP_EMBED_ALERTS_EXAMPLE; ?></h3>
+		<div id="tab-content-alerts-message"></div>
+		<iframe id="alertsexample" src="" width="500" height="300" style="overflow:auto" scrolling="auto" frameborder="0"></iframe>
 	</div>
 </div>

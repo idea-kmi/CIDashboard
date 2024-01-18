@@ -112,7 +112,7 @@ function check_param($param, $type=PARAM_ALPHAEXT) {
     global $CFG, $HUB_FLM;
 
     if (!isset($param) || $param == "") {
-         $ERROR = new error;
+         $ERROR = new Hub_Error;
          $ERROR->createRequiredParameterError($parname);
          include($HUB_FLM->getCodeDirPath("core/formaterror.php"));
          die;
@@ -139,7 +139,7 @@ function required_param($parname, $type=PARAM_ALPHAEXT) {
         $param = $_GET[$parname];
     } else {
          global $ERROR;
-         $ERROR = new error;
+         $ERROR = new Hub_Error;
          $ERROR->createRequiredParameterError($parname);
          include($HUB_FLM->getCodeDirPath("core/formaterror.php"));
          die;
@@ -276,7 +276,7 @@ function clean_param($param, $type) {
 		    if(validEmail($param)) {
 		        return $param;
 		    } else {
-				 $ERROR = new error;
+				 $ERROR = new Hub_Error;
 				 $ERROR->createInvalidEmailError();
             	 include_once($HUB_FLM->getCodeDirPath("core/formaterror.php"));
 				 die;
@@ -288,7 +288,7 @@ function clean_param($param, $type) {
 
         default:
             include_once($HUB_FLM->getCodeDirPath("core/formaterror.php"));
-            $ERROR = new error;
+            $ERROR = new Hub_Error;
             $ERROR->createInvalidParameterError($type);
             die;
     }
@@ -326,7 +326,7 @@ function clean_text($text) {
 	$text = preg_replace('/(&#[0-9]+)(;?)/i', "\\1;", $text);
 	$text = preg_replace('/(&#x[0-9a-fA-F]+)(;?)/i', "\\1;", $text);
 
-	require_once($CFG->dirAddress .'core/lib/htmlpurifier-4.5.0/library/HTMLPurifier.auto.php');
+	require_once($CFG->dirAddress .'core/lib/htmlpurifier/library/HTMLPurifier.auto.php');
 
     $config = HTMLPurifier_Config::createDefault();
 
@@ -338,12 +338,19 @@ function clean_text($text) {
     $config->set('HTML.SafeObject', true);
     $config->set('Output.FlashCompat', true);
     $config->set('HTML.FlashAllowFullScreen', true);
+
+
+    $config->set('Filter.YouTube', true);
+
     //$config->set('HTML.Allowed', 'object[id|codebase|align|classid|width|height|data],param[name|value],embed[src|quality|bgcolor|name|align|pluginspage|type|allowscriptaccess|width|height|wmode|flashvars]');
 
 	$safeurls = '%^(http[s]?:)?//(';
 
 	if (isset($CFG->safeurls)) {
-		$count = sizeof($CFG->safeurls);
+		$count = 0;
+		if (is_countable($CFG->safeurls)) {
+			$count = count($CFG->safeurls);
+		}
 		for ($i=0; $i<$count;$i++) {
 			if ($i == 0) {
 				$safeurls .= $CFG->safeurls[$i];
@@ -397,7 +404,7 @@ function clean_text($text) {
 
     $purifier = new HTMLPurifier($config);
 
-    $text=$purifier->purify($text);
+    $text = $purifier->purify($text);
 
 	return $text;
 }

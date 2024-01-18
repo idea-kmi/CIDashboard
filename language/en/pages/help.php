@@ -27,7 +27,7 @@
 $LNG->HELP_CIF_INTRO = 'The Catalyst Interchange Format (CIF) is a jsonld schema for representing conversational data from online forums, debating tools and dialogue mapping websites.';
 
 $LNG->HELP_CIF_DOCS_MESSAGE = 'There are two key documents for understanding the Catalyst Interchange Format (CIF):';
-$LNG->HELP_CIF_ARCHITECTURE = '<a target="_blank" href="http://catalyst-fp7.eu/wp-content/uploads/2014/03/D3.1-Software-Architecture-and-Cross-Platform-Interoperability-Specification.pdf">Software Architecture and Cross-Platform Interoperability Specification</a>';
+$LNG->HELP_CIF_ARCHITECTURE = '<a target="_blank" href="http://catalyst-fp7.idea.kmi.open.ac.uk/wp-content/uploads/2014/03/D3.1-Software-Architecture-and-Cross-Platform-Interoperability-Specification.pdf">Software Architecture and Cross-Platform Interoperability Specification</a>';
 $LNG->HELP_CIF_SCHEMA = '<a target="_blank" href="https://purl.org/catalyst/jsonld">The jsonld RDF schema</a>';
 
 
@@ -138,7 +138,7 @@ $LNG->HELP_EMBED_TABLE_WITHPOSTS_USE = '(optional - default is false) true/false
 
 $LNG->HELP_EMBED_LARGE_INTRO = 'This help page will describe the large visualisation embed urls and their parameters and show some examples of use.';
 
-$LNG->HELP_EMBED_LARGE_TITLE = 'Embeddding Large Visualisations';
+$LNG->HELP_EMBED_LARGE_TITLE = 'Embedding Large Visualisations';
 $LNG->HELP_EMBED_LARGE_INDIVIDUAL = 'Individual Large Visualisations';
 $LNG->HELP_EMBED_LARGE_DASHBOARD = 'Dashboard of Large Visualisations';
 
@@ -177,7 +177,7 @@ $LNG->HELP_EMBED_LARGE_DASH_EXAMPLE = 'Example iframe of a dashboard of large vi
 /** EMBED MINI VISUALISATIONS PAGE **/
 
 $LNG->HELP_EMBED_MINI_INTRO = 'This help page will describe the mini visualisation embed urls and their parameters and show some examples of use.';
-$LNG->HELP_EMBED_MINI_TITLE = 'Embeddding Mini Visualisations';
+$LNG->HELP_EMBED_MINI_TITLE = 'Embedding Mini Visualisations';
 $LNG->HELP_EMBED_MINI_INDIVIDUAL = 'Individual Mini Visualisations';
 $LNG->HELP_EMBED_MINI_DASHBOARD = 'Dashboard of Mini Visualisations';
 

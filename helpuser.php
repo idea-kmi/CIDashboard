@@ -25,7 +25,8 @@
  /** Author: Michelle Bachler, KMi, The Open University **/
  ?>
 
-<div style="background:transparent;clear:both; float:left; width: 100%;margin-top:10px;">
+
+<div style="background:transparent;clear:both; float:left; width: 100%;margin-top:10px;">
 	<div style="clear:both;float:left;"><?php echo $LNG->HELP_USER_PARA1; ?></div>
 
 	<div style="clear:both;float:left;margin-top:10px;"><?php echo $LNG->HELP_USER_PARA2; ?></div>

@@ -1,0 +1,810 @@
+{
+ "@context": "http://purl.org/catalyst/jsonld",
+ "@graph": [
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/6",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/12"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/12"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/16",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/13"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/13"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/18",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/14"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/14"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/19",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/15"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/15"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/25",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/17"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/19"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/27",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/18"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/20"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/23",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/19"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/21"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/28",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/20"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/24"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/29",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/22"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/26"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/31",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/23"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/27"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/30",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/24"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/28"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/34",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/25"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/29"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/40",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/26"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/36"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/27",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/29"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/39"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/21",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/30"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/41"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/27",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/33"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/44"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/11",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/39"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/50"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/28",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/44"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/55"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/25",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/45"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/56"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/5",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/51"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/62"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/4",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/7"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/7"
+  },
+  {
+   "@graph": [
+    {
+     "expressesIdea": "http://gilgalad.local/data/IdeaContentLink/3",
+     "@id": "http://gilgalad.local/data/TextFragmentIdentifier/8"
+    }
+   ],
+   "@id": "http://gilgalad.local/data/ExcerptGraph/8"
+  },
+  {
+   "@graph": [
+    {
+     "db_id": "1",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/3",
+     "created": "2012-06-19T15:14:56",
+     "@id": "http://gilgalad.local/data/Content/1",
+     "title": "Let's lower taxes!",
+     "id": "<1606949.IA7dUeR8YG@benoitg-t510>",
+     "content": "Let's lower taxes to favor economic growth.<br />",
+     "postLinkedToIdea": "http://gilgalad.local/data/Idea/3",
+     "postExtractRelatedToIdea": "http://gilgalad.local/data/Idea/3",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "10",
+     "reply_of": "http://gilgalad.local/data/Content/9",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/9",
+     "created": "2012-06-19T16:00:49",
+     "title": "Re: No need to worry about growth!",
+     "id": "<1908535.hooWnbd4Oz@benoitg-t510>",
+     "content": "On June 19, 2012 11:58:53 AM M. Animator wrote:<br />&gt; On June 19, 2012 11:57:06 AM Paul Krugman wrote:<br />&gt; &gt; In a recession, austerity is actually contractionary.<br />&gt; <br />&gt; Animator: Huh? Not sure I follow you...<br /><br />Lowering taxes causes austerity, which reduces economic activity.<br /><br />",
+     "@id": "http://gilgalad.local/data/Content/10",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "11",
+     "reply_of": "http://gilgalad.local/data/Content/7",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/8",
+     "created": "2012-06-19T16:03:43",
+     "title": "Re: What about Jack Layton?",
+     "id": "<2252973.BLQDMMaPU7@benoitg-t510>",
+     "content": "On June 19, 2012 11:52:54 AM Typical Quebecker wrote:<br />&gt; He was against it.<br /><br />Why?<br />",
+     "@id": "http://gilgalad.local/data/Content/11",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "12",
+     "reply_of": "http://gilgalad.local/data/Content/11",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/7",
+     "created": "2012-06-19T16:06:01",
+     "title": "Re: What about Jack Layton?",
+     "id": "<2198317.hep6mv1tM8@benoitg-t510>",
+     "content": "On June 19, 2012 12:03:43 PM M. Animator wrote:<br />&gt; Why?<br /><br />I don't know...<br /><br />",
+     "@id": "http://gilgalad.local/data/Content/12",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "13",
+     "reply_of": "http://gilgalad.local/data/Content/12",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/8",
+     "created": "2012-06-19T16:07:31",
+     "title": "Re: What about Jack Layton?",
+     "id": "<1802537.GgBR6HT3SE@benoitg-t510>",
+     "content": "But you agree with him on that?<br /><br />",
+     "@id": "http://gilgalad.local/data/Content/13",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "14",
+     "reply_of": "http://gilgalad.local/data/Content/13",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/8",
+     "created": "2012-06-19T17:40:42",
+     "title": "Fwd: What about Jack Layton?",
+     "id": "<CAKqvEwBXC5+hHJ7Vqe2uOxhvq0tjiPBFGTgrKgBJWg-8OJvK4g@mail.gmail.com>",
+     "content": "<br/><br/>---------- Forwarded message ----------<br/>From: Typical Quebecker &lt;typical.quebecker@sampledebate.assembl.net&gt;<br/>\r\nDate: Tue, Jun 19, 2012 at 1:39 PM<br/>Subject: Re: What about Jack Layton?<br/>To: \"M. Animator\" &lt;animator@sampledebate.assembl.net&gt;<br/><br/><br/>On June 19, 2012 12:07:31 PM M. Animator wrote:<br/>\r\n\r\n&gt; But you agree with him on that?<br/>\n<br/>\r\nYes!<br/>\n<br/>",
+     "@id": "http://gilgalad.local/data/Content/14",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "15",
+     "reply_of": "http://gilgalad.local/data/Content/9",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/10",
+     "created": "2012-06-19T17:49:15",
+     "title": "Re: No need to worry about growth!",
+     "id": "<2408793.IU72A2SQDE@benoitg-t510>",
+     "content": "People loose their job!<br /><br />On Tue, Jun 19, 2012 at 1:45 PM, M. Animator &lt;<br />animator@sampledebate.assembl.net&gt; wrote:<br /><br />&gt; On June 19, 2012 11:57:06 AM Paul Krugman wrote:<br />&gt; &gt; In a recession, austerity is actually contractionary.<br />&gt;<br />&gt; Animator: Huh? Not sure I follow you...<br />&gt;<br />-- <br />Simulated mail from GMail (the quotation...)<br />",
+     "@id": "http://gilgalad.local/data/Content/15",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "16",
+     "reply_of": "http://gilgalad.local/data/Content/15",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/11",
+     "created": "2012-06-19T17:51:32",
+     "title": "Who cares",
+     "id": "<7106333.QhO54ZOExH@benoitg-t510>",
+     "content": "Union workers are all lazy bums, good ridance!      <br />",
+     "@id": "http://gilgalad.local/data/Content/16",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "17",
+     "reply_of": "http://gilgalad.local/data/Content/2",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/12",
+     "created": "2012-06-19T17:52:59",
+     "@id": "http://gilgalad.local/data/Content/17",
+     "title": "Re: Let's lower taxes!",
+     "id": "<2879230.SgxIZcuISG@benoitg-t510>",
+     "content": "On June 19, 2012 11:17:27 AM Amir Khadir wrote:<br />&gt; You will put everyone out of a job!<br /><br />That makes no sense, why would that make anyone lose his job?<br /><br />",
+     "postLinkedToIdea": "http://gilgalad.local/data/Idea/6",
+     "postExtractRelatedToIdea": "http://gilgalad.local/data/Idea/6",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "18",
+     "reply_of": "http://gilgalad.local/data/Content/17",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/10",
+     "created": "2012-06-19T17:55:01",
+     "title": "Re: Let's lower taxes!",
+     "id": "<1790712.Gl4igCGcWl@benoitg-t510>",
+     "content": "On June 19, 2012 01:52:59 PM Late participant wrote:<br />&gt; That makes no sense, why would that make anyone lose his job?<br /><br />With lower government revenue, the government will be forced to cut jobs.<br /><br />",
+     "@id": "http://gilgalad.local/data/Content/18",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "19",
+     "reply_of": "http://gilgalad.local/data/Content/8",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/6",
+     "created": "2012-06-19T17:56:51",
+     "title": "Re: No need to worry about growth!",
+     "id": "<1720706.VGpvc9NSuf@benoitg-t510>",
+     "content": "On June 19, 2012 11:57:06 AM Paul Krugman wrote:<br />&gt; In a recession, austerity is actually contractionary.<br /><br />Maybe, but with the most severe cuts in environmental programs, it's still no <br />good for the environment.<br /><br />",
+     "@id": "http://gilgalad.local/data/Content/19",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "2",
+     "reply_of": "http://gilgalad.local/data/Content/1",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/4",
+     "created": "2012-06-19T15:17:27",
+     "@id": "http://gilgalad.local/data/Content/2",
+     "title": "Re: Let's lower taxes!",
+     "id": "<1649857.fOz6x3G98J@benoitg-t510>",
+     "content": "On June 19, 2012 11:14:56 AM Harper wrote:<br />&gt; Let's lower taxes to favor economic growth.<br /><br />You will put everyone out of a job!<br />-- <br />Benoit Gr\\u00E9goire, ing., PMP, PSM<br />",
+     "postLinkedToIdea": "http://gilgalad.local/data/Idea/5",
+     "postExtractRelatedToIdea": "http://gilgalad.local/data/Idea/5",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "20",
+     "reply_of": "http://gilgalad.local/data/Content/19",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/3",
+     "created": "2012-06-19T17:58:40",
+     "title": "Re: No need to worry about growth!",
+     "id": "<2400278.6mpFWar2xg@benoitg-t510>",
+     "content": "On June 19, 2012 01:56:51 PM David Suzuki wrote:<br />&gt; Maybe, but with the most severe cuts in environmental programs, it's still<br />&gt; no good for the environment.<br /><br />Federal environmental programs are ineffective and a waste of money.   <br /><br />",
+     "@id": "http://gilgalad.local/data/Content/20",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "3",
+     "reply_of": "http://gilgalad.local/data/Content/1",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/5",
+     "created": "2012-06-19T15:45:49",
+     "title": "Re: Let's lower taxes!",
+     "id": "<3844624.NgDPPPZZnZ@benoitg-t510>",
+     "content": "On June 19, 2012 11:14:56 AM you wrote:<br />&gt; Let's lower taxes to favor economic growth.<br /><br />Lowering taxes is a terrible idea!<br /><br />",
+     "@id": "http://gilgalad.local/data/Content/3",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "4",
+     "reply_of": "http://gilgalad.local/data/Content/1",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/6",
+     "created": "2012-06-19T15:47:58",
+     "title": "What about the environment?",
+     "id": "<1930166.Wt7Goto29c@benoitg-t510>",
+     "content": "Economic growth will mean more resource consumption, and that's bad for the <br />environment.<br />",
+     "@id": "http://gilgalad.local/data/Content/4",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "5",
+     "reply_of": "http://gilgalad.local/data/Content/3",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/7",
+     "created": "2012-06-19T15:49:46",
+     "title": "Re: Let's lower taxes!",
+     "id": "<2249242.d9RG67mvG7@benoitg-t510>",
+     "content": "Jack Layton was a nice guy, he's dead.<br /><br />",
+     "@id": "http://gilgalad.local/data/Content/5",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "6",
+     "reply_of": "http://gilgalad.local/data/Content/5",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/8",
+     "created": "2012-06-19T15:51:24",
+     "title": "What about Jack Layton?",
+     "id": "<5376192.Toza0VnpdF@benoitg-t510>",
+     "content": "On June 19, 2012 11:49:46 AM you wrote:<br />&gt; Jack Layton was a nice guy, he's dead.<br /><br />And what did he think of of lowering taxes?<br /><br /><br />",
+     "@id": "http://gilgalad.local/data/Content/6",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "7",
+     "reply_of": "http://gilgalad.local/data/Content/6",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/7",
+     "created": "2012-06-19T15:52:54",
+     "title": "Re: What about Jack Layton?",
+     "id": "<2046194.jVzdDay1Sb@benoitg-t510>",
+     "content": "On June 19, 2012 11:51:24 AM you wrote:<br />&gt; On June 19, 2012 11:49:46 AM you wrote:<br />&gt; &gt; Jack Layton was a nice guy, he's dead.<br />&gt; <br />&gt; And what did he think of of lowering taxes?<br /><br />He was against it.<br /><br />",
+     "@id": "http://gilgalad.local/data/Content/7",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "8",
+     "reply_of": "http://gilgalad.local/data/Content/4",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/9",
+     "created": "2012-06-19T15:57:06",
+     "@id": "http://gilgalad.local/data/Content/8",
+     "title": "No need to worry about growth!",
+     "id": "<2338275.cGRvA7U2KY@benoitg-t510>",
+     "content": "On June 19, 2012 11:47:58 AM David Suzuki wrote:<br />&gt; Economic growth will mean more resource consumption, and that's bad for the<br />&gt; environment.<br /><br />In a recession, austerity is actually contractionary.<br /><br />",
+     "postLinkedToIdea": "http://gilgalad.local/data/Idea/4",
+     "postExtractRelatedToIdea": "http://gilgalad.local/data/Idea/4",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "9",
+     "reply_of": "http://gilgalad.local/data/Content/8",
+     "has_creator": "http://gilgalad.local/data/AgentProfile/8",
+     "created": "2012-06-19T15:58:53",
+     "title": "Re: No need to worry about growth!",
+     "id": "<1963559.rNfOy2bq8q@benoitg-t510>",
+     "content": "On June 19, 2012 11:57:06 AM Paul Krugman wrote:<br />&gt; In a recession, austerity is actually contractionary.<br /><br />Animator: Huh? Not sure I follow you...<br /><br />",
+     "@id": "http://gilgalad.local/data/Content/9",
+     "@type": "SPost",
+     "has_origin": "http://gilgalad.local/data/ContentSource/1"
+    },
+    {
+     "db_id": "1",
+     "@id": "http://gilgalad.local/data/ContentSource/1",
+     "@type": "Container",
+     "created": "2013-12-26T18:49:26"
+    },
+    {
+     "db_id": "1",
+     "title": "Jack Layton",
+     "created": "2013-12-26T18:49:26",
+     "uses_source": "http://gilgalad.local/data/ContentSource/1",
+     "@id": "http://gilgalad.local/data/Discussion/1",
+     "@type": "Conversation"
+    },
+    {
+     "db_id": "1",
+     "created": "2013-12-26T18:49:26",
+     "includes": [
+      "http://gilgalad.local/data/Idea/3",
+      "http://gilgalad.local/data/Idea/6"
+     ],
+     "has_container": "http://gilgalad.local/data/Discussion/1",
+     "@id": "http://gilgalad.local/data/Idea/1",
+     "@type": "assembl:RootIdea"
+    },
+    {
+     "db_id": "3",
+     "created": "2014-01-14T19:54:35",
+     "@id": "http://gilgalad.local/data/Idea/3",
+     "title": "Lower taxes",
+     "includes": "http://gilgalad.local/data/Idea/4",
+     "has_container": "http://gilgalad.local/data/Discussion/1",
+     "dcterms:alternative": "",
+     "@type": "GenericIdeaNode"
+    },
+    {
+     "db_id": "4",
+     "created": "2014-01-14T22:10:53",
+     "@id": "http://gilgalad.local/data/Idea/4",
+     "title": "New idea",
+     "includes": [
+      "http://gilgalad.local/data/Idea/5",
+      "http://gilgalad.local/data/Idea/7",
+      "http://gilgalad.local/data/Idea/6"
+     ],
+     "has_container": "http://gilgalad.local/data/Discussion/1",
+     "dcterms:alternative": "",
+     "@type": "GenericIdeaNode"
+    },
+    {
+     "db_id": "5",
+     "description": "",
+     "created": "2014-01-19T03:43:11",
+     "@id": "http://gilgalad.local/data/Idea/5",
+     "title": "New idea",
+     "includes": "http://gilgalad.local/data/Idea/7",
+     "has_container": "http://gilgalad.local/data/Discussion/1",
+     "dcterms:alternative": "",
+     "@type": "GenericIdeaNode"
+    },
+    {
+     "db_id": "6",
+     "description": "",
+     "created": "2014-01-19T04:28:49",
+     "@id": "http://gilgalad.local/data/Idea/6",
+     "title": "Ajouter une id\\u00E9e",
+     "includes": [
+      "http://gilgalad.local/data/Idea/7",
+      "http://gilgalad.local/data/Idea/5"
+     ],
+     "has_container": "http://gilgalad.local/data/Discussion/1",
+     "dcterms:alternative": "<p>expression</p>",
+     "@type": "GenericIdeaNode"
+    },
+    {
+     "db_id": "7",
+     "description": "",
+     "created": "2014-01-19T04:30:03",
+     "@id": "http://gilgalad.local/data/Idea/7",
+     "title": "Ajouter une id\\u00E9e",
+     "includes": [
+      "http://gilgalad.local/data/Idea/5",
+      "http://gilgalad.local/data/Idea/6"
+     ],
+     "has_container": "http://gilgalad.local/data/Discussion/1",
+     "dcterms:alternative": "",
+     "@type": "GenericIdeaNode"
+    },
+    {
+     "db_id": "12",
+     "hasBody": "http://gilgalad.local/data/ExcerptGraph/12",
+     "created": "2014-01-20T20:58:44",
+     "hasTarget": "http://gilgalad.local/data/TextFragmentIdentifier/12",
+     "catalyst:relevantToConversation": {
+      "@id": "http://gilgalad.local/data/Discussion/1"
+     },
+     "@id": "http://gilgalad.local/data/IdeaContentLink/12",
+     "@type": "Excerpt"
+    },
+    {
+     "db_id": "62",
+     "hasBody": "http://gilgalad.local/data/ExcerptGraph/62",
+     "created": "2014-03-09T17:55:22",
+     "hasTarget": "http://gilgalad.local/data/TextFragmentIdentifier/51",
+     "catalyst:relevantToConversation": {
+      "@id": "http://gilgalad.local/data/Discussion/1"
+     },
+     "@id": "http://gilgalad.local/data/IdeaContentLink/62",
+     "@type": "Excerpt"
+    },
+    {
+     "db_id": "7",
+     "hasBody": "http://gilgalad.local/data/ExcerptGraph/7",
+     "created": "2014-01-20T04:09:14",
+     "hasTarget": "http://gilgalad.local/data/TextFragmentIdentifier/7",
+     "catalyst:relevantToConversation": {
+      "@id": "http://gilgalad.local/data/Discussion/1"
+     },
+     "@id": "http://gilgalad.local/data/IdeaContentLink/7",
+     "@type": "Excerpt"
+    },
+    {
+     "db_id": "8",
+     "hasBody": "http://gilgalad.local/data/ExcerptGraph/8",
+     "created": "2014-01-20T15:24:54",
+     "hasTarget": "http://gilgalad.local/data/TextFragmentIdentifier/8",
+     "catalyst:relevantToConversation": {
+      "@id": "http://gilgalad.local/data/Discussion/1"
+     },
+     "@id": "http://gilgalad.local/data/IdeaContentLink/8",
+     "@type": "Excerpt"
+    },
+    {
+     "has_container": "http://gilgalad.local/data/Discussion/1",
+     "db_id": "1",
+     "@id": "http://gilgalad.local/data/IdeaGraphView/1",
+     "@type": "Map",
+     "created": "2013-12-26T18:49:26"
+    },
+    {
+     "has_container": "http://gilgalad.local/data/Discussion/1",
+     "db_id": "2",
+     "@id": "http://gilgalad.local/data/IdeaGraphView/2",
+     "@type": "Map",
+     "created": "2013-12-26T18:49:26"
+    },
+    {
+     "db_id": "1",
+     "source_idea": "http://gilgalad.local/data/Idea/3",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/1",
+     "@id": "http://gilgalad.local/data/IdeaLink/1",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "10",
+     "source_idea": "http://gilgalad.local/data/Idea/5",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/7",
+     "@id": "http://gilgalad.local/data/IdeaLink/10",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "11",
+     "source_idea": "http://gilgalad.local/data/Idea/5",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/6",
+     "@id": "http://gilgalad.local/data/IdeaLink/11",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "12",
+     "source_idea": "http://gilgalad.local/data/Idea/6",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/7",
+     "@id": "http://gilgalad.local/data/IdeaLink/12",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "13",
+     "source_idea": "http://gilgalad.local/data/Idea/6",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "2.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/4",
+     "@id": "http://gilgalad.local/data/IdeaLink/13",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "14",
+     "source_idea": "http://gilgalad.local/data/Idea/5",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "3.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/4",
+     "@id": "http://gilgalad.local/data/IdeaLink/14",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "15",
+     "source_idea": "http://gilgalad.local/data/Idea/6",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/7",
+     "@id": "http://gilgalad.local/data/IdeaLink/15",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "16",
+     "source_idea": "http://gilgalad.local/data/Idea/6",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "2.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/4",
+     "@id": "http://gilgalad.local/data/IdeaLink/16",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "2",
+     "source_idea": "http://gilgalad.local/data/Idea/4",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/3",
+     "@id": "http://gilgalad.local/data/IdeaLink/2",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "21",
+     "source_idea": "http://gilgalad.local/data/Idea/5",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/6",
+     "@id": "http://gilgalad.local/data/IdeaLink/21",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "22",
+     "source_idea": "http://gilgalad.local/data/Idea/5",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "3.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/4",
+     "@id": "http://gilgalad.local/data/IdeaLink/22",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "3",
+     "source_idea": "http://gilgalad.local/data/Idea/5",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/4",
+     "@id": "http://gilgalad.local/data/IdeaLink/3",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "4",
+     "source_idea": "http://gilgalad.local/data/Idea/6",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "2.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/1",
+     "@id": "http://gilgalad.local/data/IdeaLink/4",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "5",
+     "source_idea": "http://gilgalad.local/data/Idea/7",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/6",
+     "@id": "http://gilgalad.local/data/IdeaLink/5",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "6",
+     "source_idea": "http://gilgalad.local/data/Idea/7",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/5",
+     "@id": "http://gilgalad.local/data/IdeaLink/6",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "7",
+     "source_idea": "http://gilgalad.local/data/Idea/5",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/6",
+     "@id": "http://gilgalad.local/data/IdeaLink/7",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "8",
+     "source_idea": "http://gilgalad.local/data/Idea/7",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "2.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/6",
+     "@id": "http://gilgalad.local/data/IdeaLink/8",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "87",
+     "source_idea": "http://gilgalad.local/data/Idea/5",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/6",
+     "@id": "http://gilgalad.local/data/IdeaLink/87",
+     "@type": "InclusionRelation"
+    },
+    {
+     "db_id": "9",
+     "source_idea": "http://gilgalad.local/data/Idea/7",
+     "assembl:link_order": {
+      "@type": "xsd:float",
+      "@value": "1.0"
+     },
+     "target_idea": "http://gilgalad.local/data/Idea/4",
+     "@id": "http://gilgalad.local/data/IdeaLink/9",
+     "@type": "InclusionRelation"
+    }
+   ],
+   "@id": "assembl:discussion_1_data"
+  }
+ ]
+}

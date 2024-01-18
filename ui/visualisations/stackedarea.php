@@ -49,9 +49,7 @@ var NODE_ARGS = new Array();
 Event.observe(window, 'load', function() {
 	NODE_ARGS['jsondata'] = <?php echo $json; ?>;
 
-	var bObj = new JSONscriptRequest('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-stackedarea.js.php"); ?>');
-    bObj.buildScriptTag();
-    bObj.addScriptTag();
+	addScriptDynamically('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-stackedarea.js.php"); ?>', 'stackedarea-script');
 });
 </script>
 

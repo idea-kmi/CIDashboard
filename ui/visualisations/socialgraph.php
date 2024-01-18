@@ -71,9 +71,8 @@ function processCIFUserData(json) {
 		var userArray = loadUserUnobfuscationData(json);
 		NODE_ARGS['userdata'] = userArray;
 		//alert(userArray.toSource());
-		var bObj = new JSONscriptRequest('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-social.js.php"); ?>');
-		bObj.buildScriptTag();
-		bObj.addScriptTag();
+
+		addScriptDynamically('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-social.js.php"); ?>', 'social-script');
 	}
 }
 
@@ -89,9 +88,8 @@ Event.observe(window, 'load', function() {
 		document.body.appendChild(s);
 	} else {
 		//$('messagearea').update(getLoadingLine("<?php echo $LNG->LOADING_DATA; ?>"));
-		var bObj = new JSONscriptRequest('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-social.js.php"); ?>');
-		bObj.buildScriptTag();
-		bObj.addScriptTag();
+
+		addScriptDynamically('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-social.js.php"); ?>', 'social-script');
 	}
 });
 </script>

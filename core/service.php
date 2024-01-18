@@ -28,7 +28,7 @@
  * All the methods listed are are available to users through REST-style URL calls
  */
 
-include_once('../config.php');
+require_once(__DIR__ . '/../config.php');
 
 global $USER,$CFG,$LNG,$HUB_FLM;
 

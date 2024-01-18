@@ -24,7 +24,7 @@
  ********************************************************************************/
  /** Author: Michelle Bachler, KMi, The Open University **/
 
-include_once('../../../cidashboard/config.php');
+require_once(__DIR__ . '/../../../config.php');
 
 global $serviceRootAnalytics;
 
@@ -297,8 +297,13 @@ function callAnalyticsAPIWithZip($method, $metrics, $zipfilepath, $timeout=60) {
 function createMetricRequestPostField($metrics) {
 	$requests = '[';
 	$metricspieces = explode(",",$metrics);
-	if(sizeof($metricspieces) != 0){
-		$count = sizeof($metricspieces);
+
+	$count = 0;
+	if (is_countable($metricspieces)) {
+		$count = count($metricspieces);
+	}
+
+	if($count != 0){
 		for($i=0; $i<$count; $i++){
 			$metric = $metricspieces[$i];
 			if (isset($metric) && $metric != "") {
@@ -327,8 +332,12 @@ function createAlertMetricRequestPostField($alerttypes, $userids="", $root="") {
 	if ($userids != "") {
 		$users .= '[';
 		$useridspieces = explode(",",$userids);
-		if(sizeof($useridspieces) != 0){
-			$count = sizeof($useridspieces);
+
+		$count = 0;
+		if (is_countable($useridspieces)) {
+			$count = count($useridspieces);
+		}
+		if($count != 0){
 			for($i=0; $i<$count; $i++){
 				$user = $useridspieces[$i];
 				if (isset($user) && $user != "") {
@@ -346,8 +355,11 @@ function createAlertMetricRequestPostField($alerttypes, $userids="", $root="") {
 	if ($alerttypes != "") {
 		$alerts .= '[';
 		$alerttypespieces = explode(",",$alerttypes);
-		if(sizeof($alerttypespieces) != 0){
-			$count = sizeof($alerttypespieces);
+		$count = 0;
+		if (is_countable($alerttypespieces)) {
+			$count = count($alerttypespieces);
+		}
+		if($count != 0){
 			for($i=0; $i<$count; $i++){
 				$alert = $alerttypespieces[$i];
 				if (isset($alert) && $alert != "") {

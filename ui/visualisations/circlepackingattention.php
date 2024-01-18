@@ -45,11 +45,9 @@ if ($dashboard) {
 var NODE_ARGS = new Array();
 
 Event.observe(window, 'load', function() {
-	NODE_ARGS['jsondata'] = <?php echo $json; ?>;
+	NODE_ARGS['jsondata'] = <?php if ($json === FALSE || $json === "") { echo '""'; } else {echo $json;} ?>;
 
-	var bObj = new JSONscriptRequest('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-circlepackingattention.js.php"); ?>');
-    bObj.buildScriptTag();
-    bObj.addScriptTag();
+	addScriptDynamically('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-circlepackingattention.js.php"); ?>', 'circlepackingattention-script');
 });
 </script>
 

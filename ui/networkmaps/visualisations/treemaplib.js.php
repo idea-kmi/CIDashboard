@@ -67,15 +67,17 @@ function displayTreemapNetworkD3Vis(container, json, width, height) {
 
 
     // Init tooltip
-    var tipTreemap = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset([0, 0])
-    .html(function(d) {
-		if (d != root) {
-			return '<div style="padding:2px;background:white;border:1px solid lightgray;weight:bold;width:200px;">' + getNodeTitleAntecedence(d.nodetype)+" "+d.name + '</div>';
-		}
-    })
-    chart.call(tipTreemap);
+	var tipTreemap = d3.select(container)
+  		.append("div")
+    	.style("visibility", "hidden")
+    	.style("position","absolute")
+    	.style("border","1px solid lightgray")
+    	.style("background-color","white")
+    	.style("padding", "2px")
+    	.style("top", "10px")
+    	.style("left", "10px")
+    	.text("");
+
 
 	var node = json;
 	var root = json;
@@ -103,10 +105,20 @@ function displayTreemapNetworkD3Vis(container, json, width, height) {
 		.append("g")
 		.attr("class", "cell parent")
 		.on('mouseover', function (d,i) {
-			tipTreemap.show(d)
+			var offset = [15,15];
+	    	var label = getNodeTitleAntecedence(d.nodetype)+" "+d.name
+			tipTreemap.style("top", (event.pageY)+(offset[1])+"px");
+        	tipTreemap.style("left",(event.pageX)+(offset[0])+"px");
+			tipTreemap.text(label);
+			tipTreemap.style("visibility", "visible");
+		})
+		.on('mousemove', function (d,i) {
+			var offset = [15,15];
+			tipTreemap.style("top", (event.pageY)+(offset[1])+"px");
+        	tipTreemap.style("left",(event.pageX)+(offset[0])+"px");
 		})
 		.on('mouseout', function (d,i) {
-			tipTreemap.hide(d)
+			tipTreemap.style("visibility", "hidden")
 		})
 		.on("click", function(d) {
 			if (d.zoomed) {
@@ -176,10 +188,20 @@ function displayTreemapNetworkD3Vis(container, json, width, height) {
 		.append("g")
 		.attr("class", "cell child")
 		.on('mouseover', function (d,i) {
-			tipTreemap.show(d)
+			var offset = [15,15];
+	    	var label = getNodeTitleAntecedence(d.nodetype)+" "+d.name
+			tipTreemap.style("top", (event.pageY)+(offset[1])+"px");
+        	tipTreemap.style("left",(event.pageX)+(offset[0])+"px");
+			tipTreemap.text(label);
+			tipTreemap.style("visibility", "visible");
+		})
+		.on('mousemove', function (d,i) {
+			var offset = [15,15];
+			tipTreemap.style("top", (event.pageY)+(offset[1])+"px");
+        	tipTreemap.style("left",(event.pageX)+(offset[0])+"px");
 		})
 		.on('mouseout', function (d,i) {
-			tipTreemap.hide(d)
+			tipTreemap.style("visibility", "hidden")
 		})
 		.on("click", function(d) {
 			zoom(node === d.parent ? root : d.parent);
@@ -407,15 +429,16 @@ function displayTreemapNetworkByTypeD3Vis(container, json, width, height) {
         .append("svg:g");
 
     // Init tooltip
-    var tipTreemap = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset([0, 0])
-    .html(function(d) {
-		if (d != root) {
-			return '<div style="padding:2px;background:white;border:1px solid lightgray;weight:bold;width:200px;">' + getNodeTitleAntecedence(d.nodetype)+" "+d.name + '</div>';
-		}
-    })
-    chart.call(tipTreemap);
+	var tipTreemap = d3.select(container)
+  		.append("div")
+    	.style("visibility", "hidden")
+    	.style("position","absolute")
+    	.style("border","1px solid lightgray")
+    	.style("background-color","white")
+    	.style("padding", "2px")
+    	.style("top", "10px")
+    	.style("left", "10px")
+    	.text("");
 
 	var node = json;
 	var root = json;
@@ -486,10 +509,20 @@ function displayTreemapNetworkByTypeD3Vis(container, json, width, height) {
 		.append("g")
 		.attr("class", "cell parent")
 		.on('mouseover', function (d,i) {
-			tipTreemap.show(d)
+			var offset = [15,15];
+	    	var label = getNodeTitleAntecedence(d.nodetype)+" "+d.name
+			tipTreemap.style("top", (event.pageY)+(offset[1])+"px");
+        	tipTreemap.style("left",(event.pageX)+(offset[0])+"px");
+			tipTreemap.text(label);
+			tipTreemap.style("visibility", "visible");
+		})
+		.on('mousemove', function (d,i) {
+			var offset = [15,15];
+			tipTreemap.style("top", (event.pageY)+(offset[1])+"px");
+        	tipTreemap.style("left",(event.pageX)+(offset[0])+"px");
 		})
 		.on('mouseout', function (d,i) {
-			tipTreemap.hide(d)
+			tipTreemap.style("visibility", "hidden")
 		})
 		.on("click", function(d) {
 			if (d.zoomed) {
@@ -559,10 +592,20 @@ function displayTreemapNetworkByTypeD3Vis(container, json, width, height) {
 		.append("g")
 		.attr("class", "cell child")
 		.on('mouseover', function (d,i) {
-			tipTreemap.show(d)
+			var offset = [15,15];
+	    	var label = getNodeTitleAntecedence(d.nodetype)+" "+d.name
+			tipTreemap.style("top", (event.pageY)+(offset[1])+"px");
+        	tipTreemap.style("left",(event.pageX)+(offset[0])+"px");
+			tipTreemap.text(label);
+			tipTreemap.style("visibility", "visible");
+		})
+		.on('mousemove', function (d,i) {
+			var offset = [15,15];
+			tipTreemap.style("top", (event.pageY)+(offset[1])+"px");
+        	tipTreemap.style("left",(event.pageX)+(offset[0])+"px");
 		})
 		.on('mouseout', function (d,i) {
-			tipTreemap.hide(d)
+			tipTreemap.style("visibility", "hidden")
 		})
 		.on("click", function(d) {
 			zoom(node === d.parent ? root : d.parent);

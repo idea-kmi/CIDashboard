@@ -34,6 +34,7 @@ unset($CFG);
 
 $CFG = new stdClass();
 
+
 /** EDIT THESE NEXT CONFIGURATION SETTINGS TO SETUP YOUR CIDASHBOARD INSTANCE **/
 
 /**
@@ -60,12 +61,12 @@ $CFG->dirAddress = "";
  */
 $CFG->homeAddress = "";
 
-// The url of the analytics service being used - including trailing '/'
+// The url of the analytics service being used - including trailing slash
 // Sepcifically this is the one developed by Mark Klein on the Catalyst FP7 project (http://catalyst-fp7.eu/)
 // https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2962524
 $CFG->analyticsServiceUrl = "";
 
-// The url where you are getting an edgesense service - including trailing '/'
+// The url where you are getting an edgesense service - including trailing slash
 // The serice is expected to deliver the services as per code base: https://github.com/Wikitalia/edgesense
 $CFG->edgesenseServiceUrl = "";
 
@@ -80,18 +81,16 @@ $CFG->hasMemcacheManager = false;
  */
 $CFG->EMAIL_REPLY_TO = "";
 
+
 /** OPTINALLY EDIT THESE NEXT SETTINGS **/
 
 /** GOOGLE **/
 // Do you want to use Google analytics. ('true' or 'false')
-// If this is set to 'true' you must also complete the GOOGLE_ANALYTICS_KEY below.
 $CFG->GOOGLE_ANALYTICS_ON = false;
-
-// Google analytics key.
-// You must get this from the Google Analytics website.
-// If you set the GOOGLE_ANALYTICS_ON to 'true' you must add a key for it to work.
-$CFG->GOOGLE_ANALYTICS_KEY = "";
+$CFG->GOOGLE_ANALYTICS_KEY = ";
 $CFG->GOOGLE_ANALYTICS_DOMAIN = "";
+// Google Analytics 4
+$CFG->GOOGLE_SITE_TAG = "";
 
 /** LANGUAGE **/
 // This string indicates what language the interface text should use.

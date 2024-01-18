@@ -147,7 +147,10 @@ function overrideLanguageCore($langurl) {
 		}
 
 		if ($jsondata != NULL && json_last_error() == 0) {
-			$count = count($jsondata);
+			$count = 0;
+			if (is_countable($jsondata)) {
+				$count = count($jsondata);
+			}
 			for ($i=0; $i < $count; $i++) {
 				$next = $jsondata[$i];
 				$term = $next->term;
@@ -155,7 +158,10 @@ function overrideLanguageCore($langurl) {
 				$singular = '';
 				$plural = '';
 				$text= '';
-				$countlabel = count($label);
+				$countlabel = 0;
+				if (is_countable($label)) {
+					$countlabel = count($label);
+				}
 				for ($j=0; $j<$countlabel;$j++) {
 					$n = $label[$j];
 					if ($n->language == $CFG->language) {

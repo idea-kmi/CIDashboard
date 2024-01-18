@@ -24,7 +24,7 @@
  ********************************************************************************/
  /** Author: Michelle Bachler, KMi, The Open University **/
 
-require_once('../../config.php');
+require_once(__DIR__ . '/../../config.php');
 require_once($HUB_FLM->getCodeDirPath("ui/alertdata.php"));
 
 $url = required_param('url', PARAM_URL);
@@ -35,7 +35,10 @@ $userids = optional_param('userids', "", PARAM_TEXT);
 
 //convert alert numbers to metric alert names
 $alertsArray = explode(',', $alerts);
-$count = count($alertsArray);
+$count = 0;
+if (is_countable($alertsArray)) {
+	$count = count($alertsArray);
+}
 $alertsFinal = "";
 for($i=0; $i<$count; $i++) {
 	$num = $alertsArray[$i];

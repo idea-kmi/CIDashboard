@@ -23,7 +23,8 @@
  *                                                                              *
  ********************************************************************************/
 header('Content-Type: text/javascript;');
-include_once('../config.php');
+require_once(__DIR__ . '/../config.php');
+
 ?>
 
 /**

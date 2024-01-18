@@ -35,7 +35,10 @@ $url = required_param("url",PARAM_URL);
 $userurl = required_param("userurl",PARAM_URL);
 $langurl = optional_param('langurl', '', PARAM_URL);
 
-$count = count($visdata);
+$count = 0;
+if (is_countable($visdata)) {
+	$count = count($visdata);
+}
 for ($i=0; $i<$count; $i++) {
 	$item = $visdata[$i];
 	if ($page == $item[6]) {
@@ -52,7 +55,10 @@ include_once($HUB_FLM->getCodeDirPath("ui/headerdashboard.php"));
 <?php
 $inner = 0;
 $rowcount = 5;
-$count = count($vises);
+$count = 0;
+if (is_countable($vises)) {
+	$count = count($vises);
+}
 for ($i=0; $i<$count; $i++) {
 	$next = $vises[$i];
 
@@ -66,6 +72,8 @@ for ($i=0; $i<$count; $i++) {
 		$networkonly = 'true';
 		$next = intval(substr($next,1));
 	}
+
+	$next = intval($next);
 
 	$item = $visdata[$next-1];
 

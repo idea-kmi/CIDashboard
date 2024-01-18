@@ -23,7 +23,8 @@
  *                                                                              *
  ********************************************************************************/
 
-include_once('../config.php');
+require_once(__DIR__ . '/../config.php');
+
 
 $url = required_param("url", PARAM_URL);
 $title = required_param("title",PARAM_TEXT);

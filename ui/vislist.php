@@ -25,15 +25,18 @@
  /** Author: Michelle Bachler, KMi, The Open University **/
  ?>
 
-<div class="boxbackground" style="clear:both; float:left; width: 100%;">
+<div class="boxbackground d-flex flex-wrap gap-3">
 	<?php
 		include('visdata.php');
 
-		$count = count($vissequence);
+		$count = 0;
+		if (is_countable($vissequence)) {
+			$count = count($vissequence);
+		}
 		for ($i=0; $i<$count; $i++) {
 			$next = $vissequence[$i];
 			$item = $visdata[$next-1];
-			echo '<div style="float:left;padding:5px;padding-bottom:10px;"><img id="largevisimage'.$item[1].'" alt="'.$item[0].'" title="'.$item[0].'" style="loat:left;height:60px;border:1px solid #e8e8e8;" border="0" src="'.$item[3].'" /></div>';
+			echo '<div class="border border-1"><img style="height: 60px;" id="largevisimage'.$item[1].'" alt="'.$item[0].'" title="'.$item[0].'" src="'.$item[3].'" /></div>';
 		}
 	?>
 </div>

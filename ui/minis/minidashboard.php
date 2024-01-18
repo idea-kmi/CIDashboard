@@ -24,14 +24,14 @@
  ********************************************************************************/
  /** Author: Michelle Bachler, KMi, The Open University **/
 
-require_once('../../config.php');
+require_once(__DIR__ . '/../../config.php');
 require_once($HUB_FLM->getCodeDirPath('ui/minisdata.php'));
 
 $url = required_param("url",PARAM_URL);
 $timeout = optional_param('timeout',60,PARAM_INT);
 
 $vis = required_param("vis",PARAM_TEXT);
-$vises = split(',', $vis);
+$vises = explode(',', $vis);
 
 $title = optional_param("title", "",PARAM_TEXT);
 
@@ -49,7 +49,11 @@ include_once($HUB_FLM->getCodeDirPath("ui/headerminiembed.php"));
 $inner = 0;
 $rowcount = 5;
 $loadString = "";
-$count = count($vises);
+
+$count = 0;
+if (is_countable($vises)) {
+	$count = count($vises);
+}
 
 for ($i=0; $i<$count; $i++) {
 	$next = $vises[$i];

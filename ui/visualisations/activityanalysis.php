@@ -52,7 +52,7 @@ if ($dashboard) {
 var NODE_ARGS = new Array();
 
 Event.observe(window, 'load', function() {
-	NODE_ARGS['data'] = <?php echo json_encode($data); ?>;
+	NODE_ARGS['data'] = <?php echo json_encode($data, JSON_INVALID_UTF8_IGNORE); ?>;
 
 	$('messagearea').update(getLoadingLine("<?php echo $LNG->LOADING_DATA; ?>"));
 	var data = NODE_ARGS['data'];

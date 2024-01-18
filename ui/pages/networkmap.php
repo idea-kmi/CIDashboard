@@ -31,7 +31,7 @@ if ($HUB_FLM->hasCustomVersion($me)) {
 	die;
 }
 
-include_once($HUB_FLM->getCodeDirPath("ui/dialogheader.php"));
+include_once($HUB_FLM->getCodeDirPath("ui/headerdialog.php"));
 ?>
 <h1><?php echo $LNG->HELP_NETWORKMAP_TITLE; ?></h1>
 

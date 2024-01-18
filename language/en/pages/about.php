@@ -53,9 +53,9 @@ $LNG->PAGE_ABOUT_BODY .= '<p>One of the key issues shared by most common platfor
 							deliberation with effective visualization methods is an open challenge. </p>';
 
 $LNG->PAGE_ABOUT_BODY .= '<p style="font-style:italic">How would you visualize what happens in an online community?
-							<br>How can we make idea and arguments more tangible so that they can be easily grasped, understood
+							<br />How can we make idea and arguments more tangible so that they can be easily grasped, understood
 							and shared?
-							<br>How do we device intuitive, engaging, interactive visualisations for users to better explore
+							<br />How do we device intuitive, engaging, interactive visualisations for users to better explore
 							and understand the main content, insights, outcomes and hidden dynamics of an online debate?</p>';
 
 $LNG->PAGE_ABOUT_BODY .= '<p>The CIDashboard Website is the result of research work aimed at answering those questions.
@@ -64,25 +64,24 @@ $LNG->PAGE_ABOUT_BODY .= '<p>The CIDashboard Website is the result of research w
 							online discussion.<p>';
 
 $LNG->PAGE_ABOUT_BODY .= '<p>Early user-requirements analysis of existing online community debating platforms revealed that
-							there where the following main issues that we hoped to address:
-							<ul>
-							<li>Participants struggle to get an overview of what happened in an online community debate. (Who are the key
-							members? What are the most relevant discussions? Etc).</li><br>
-							<li>Participants are rarely aware of other people\'s contributions before they contribute to the debate (this also
-							leads to poorly informed contribution and idea duplication).</li><br>
-							<li>Newcomers do not know where to start contributing.</li><br>
-							<li>Community managers do not know where new contributions would be mostly needed
-							(debate management is ineffective because community managers are missing tools to
-							analyse the debate and direct users attention).</li><br>
-							<li>Community managers struggle to summarise the state of a debate to disseminate results and engage new users.</li>
+							there where the following main issues that we hoped to address:</p>
+							<ul style="font-size: 0.9em;">
+								<li>Participants struggle to get an overview of what happened in an online community debate. (Who are the key
+								members? What are the most relevant discussions? Etc).</li>
+								<li>Participants are rarely aware of other people\'s contributions before they contribute to the debate (this also
+								leads to poorly informed contribution and idea duplication).</li>
+								<li>Newcomers do not know where to start contributing.</li>
+								<li>Community managers do not know where new contributions would be mostly needed
+								(debate management is ineffective because community managers are missing tools to
+								analyse the debate and direct users attention).</li>
+								<li>Community managers struggle to summarise the state of a debate to disseminate results and engage new users.</li>
 							</ul>
 
-							These issues informed the choice of visualisations, analytics and alerts that you will find on
+							<p>These issues informed the choice of visualisations, analytics and alerts that you will find on
 							this website. It is our aim to provide \'embeddables\' that improve informed participation and
 							the quality of contributions in an online debate site that uses them.</p>';
 
 $LNG->PAGE_ABOUT_BODY .= '<h2>Tech Info</h2>';
-
 
 $LNG->PAGE_ABOUT_BODY .= '<p>The Collective Intelligence dashboard  (<a href="https://cidashboard.net/">CI dashboard</a>)
 							is a analytics visualisation service provider for other online discussion and Collective

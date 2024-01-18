@@ -44,11 +44,9 @@ if ($dashboard) {
 var NODE_ARGS = new Array();
 
 Event.observe(window, 'load', function() {
-	NODE_ARGS['data'] = <?php echo json_encode($data); ?>;
+	NODE_ARGS['data'] = <?php echo json_encode($data, JSON_INVALID_UTF8_IGNORE); ?>;
 
-	var bObj = new JSONscriptRequest('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-streamgraph.js.php"); ?>');
-    bObj.buildScriptTag();
-    bObj.addScriptTag();
+	addScriptDynamically('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-streamgraph.js.php"); ?>', 'streamgraph-script');
 });
 </script>
 

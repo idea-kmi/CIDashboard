@@ -66,13 +66,12 @@ function processCIFUserData(json) {
 	} else {
 		var userArray = loadUserUnobfuscationData(json);
 		NODE_ARGS['userdata'] = userArray;
-		var bObj = new JSONscriptRequest('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-sunburst.js.php"); ?>');
-		bObj.buildScriptTag();
-		bObj.addScriptTag();
+
+		addScriptDynamically('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-sunburst.js.php"); ?>', 'sunburst-script');
 	}
 }
 
-Event.observe(window, 'load', function() {
+document.addEventListener('DOMContentLoaded', function() {
 	//alert(NODE_ARGS['userurl']);
 
 	var data = NODE_ARGS['data'];
@@ -84,9 +83,8 @@ Event.observe(window, 'load', function() {
 		document.body.appendChild(s);
 	} else {
 		//$('messagearea').update(getLoadingLine("<?php echo $LNG->LOADING_DATA; ?>"));
-		var bObj = new JSONscriptRequest('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-sunburst.js.php"); ?>');
-		bObj.buildScriptTag();
-		bObj.addScriptTag();
+
+		addScriptDynamically('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-sunburst.js.php"); ?>', 'sunburst-script');
 	}
 });
 </script>

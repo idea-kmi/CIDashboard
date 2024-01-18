@@ -24,7 +24,7 @@
  ********************************************************************************/
  /** Author: Michelle Bachler, KMi, The Open University **/
 
-require_once('../../config.php');
+require_once(__DIR__ . '/../../config.php');
 
 $url = required_param('url', PARAM_URL);
 $withposts = optional_param('miniwithposts', false, PARAM_BOOL);

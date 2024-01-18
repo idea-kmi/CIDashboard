@@ -142,33 +142,24 @@ function displaySunburstNetworkD3Vis(container, json, width, height) {
 
 
     // Init tooltip
-    var tipSunburstNetwork = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset(function(d) {
-    	var label = getNodeTitleAntecedence(d.nodetype)+" "+d.name;
-  		if(label.length > 35) {
-  			return [-10, 80];
-  		} else {
-  			return [-10, 0];
-  		}
-	})
-    .html(function(d) {
-  		if (d.nodetype != 'Group') {
-	    	var label = getNodeTitleAntecedence(d.nodetype)+" "+d.name;
-			if (label.length > 60) {
-				return '<div style="padding:2px;background:white;border:1px solid lightgray;weight:bold;width:300px;">' + label + '</div>';
-			} else {
-				return '<div style="padding:2px;background:white;border:1px solid lightgray;weight:bold;">' + label + '</div>';
-			}
-		}
-    })
-    svg.call(tipSunburstNetwork);
 
 	function zoomsunburst(d) {
 		path.transition()
 		  .duration(750)
 		  .attrTween("d", arcTween(d));
 	}
+
+    // Init tooltip
+	var tipSunburstNetwork = d3.select(container)
+  		.append("div")
+    	.style("visibility", "hidden")
+    	.style("position","absolute")
+    	.style("border","1px solid lightgray")
+    	.style("background-color","white")
+    	.style("padding", "2px")
+    	.style("top", "10px")
+    	.style("left", "10px")
+    	.text("");
 
 	path = svg.selectAll("path")
 		.data(partition.nodes(root))
@@ -177,10 +168,20 @@ function displaySunburstNetworkD3Vis(container, json, width, height) {
 		.style("fill", function(d) { return d.color; })
 	  	.style("stroke", "#fff")
 		.on('mouseover', function (d,i) {
-			tipSunburstNetwork.show(d)
+			var offset = [15,15];
+			var label = getNodeTitleAntecedence(d.nodetype)+" "+d.name;
+			tipSunburstNetwork.style("top", (event.pageY)+(offset[1])+"px");
+        	tipSunburstNetwork.style("left",(event.pageX)+(offset[0])+"px");
+			tipSunburstNetwork.text(label);
+			tipSunburstNetwork.style("visibility", "visible");
+		})
+		.on('mousemove', function (d,i) {
+			var offset = [15,15];
+			tipSunburstNetwork.style("top", (event.pageY)+(offset[1])+"px");
+        	tipSunburstNetwork.style("left",(event.pageX)+(offset[0])+"px");
 		})
 		.on('mouseout', function (d,i) {
-			tipSunburstNetwork.hide(d)
+			tipSunburstNetwork.style("visibility", "hidden")
 		})
 		.on("click", zoomsunburst);
 
@@ -268,29 +269,6 @@ function displaySunburstNetworkByBranchD3Vis(container, json, width, height) {
 		}
 	});
 
-    // Init tooltip
-    var tipSunburstNetwork = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset(function(d) {
-    	var label = getNodeTitleAntecedence(d.nodetype)+" "+d.name;
-  		if(label.length > 35) {
-  			return [-10, 86];
-  		} else {
-  			return [-10, 0];
-  		}
-	})
-    .html(function(d) {
-  		if (d.nodetype != 'Group') {
-	    	var label = getNodeTitleAntecedence(d.nodetype)+" "+d.name;
-			if (label.length > 60) {
-				return '<div style="padding:2px;background:white;border:1px solid lightgray;weight:bold;width:300px;">' + label + '</div>';
-			} else {
-				return '<div style="padding:2px;background:white;border:1px solid lightgray;weight:bold;">' + label + '</div>';
-			}
-		}
-    })
-    svg.call(tipSunburstNetwork);
-
 	arc = d3.svg.arc()
 		.startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x))); })
 		.endAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))); })
@@ -303,6 +281,18 @@ function displaySunburstNetworkByBranchD3Vis(container, json, width, height) {
 		  .attrTween("d", arcTween(d));
 	}
 
+    // Init tooltip
+	var tipSunburstNetwork = d3.select(container)
+  		.append("div")
+    	.style("visibility", "hidden")
+    	.style("position","absolute")
+    	.style("border","1px solid lightgray")
+    	.style("background-color","white")
+    	.style("padding", "2px")
+    	.style("top", "10px")
+    	.style("left", "10px")
+    	.text("");
+
 	path = svg.selectAll("path")
 		.data(partition.nodes(root))
 		.enter().append("path")
@@ -310,10 +300,20 @@ function displaySunburstNetworkByBranchD3Vis(container, json, width, height) {
 		.style("fill", function(d) { return d.color; })
 	  	.style("stroke", "#fff")
 		.on('mouseover', function (d,i) {
-			tipSunburstNetwork.show(d)
+			var offset = [15,15];
+			var label = getNodeTitleAntecedence(d.nodetype)+" "+d.name;
+			tipSunburstNetwork.style("top", (event.pageY)+(offset[1])+"px");
+        	tipSunburstNetwork.style("left",(event.pageX)+(offset[0])+"px");
+			tipSunburstNetwork.text(label);
+			tipSunburstNetwork.style("visibility", "visible");
+		})
+		.on('mousemove', function (d,i) {
+			var offset = [15,15];
+			tipSunburstNetwork.style("top", (event.pageY)+(offset[1])+"px");
+        	tipSunburstNetwork.style("left",(event.pageX)+(offset[0])+"px");
 		})
 		.on('mouseout', function (d,i) {
-			tipSunburstNetwork.hide(d)
+			tipSunburstNetwork.style("visibility", "hidden")
 		})
 		.on("click", function (d, i) {
 		    if (window.event.ctrlKey && d.homepage) {

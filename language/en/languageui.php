@@ -43,6 +43,8 @@ $LNG->HEADER_ADMIN_PAGE_LINK_HINT = 'Go to the Admin page';
 $LNG->FOOTER_TERMS_LINK = 'Terms of Use';
 $LNG->FOOTER_PRIVACY_LINK = 'Privacy';
 $LNG->FOOTER_CONTACT_LINK = 'Contact';
+$LNG->FOOTER_DEVELOPED_BY = 'Developed By';
+$LNG->FOOTER_ACCESSIBILITY = 'Accessibility';
 
 $LNG->POPUPS_BLOCK = 'You appear to have blocked popup windows.\n\n Please alter your browser settings to allow this site to open popup windows.';
 $LNG->FORM_BUTTON_CLOSE = 'Close';

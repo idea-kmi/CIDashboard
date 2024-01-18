@@ -47,7 +47,7 @@ $LNG->EMBED_INDEX_TAB_HELP_ALERT = "Alerts";
 $LNG->EMBED_INDEX_TAB_HELP_EMBED = "Large Visualisations";
 $LNG->EMBED_INDEX_TAB_HELP_MINI = "Mini Visualisations";
 
-$LNG->EMBED_INDEX_INNER_TITLE = 'Welcome to our Embedables.';
+$LNG->EMBED_INDEX_INNER_TITLE = 'Welcome to our Embeddables.';
 $LNG->EMBED_INDEX_FIRST_PARA = 'The Collective Intelligence Dashboard (CIDashboard) is a place in which analytics on conversational and
 								social dynamics can be made visible and fed back to the community for further awareness
 								and reflection on the state and outcomes of a public debate. This site allows you to choose individual

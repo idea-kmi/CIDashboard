@@ -52,15 +52,25 @@ class format_json extends format_base {
             $str .= '{"'. strtolower(get_class($object)).'":[';
 
             $okeys = array_keys($objects);
-            for ($i=0; $i< sizeof($okeys); $i++){
+			$ocount = 0;
+			if (is_countable($okeys)) {
+				$ocount = count($okeys);
+			}
+            for ($i=0; $i< $ocount; $i++){
                 $myobj = $objects[$okeys[$i]];
                 $attr = get_object_vars($myobj);
 
                 $keys = array_keys($attr);
-                if(sizeof($keys) > 0 ){
+
+				$keycount = 0;
+				if (is_countable($keys)) {
+					$keycount = count($keys);
+				}
+
+                if($keycount > 0 ){
                     $str .= '{';
                 }
-                for($j=0;$j< sizeof($keys); $j++){
+                for($j=0;$j< $keycount; $j++){
                 	$next = $attr[$keys[$j]];
                 	$isArray = false;
                 	if (is_array($next)) {
@@ -78,14 +88,14 @@ class format_json extends format_base {
 						$str .= '"'. $keys[$j] .'":"'. parseToJSON($next) .'"';
 					}
 
-					if ($j != (sizeof($keys)-1)){
+					if ($j < ($keycount-1)){
 						$str .= ',';
 					}
                 }
-                if(sizeof($keys) > 0 ){
+                if($keycount > 0 ){
                     $str .= '}';
                 }
-                if ($i != (sizeof($objects)-1)){
+                if ($i < ($ocount-1)){
                     $str .= '},{';
                 }
             }
@@ -107,7 +117,11 @@ class format_json extends format_base {
     function phpToJSONInner($node,$objects){
         $str = '"'.$node.'":';
         $str .= "[";
-        $count = count($objects);
+
+      	$count = 0;
+		if (is_countable($objects)) {
+			$count = count($objects);
+		}
         if (is_array($objects) && $count > 0){
             $str .="{";
 
@@ -125,7 +139,10 @@ class format_json extends format_base {
 					$keys = array_keys($attr);
 					$str .= '"'.strtolower(get_class($obj)).'":';
 					$str .= '{';
-					$countj = count($keys);
+					$countj = 0;
+					if (is_countable($keys)) {
+						$countj = count($keys);
+					}
 					for($j=0;$j<$countj; $j++){
 						$next = $attr[$keys[$j]];
 						$isArray = false;
@@ -143,12 +160,12 @@ class format_json extends format_base {
 						} else {
 							$str .= '"'. $keys[$j] .'":"'. parseToJSON($next) .'"';
 						}
-						if ($j != ($countj-1)){
+						if ($j < ($countj-1)){
 							$str .= ',';
 						}
 					}
 	                $str .= '}';
-					if ($i != ($count-1)){
+					if ($i < ($count-1)){
 						$str .= '},{';
 					}
 				} else {
@@ -157,7 +174,7 @@ class format_json extends format_base {
 					} else {
 						$str .= '"'. parseToJSON($key) .'":"'. parseToJSON($value) .'"';
 					}
-					if ($i != ($count-1)){
+					if ($i < ($count-1)){
 						$str .= ',';
 					}
 				}
@@ -173,7 +190,10 @@ class format_json extends format_base {
             $str .= '"'.strtolower(get_class($obj)).'":';
             $str .= '{';
 
-			$countj = count($keys);
+			$countj = 0;
+			if (is_countable($keys)) {
+				$countj = count($keys);
+			}
             for($j=0;$j<$countj; $j++){
 				$next = $attr[$keys[$j]];
 				$isArray = false;
@@ -192,7 +212,7 @@ class format_json extends format_base {
 					$str .= '"'. $keys[$j] .'":"'. parseToJSON($next) .'"';
 				}
 
-                if ($j != (sizeof($keys)-1)){
+                if ($j < ($countj-1)){
                     $str .= ',';
                 }
             }

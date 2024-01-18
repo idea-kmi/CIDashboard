@@ -34,7 +34,7 @@ $userurl = required_param("userurl",PARAM_URL);
 $langurl = optional_param('langurl', '', PARAM_URL);
 
 $vis = required_param("vis",PARAM_TEXT);
-$vises = split(',', $vis);
+$vises = explode(',', $vis);
 
 $dashtitle = optional_param("title", "",PARAM_TEXT);
 ?>
@@ -52,7 +52,10 @@ $dashtitle = optional_param("title", "",PARAM_TEXT);
 		</li>
 
 <?php
-$count = count($vises);
+$count = 0;
+if (is_countable($vises)) {
+	$count = count($vises);
+}
 for ($i=0; $i<$count; $i++) {
 	$next = $vises[$i];
 
@@ -66,6 +69,8 @@ for ($i=0; $i<$count; $i++) {
 		$networkonly = 'true';
 		$next = intval(substr($next,1));
 	}
+
+	$next = intval($next);
 
 	$item = $visdata[$next-1];
 

@@ -47,7 +47,7 @@ if ($dashboard == true) {
 
 <script type='text/javascript'>
 var NODE_ARGS = new Array();
-NODE_ARGS['data'] = <?php echo json_encode($data); ?>;
+NODE_ARGS['data'] = <?php echo json_encode($data, JSON_INVALID_UTF8_IGNORE); ?>;
 NODE_ARGS['userurl'] = '<?php echo $userurl; ?>';
 
 function processCIFUserData(json) {

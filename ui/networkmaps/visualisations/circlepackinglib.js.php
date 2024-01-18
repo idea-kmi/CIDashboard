@@ -78,7 +78,7 @@ function displayCirclePackingNodeTypesD3Vis(container, json, width, height) {
 		.value(function(d) { return d.size; });
 
 	var focus = root;
-	var view;
+	var view = null;
 
     addPlaceholders(root);
     var nodes = pack.nodes( root );
@@ -136,25 +136,16 @@ function displayCirclePackingNodeTypesD3Vis(container, json, width, height) {
     makePositionsRelativeToZero( nodes );
 
     // Init tooltip
-    var tipCirclePack = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset(function(d) {
-    	var label = getNodeTitleAntecedence(d.nodetype, true)+" "+d.name;
-  		if(label.length > 35) {
-  			return [-10, 50];
-  		} else {
-  			return [-10, 0];
-  		}
-	})
-    .html(function(d) {
-    	var label = getNodeTitleAntecedence(d.nodetype, true)+" "+d.name;
-    	if (label.length > 50) {
-    		return '<div style="padding:2px;background:white;border:1px solid lightgray;weight:bold;width:300px;">' + label + '</div>';
-    	} else {
-    		return '<div style="padding:2px;background:white;border:1px solid lightgray;weight:bold;">' +  label + '</div>';
-    	}
-    })
-    svg.call(tipCirclePack);
+	var tipCirclePack = d3.select(container)
+  		.append("div")
+    	.style("visibility", "hidden")
+    	.style("position","absolute")
+    	.style("border","1px solid lightgray")
+    	.style("background-color","white")
+    	.style("padding", "2px")
+    	.style("top", "10px")
+    	.style("left", "10px")
+    	.text("");
 
 	var circle = svg.selectAll("circle")
 		.data(nodes)
@@ -165,10 +156,20 @@ function displayCirclePackingNodeTypesD3Vis(container, json, width, height) {
 		})
 		.on("click", function(d) {if (d.children) { if (focus !== d) zoom(d), d3.event.stopPropagation(); } })
 		.on('mouseover', function (d,i) {
-			tipCirclePack.show(d)
+			var offset = [15,15];
+	    	var label = getNodeTitleAntecedence(d.nodetype, true)+" "+d.name;
+			tipCirclePack.style("top", (event.pageY)+(offset[1])+"px");
+        	tipCirclePack.style("left",(event.pageX)+(offset[0])+"px");
+			tipCirclePack.text(label);
+			tipCirclePack.style("visibility", "visible");
+		})
+		.on('mousemove', function (d,i) {
+			var offset = [15,15];
+			tipCirclePack.style("top", (event.pageY)+(offset[1])+"px");
+        	tipCirclePack.style("left",(event.pageX)+(offset[0])+"px");
 		})
 		.on('mouseout', function (d,i) {
-		  	tipCirclePack.hide(d)
+			tipCirclePack.style("visibility", "hidden")
 		});
 
 	var text = svg.selectAll("text")
@@ -262,7 +263,7 @@ function displayCirclePackingAttentionD3Vis(container, json, width, height) {
 		.value(function(d) { return d.size; });
 
 	var focus = root;
-	var view;
+	var view = null;
 
     addPlaceholders(root);
     var nodes = pack.nodes( root );
@@ -271,25 +272,16 @@ function displayCirclePackingAttentionD3Vis(container, json, width, height) {
     makePositionsRelativeToZero( nodes );
 
     // Init tooltip
-    var tipCirclePack = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset(function(d) {
-    	var label = getNodeTitleAntecedence(d.nodetype, true)+" "+d.name+' - <?php echo $LNG->ATTENTION_MAP_INEQULAITY; ?>: '+d.colornumber+' <?php echo $LNG->ATTENTION_MAP_INTEREST;?>: '+d.size;
-  		if(label.length > 35) {
-  			return [-10, 50];
-  		} else {
-  			return [-10, 0];
-  		}
-	})
-    .html(function(d) {
-    	var label = getNodeTitleAntecedence(d.nodetype, true)+" "+d.name+' - <?php echo $LNG->ATTENTION_MAP_INEQULAITY; ?>: '+d.colornumber+' <?php echo $LNG->ATTENTION_MAP_INTEREST;?>: '+d.size;
-    	if (label.length > 50) {
-    		return '<div style="padding:2px;background:white;border:1px solid lightgray;weight:bold;width:300px;">' +label+'</div>';
-    	} else {
-    		return '<div style="padding:2px;background:white;border:1px solid lightgray;weight:bold;">' + label+'</div>';
-    	}
-    })
-    svg.call(tipCirclePack);
+	var tipCirclePack = d3.select(container)
+  		.append("div")
+    	.style("visibility", "hidden")
+    	.style("position","absolute")
+    	.style("border","1px solid lightgray")
+    	.style("background-color","white")
+    	.style("padding", "2px")
+    	.style("top", "10px")
+    	.style("left", "10px")
+    	.text("");
 
 	var circle = svg.selectAll("circle")
 		.data(nodes)
@@ -304,10 +296,20 @@ function displayCirclePackingAttentionD3Vis(container, json, width, height) {
 		})
 		.on("click", function(d) {if (d.children) { if (focus !== d) zoom(d), d3.event.stopPropagation(); } })
 		.on('mouseover', function (d,i) {
-			tipCirclePack.show(d)
+			var offset = [15,15];
+	    	var label = getNodeTitleAntecedence(d.nodetype, true)+" "+d.name;
+			tipCirclePack.style("top", (event.pageY)+(offset[1])+"px");
+        	tipCirclePack.style("left",(event.pageX)+(offset[0])+"px");
+			tipCirclePack.text(label);
+			tipCirclePack.style("visibility", "visible");
+		})
+		.on('mousemove', function (d,i) {
+			var offset = [15,15];
+			tipCirclePack.style("top", (event.pageY)+(offset[1])+"px");
+        	tipCirclePack.style("left",(event.pageX)+(offset[0])+"px");
 		})
 		.on('mouseout', function (d,i) {
-		  	tipCirclePack.hide(d)
+			tipCirclePack.style("visibility", "hidden")
 		});
 
 	var text = svg.selectAll("text")

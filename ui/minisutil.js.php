@@ -23,7 +23,8 @@
  *                                                                              *
  ********************************************************************************/
 header('Content-Type: text/javascript;');
-include_once('../config.php');
+include_once(__DIR__ . '/../config.php');
+
 ?>
 
 function loadUserContributionData(url, timeout, withPosts, withVotes) {
@@ -107,15 +108,16 @@ function loadUserViewingData(url, timeout, withPosts) {
 	args["timeout"] = timeout;
 
 	var reqUrl = SERVICE_ROOT + "&method=getminiuserviewings&" + Object.toQueryString(args);
-	//alert(reqUrl);
+	console.log(reqUrl);
 
 	new Ajax.Request(reqUrl, { method:'post',
 		onSuccess: function(transport){
-			//alert(transport.responseText);
+			//console.log(transport.responseText);
 
 			var json = null;
 			try {
 				json = transport.responseText.evalJSON();
+				console.log(json);
 			} catch(e) {
 				alert(e);
 			}
@@ -123,9 +125,9 @@ function loadUserViewingData(url, timeout, withPosts) {
 				alert(json.error[0].message);
 				return;
 			}
-
 			var data = json.userviewings[0];
-			//alert("data:"+data.toSource());
+			//console.log(data);
+
 			if (data.viewdatearray.length > 0) {
 
 				var viewDateArray = data.viewdatearray[0];

@@ -40,6 +40,7 @@ $dashboard = optional_param('dashboard', false, PARAM_BOOL);
 // need to call for the visualisation data first to create the userid for the second call for litemap and debatehub.
 // As results are cashed the first time it is not too wasteful to call it again from the vis
 // But probably need to rethink this really.
+
 require_once($HUB_FLM->getCodeDirPath("core/io/catalyst/catalyst_jsonld_reader.class.php"));
 $withhistory = optional_param('withhistory',false,PARAM_BOOL);
 $withvotes = optional_param('withvotes',false,PARAM_BOOL);
@@ -72,9 +73,7 @@ function processCIFUserData(json) {
 		var userArray = loadUserUnobfuscationData(json);
 		NODE_ARGS['userdata'] = userArray;
 
-		var bObj = new JSONscriptRequest('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-net.js.php"); ?>');
-		bObj.buildScriptTag();
-		bObj.addScriptTag();
+		addScriptDynamically('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-net.js.php"); ?>', 'net-script');
 	}
 }
 
@@ -90,9 +89,8 @@ Event.observe(window, 'load', function() {
 		document.body.appendChild(s);
 	} else {
 		//$('messagearea').update(getLoadingLine("<?php echo $LNG->LOADING_DATA; ?>"));
-		var bObj = new JSONscriptRequest('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-net.js.php"); ?>');
-		bObj.buildScriptTag();
-		bObj.addScriptTag();
+
+		addScriptDynamically('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-net.js.php"); ?>', 'net-script');
 	}
 });
 </script>

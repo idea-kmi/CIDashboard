@@ -61,7 +61,10 @@ function getStreamGraphData($url, $timeout=60, $withposts=false) {
 		$totalnodes = 0;
 
 		$nodes = $reader->nodeSet->nodes;
-		$count = count($nodes);
+		$count = 0;
+		if (is_countable($nodes)) {
+			$count = count($nodes);
+		}
 
 		$typeArray = array();
 
@@ -161,7 +164,10 @@ function getStackedAreaData($url, $timeout=60, $withposts=false) {
 		$totalnodes = 0;
 
 		$nodes = $reader->nodeSet->nodes;
-		$count = count($nodes);
+		$count = 0;
+		if (is_countable($nodes)) {
+			$count = count($nodes);
+		}
 
 		$typeArray = array();
 		$dateArray = array();
@@ -206,13 +212,19 @@ function getStackedAreaData($url, $timeout=60, $withposts=false) {
 		uksort($dateArray, "datesortstacked");
 
 		// Turn data into json
-		$count = count($dateArray);
+		$count = 0;
+		if (is_countable($dateArray)) {
+			$count = count($dateArray);
+		}
 		if ($count > 0) {
 			$json .=  "{";
 
 			// Add category index list
 			$json .=  "'label' : [";
-			$countj = count($typeArray);
+			$countj = 0;
+			if (is_countable($typeArray)) {
+				$countj = count($typeArray);
+			}
 			for($j=0; $j<$countj; $j++) {
 				$next = $typeArray[$j];
 				$json .=  "'".$next."'";
@@ -223,7 +235,10 @@ function getStackedAreaData($url, $timeout=60, $withposts=false) {
 			$json .=  "],";
 
 			$json .=  "'color' : [";
-			$countj = count($typeArray);
+			$countj = 0;
+			if (is_countable($typeArray)) {
+				$countj = count($typeArray);
+			}
 			for($j=0; $j<$countj; $j++) {
 				$next = $typeArray[$j];
 				if ($next == "Pro") {
@@ -260,7 +275,10 @@ function getStackedAreaData($url, $timeout=60, $withposts=false) {
 
 				$json .= "'values': [";
 				$k=0;
-				$countk = count($innerdata);
+				$countk = 0;
+				if (is_countable($innerdata)) {
+					$countk = count($innerdata);
+				}
 				foreach ($innerdata as $type => $typecount) {
 					$json .= $typecount;
 					if ($k < $countk-1) {
@@ -302,13 +320,21 @@ function addNextNetworkDataD3Depth($json, $node, $depth, $branch, $treeArray, $c
 	$json .=  '"branch": "'.parseToJSON($branch).'"';
 
 	$treeitem = $treeArray[$node->nodeid];
-	if (isset($treeitem["children"]) && count($treeitem["children"]) > 0 && !array_key_exists($node->nodeid, $checkArray)) {
+	$itemcount = 0;
+	if (is_countable($treeitem["children"])) {
+		$itemcount = count($treeitem["children"]);
+	}
+
+	if (isset($treeitem["children"]) && $itemcount > 0 && !array_key_exists($node->nodeid, $checkArray)) {
 
 		// make sure you don't recurse the same set of children more than once.
 		$checkArray[$node->nodeid] = $node->nodeid;
 
 		$children = $treeitem["children"];
-		$countkids = count($children);
+		$countkids = 0;
+		if (is_countable($children)) {
+			$countkids = count($children);
+		}
 		$json .=  ',"children": [';
 		for ($i=0; $i<$countkids; $i++) {
 			$child = $children[$i];
@@ -349,11 +375,17 @@ function getNetworkDataD3($url, $timeout=60, $withposts=false) {
 	if (!$reader instanceof Hub_Error) {
 		$conSet = $reader->connectionSet;
 		$cons = $conSet->connections;
-		$countcons = count($cons);
+		$countcons = 0;
+		if (is_countable($cons)) {
+			$countcons = count($cons);
+		}
 
 		$nodeSet = $reader->nodeSet;
 		$nodes = $nodeSet->nodes;
-		$countnodes = count($nodes);
+		$countnodes = 0;
+		if (is_countable($nodes)) {
+			$countnodes = count($nodes);
+		}
 
 		$checkArray = array();
 		$treeArray = array();
@@ -417,7 +449,10 @@ function getNetworkDataD3($url, $timeout=60, $withposts=false) {
 		//file_put_contents($file, $results);
 
 		$topNodes = array();
-		$counttop = count($treeArray);
+		$counttop = 0;
+		if (is_countable($treeArray)) {
+			$counttop = count($treeArray);
+		}
 		foreach ($treeArray as $key => $value) {
 			if ($value["from"] == 0) {
 				array_push($topNodes, $value["node"]);
@@ -428,7 +463,10 @@ function getNetworkDataD3($url, $timeout=60, $withposts=false) {
 		$json .=  '"name": "Group",';
 		$json .=  '"nodetype": "Group",';
 		$json .=  '"nodetypename": "Group"';
-		$count = count($topNodes);
+		$count = 0;
+		if (is_countable($topNodes)) {
+			$count = count($topNodes);
+		}
 		if ($count > 0) {
 			$json .=  ',"children": [';
 			for ($i=0; $i<$count; $i++) {
@@ -475,14 +513,22 @@ function addNextNetworkDataD3DepthComments($json, $node, $depth, $branch, $treeA
 	$json .=  '"branch": "'.parseToJSON($branch).'"';
 
 	$treeitem = $treeArray[$node->nodeid];
-	if (isset($treeitem["children"]) && count($treeitem["children"]) > 0
+	$itemcount = 0;
+	if (is_countable($treeitem["children"])) {
+		$itemcount = count($treeitem["children"]);
+	}
+
+	if (isset($treeitem["children"]) && $itemcount > 0
 		&& !array_key_exists($node->nodeid, $checkArray)) {
 
 		// make sure you don't recurse the same set of children more than once.
 		$checkArray[$node->nodeid] = $node->nodeid;
 
 		$children = $treeitem["children"];
-		$countkids = count($children);
+		$countkids = 0;
+		if (is_countable($children)) {
+			$countkids = count($children);
+		}
 		$json .=  ',"children": [';
 		for ($i=0; $i<$countkids; $i++) {
 			$child = $children[$i];
@@ -521,7 +567,11 @@ function addNextNetworkDataD3DepthPosts($json, $node, $depth, $branch, $treeArra
 	$json .=  '"branch": "'.parseToJSON($branch).'"';
 
 	$treeitem = $treeArray[$node->nodeid];
-	if (isset($treeitem["children"]) && count($treeitem["children"]) > 0 && !array_key_exists($node->nodeid, $checkArray)) {
+	$itemcount = 0;
+	if (is_countable($treeitem["children"])) {
+		$itemcount = count($treeitem["children"]);
+	}
+	if (isset($treeitem["children"]) && $itemcount > 0 && !array_key_exists($node->nodeid, $checkArray)) {
 
 		// make sure you don't recurse the same set of children more than once.
 		$checkArray[$node->nodeid] = $node->nodeid;
@@ -532,7 +582,10 @@ function addNextNetworkDataD3DepthPosts($json, $node, $depth, $branch, $treeArra
 		$kidsArray = array();
 
 		$children = $treeitem["children"];
-		$countkids = count($children);
+		$countkids = 0;
+		if (is_countable($children)) {
+			$countkids = count($children);
+		}
 		for ($i=0; $i<$countkids; $i++) {
 			$child = $children[$i];
 			if ($child->rolename == "Comment") {
@@ -548,7 +601,10 @@ function addNextNetworkDataD3DepthPosts($json, $node, $depth, $branch, $treeArra
 			}
 		}
 
-		$kidscount = count($kidsArray);
+		$kidscount = 0;
+		if (is_countable($kidsArray)) {
+			$kidscount = count($kidsArray);
+		}
 		if ($kidscount > 0) {
 			$json .=  ',"children": [';
 			for ($i=0; $i<$kidscount; $i++) {
@@ -561,7 +617,10 @@ function addNextNetworkDataD3DepthPosts($json, $node, $depth, $branch, $treeArra
 			$json .=  "]";
 		}
 
-		$commentcount = count($commentsArray);
+		$commentcount = 0;
+		if (is_countable($commentsArray)) {
+			$commentcount = count($commentsArray);
+		}
 		if ($commentcount > 0) {
 			$totalcomments = 0;
 			$json .=  ',"comments": [';
@@ -608,11 +667,17 @@ function getNetworkDataD3Posts($url, $timeout=60) {
 	if (!$reader instanceof Hub_Error) {
 		$conSet = $reader->connectionSet;
 		$cons = $conSet->connections;
-		$countcons = count($cons);
+		$countcons = 0;
+		if (is_countable($cons)) {
+			$countcons = count($cons);
+		}
 
 		$nodeSet = $reader->nodeSet;
 		$nodes = $nodeSet->nodes;
-		$countnodes = count($nodes);
+		$countnodes = 0;
+		if (is_countable($nodes)) {
+			$countnodes = count($nodes);
+		}
 
 		$checkArray = array();
 		$treeArray = array();
@@ -672,14 +737,20 @@ function getNetworkDataD3Posts($url, $timeout=60) {
 		}
 
 		$topNodes = array();
-		$counttop = count($treeArray);
+		$counttop = 0;
+		if (is_countable($treeArray)) {
+			$counttop = count($treeArray);
+		}
 		foreach ($treeArray as $key => $value) {
 			if ($value["node"]->rolename != "Comment" && $value["from"] == 0) {
 				array_push($topNodes, $value["node"]);
 			}
 		}
 
-		$count = count($topNodes);
+		$count = 0;
+		if (is_countable($topNodes)) {
+			$count = count($topNodes);
+		}
 		if ($count == 1) {
 			$depth = 0;
 			$node = $topNodes[0];
@@ -697,7 +768,12 @@ function getNetworkDataD3Posts($url, $timeout=60) {
 			$json .=  '"nodeid": "'.parseToJSON($node->nodeid).'"';
 
 			$treeitem = $treeArray[$node->nodeid];
-			if (isset($treeitem["children"]) && count($treeitem["children"]) > 0 && !array_key_exists($node->nodeid, $checkArray)) {
+			$itemcount = 0;
+			if (is_countable($treeitem["children"])) {
+				$itemcount = count($treeitem["children"]);
+			}
+
+			if (isset($treeitem["children"]) && $itemcount > 0 && !array_key_exists($node->nodeid, $checkArray)) {
 				// make sure you don't recurse the same set of children more than once.
 				$checkArray[$node->nodeid] = $node->nodeid;
 
@@ -706,7 +782,10 @@ function getNetworkDataD3Posts($url, $timeout=60) {
 				$kidsArray = array();
 
 				$children = $treeitem["children"];
-				$countkids = count($children);
+				$countkids = 0;
+				if (is_countable($children)) {
+					$countkids = count($children);
+				}
 				for ($i=0; $i<$countkids; $i++) {
 					$child = $children[$i];
 					if ($child->rolename == "Comment") {
@@ -722,7 +801,10 @@ function getNetworkDataD3Posts($url, $timeout=60) {
 					}
 				}
 
-				$kidscount = count($kidsArray);
+				$kidscount = 0;
+				if (is_countable($kidsArray)) {
+					$kidscount = count($kidsArray);
+				}
 				if ($kidscount > 0) {
 					$json .=  ',"children": [';
 					for ($i=0; $i<$kidscount; $i++) {
@@ -735,7 +817,10 @@ function getNetworkDataD3Posts($url, $timeout=60) {
 					$json .=  "]";
 				}
 
-				$commentcount = count($commentsArray);
+				$commentcount = 0;
+				if (is_countable($commentsArray)) {
+					$commentcount = count($commentsArray);
+				}
 				if ($commentcount > 0) {
 					$totalcomments = 0;
 					$json .=  ',"comments": [';
@@ -803,13 +888,21 @@ function addNextNetworkDataD3Depth2($json, $node, $depth, $branch, $treeArray, $
 	$json .=  '"branch": "'.parseToJSON($branch).'"';
 
 	$treeitem = $treeArray[$node->nodeid];
-	if (isset($treeitem["children"]) && count($treeitem["children"]) > 0 && !array_key_exists($node->nodeid, $checkArray)) {
+	$itemcount = 0;
+	if (is_countable($treeitem["children"])) {
+		$itemcount = count($treeitem["children"]);
+	}
+
+	if (isset($treeitem["children"]) && $itemcount > 0 && !array_key_exists($node->nodeid, $checkArray)) {
 
 		// make sure you don't recurse the same set of children more than once.
 		$checkArray[$node->nodeid] = $node->nodeid;
 
 		$children = $treeitem["children"];
-		$countkids = count($children);
+		$countkids = 0;
+		if (is_countable($children)) {
+			$countkids = count($children);
+		}
 		$json .=  ',"children": [';
 		for ($i=0; $i<$countkids; $i++) {
 			$child = $children[$i];
@@ -850,11 +943,17 @@ function getNetworkDataD32($url, $timeout=60, $withposts=false) {
 	if (!$reader instanceof Hub_Error) {
 		$conSet = $reader->connectionSet;
 		$cons = $conSet->connections;
-		$countcons = count($cons);
+		$countcons = 0;
+		if (is_countable($cons)) {
+			$countcons = count($cons);
+		}
 
 		$nodeSet = $reader->nodeSet;
 		$nodes = $nodeSet->nodes;
-		$countnodes = count($nodes);
+		$countnodes = 0;
+		if (is_countable($nodes)) {
+			$countnodes = count($nodes);
+		}
 
 		$checkArray = array();
 		$treeArray = array();
@@ -914,14 +1013,20 @@ function getNetworkDataD32($url, $timeout=60, $withposts=false) {
 		}
 
 		$topNodes = array();
-		$counttop = count($treeArray);
+		$counttop = 0;
+		if (is_countable($treeArray)) {
+			$counttop = count($treeArray);
+		}
 		foreach ($treeArray as $key => $value) {
 			if ($value["from"] == 0) {
 				array_push($topNodes, $value["node"]);
 			}
 		}
 
-		$count = count($topNodes);
+		$count = 0;
+		if (is_countable($topNodes)) {
+			$count = count($topNodes);
+		}
 		if ($count == 1) {
 			$depth = 0;
 			$node = $topNodes[0];
@@ -939,13 +1044,21 @@ function getNetworkDataD32($url, $timeout=60, $withposts=false) {
 			$json .=  '"nodeid": "'.parseToJSON($node->nodeid).'"';
 
 			$treeitem = $treeArray[$node->nodeid];
-			if (isset($treeitem["children"]) && count($treeitem["children"]) > 0 && !array_key_exists($node->nodeid, $checkArray)) {
+			$itemcount = 0;
+			if (is_countable($treeitem["children"])) {
+				$itemcount = count($treeitem["children"]);
+			}
+
+			if (isset($treeitem["children"]) && $itemcount > 0 && !array_key_exists($node->nodeid, $checkArray)) {
 				// make sure you don't recurse the same set of children more than once.
 				$checkArray[$node->nodeid] = $node->nodeid;
 
 				$json .=  ',"children": [';
 				$children = $treeitem["children"];
-				$countkids = count($children);
+				$countkids = 0;
+				if (is_countable($children)) {
+					$countkids = count($children);
+				}
 				for ($i=0; $i<$countkids; $i++) {
 					$child = $children[$i];
 					$json = addNextNetworkDataD3Depth2($json, $child, 1, $i, $treeArray, $checkArray);
@@ -1001,12 +1114,19 @@ function addNextCirclePackingAttentionDepth($json, $node, $depth,$treeArray, $ch
 	}
 
 	$treeitem = $treeArray[$node->nodeid];
-	if (isset($treeitem["children"]) && count($treeitem["children"]) > 0 && !array_key_exists($node->nodeid, $checkArray)) {
+	$itemcount = 0;
+	if (is_countable($treeitem["children"])) {
+		$itemcount = count($treeitem["children"]);
+	}
+	if (isset($treeitem["children"]) && $itemcount > 0 && !array_key_exists($node->nodeid, $checkArray)) {
 		// make sure you don't recurse the same set of children more than once.
 		$checkArray[$node->nodeid] = $node->nodeid;
 
 		$children = $treeitem["children"];
-		$countkids = count($children);
+		$countkids = 0;
+		if (is_countable($children)) {
+			$countkids = count($children);
+		}
 		$json .=  ',"children": [';
 		for ($i=0; $i<$countkids; $i++) {
 			$child = $children[$i];
@@ -1115,11 +1235,17 @@ function getCirclePackingAttentionData($url, $timeout=60) {
 
 		$conSet = $reader->connectionSet;
 		$cons = $conSet->connections;
-		$countcons = count($cons);
+		$countcons = 0;
+		if (is_countable($cons)) {
+			$countcons = count($cons);
+		}
 
 		$nodeSet = $reader->nodeSet;
 		$nodes = $nodeSet->nodes;
-		$countnodes = count($nodes);
+		$countnodes = 0;
+		if (is_countable($nodes)) {
+			$countnodes = count($nodes);
+		}
 
 		$checkArray = array();
 		$treeArray = array();
@@ -1183,7 +1309,10 @@ function getCirclePackingAttentionData($url, $timeout=60) {
 		//file_put_contents($file, $results);
 
 		$topNodes = array();
-		$counttop = count($treeArray);
+		$counttop = 0;
+		if (is_countable($treeArray)) {
+			$counttop = count($treeArray);
+		}
 		foreach ($treeArray as $key => $value) {
 			if ($value["from"] == 0) {
 				array_push($topNodes, $value["node"]);
@@ -1195,7 +1324,10 @@ function getCirclePackingAttentionData($url, $timeout=60) {
 		$json .=  '"nodetype": "Group",';
 		$json .=  '"nodetypename": "Group",';
 		$json .=  '"color": "#F4F5F7"';
-		$count = count($topNodes);
+		$count = 0;
+		if (is_countable($topNodes)) {
+			$count = count($topNodes);
+		}
 		if ($count > 0) {
 			$json .=  ',"children": [';
 			for ($i=0; $i<$count; $i++) {
@@ -1257,7 +1389,10 @@ function getSunburstData($url, $timeout=60) {
 		$solutionNodes = array();
 
 		$connections = $reader->connectionSet->connections;
-		$count = count($connections);
+		$count = 0;
+		if (is_countable($connections)) {
+			$count = count($connections);
+		}
 
 		$nodeSet = new NodeSet();
 
@@ -1287,7 +1422,10 @@ function getSunburstData($url, $timeout=60) {
 		function loadMoreIssueChildNodes(&$connections, $nextArray, &$parentlist) {
 			global $issueConnections;
 
-			$countj = count($nextArray);
+			$countj = 0;
+			if (is_countable($nextArray)) {
+				$countj = count($nextArray);
+			}
 			for ($j=0; $j<$countj; $j++) {
 				$nextid = $nextArray[$j];
 				$newNextArray = array();
@@ -1311,7 +1449,16 @@ function getSunburstData($url, $timeout=60) {
 					}
 				}
 
-				if (count($newNextArray) > 0 && count($connections) > 0) {
+				$countnew = 0;
+				if (is_countable($newNextArray)) {
+					$countnew = count($newNextArray);
+				}
+				$countcon = 0;
+				if (is_countable($connections)) {
+					$countcon = count($connections);
+				}
+
+				if ($countnew > 0 && $countcon > 0) {
 					loadMoreIssueChildNodes($connections, $newNextArray, $parentlist);
 				}
 			}
@@ -1321,7 +1468,10 @@ function getSunburstData($url, $timeout=60) {
 
 		$nextArray = array();
 
-		$countj = count($issueNodes);
+		$countj = 0;
+		if (is_countable($issueNodes)) {
+			$countj = count($issueNodes);
+		}
 		for ($j=0; $j<$countj; $j++) {
 			$next = $issueNodes[$j];
 			$nextid = $next->nodeid;
@@ -1350,7 +1500,10 @@ function getSunburstData($url, $timeout=60) {
 		}
 
 		// COUNT TYPES FOR DETAILS PANEL
-		$count = count($issueNodes);
+		$count = 0;
+		if (is_countable($issueNodes)) {
+			$count = count($issueNodes);
+		}
 		for ($i=0; $i<$count; $i++) {
 			$node = $issueNodes[$i];
 			if (isset($node->users[0])) {
@@ -1373,7 +1526,10 @@ function getSunburstData($url, $timeout=60) {
 
 				if (array_key_exists($node->nodeid, $issueConnections)) {
 					$cons = $issueConnections[$node->nodeid];
-					$countcons = count($cons);
+					$countcons = 0;
+					if (is_countable($cons)) {
+						$countcons = count($cons);
+					}
 					$localusers = array();
 
 					$debateowner = $node->users[0];
@@ -1443,7 +1599,10 @@ function getSunburstData($url, $timeout=60) {
 		}
 
 		$conSet = new ConnectionSet();
-		$count = count($usersToDebates);
+		$count = 0;
+		if (is_countable($usersToDebates)) {
+			$count = count($usersToDebates);
+		}
 
 		//$userHashtable = $userCheck;
 
@@ -1529,7 +1688,10 @@ function getTopicSpaceData($url, $timeout=60) {
 	$data = array();
 	if (!$reader instanceof Hub_Error) {
 		$nodes = $reader->nodeSet->nodes;
-		$count = count($nodes);
+		$count = 0;
+		if (is_countable($nodes)) {
+			$count = count($nodes);
+		}
 		$nodeArray = array();
 		for ($i=0; $i<$count; $i++) {
 			$node = $nodes[$i];
@@ -1620,7 +1782,10 @@ function getBiasSpaceData($url, $timeout=60) {
 	$data = array();
 	if (!$reader instanceof Hub_Error) {
 		$nodes = $reader->nodeSet->nodes;
-		$count = count($nodes);
+		$count = 0;
+		if (is_countable($nodes)) {
+			$count = count($nodes);
+		}
 		$nodeArray = array();
 		for ($i=0; $i<$count; $i++) {
 			$node = $nodes[$i];
@@ -1709,7 +1874,10 @@ function getActivityAnalysisData($url, $timeout=60, $withposts=false) {
 	$data = array();
 	if (!$reader instanceof Hub_Error) {
 		$nodes = $reader->nodeSet->nodes;
-		$count = count($nodes);
+		$count = 0;
+		if (is_countable($nodes)) {
+			$count = count($nodes);
+		}
 		for ($i=0; $i<$count; $i++) {
 			if (isset($nodes[$i]->activity)) {
 				foreach($nodes[$i]->activity as $activity) {
@@ -1764,7 +1932,10 @@ function getUserActivityAnalysisData($url, $timeout=60, $withposts=false) {
 	if (!$reader instanceof Hub_Error) {
 		$nodeSet = $reader->nodeSet;
 		$nodes = $nodeSet->nodes;
-		$count = count($nodes);
+		$count = 0;
+		if (is_countable($nodes)) {
+			$count = count($nodes);
+		}
 		$userArray = $reader->userArray;
 
 		$usersCheck = array();
@@ -1793,6 +1964,7 @@ function getUserActivityAnalysisData($url, $timeout=60, $withposts=false) {
 						$username = "";
 						if (!in_array($userid, $usersCheck)) {
 							array_push($usersCheck, $userid);
+
 							$username = $LNG->STATS_ACTIVITY_USER_ANONYMOUS.(count($usersCheck));
 							if ($activityuser->name != $activityuser->userid && $activityuser->name != "") {
 								$username = $activityuser->name;
@@ -1919,7 +2091,10 @@ function getInterestNetworkData($url, $timeout=60,$withposts=false) {
 		$conSet = $reader->connectionSet;
 		$conSet->biggest = $biggestsize;
 		$cons = $conSet->connections;
-		$countcons = count($cons);
+		$countcons = 0;
+		if (is_countable($cons)) {
+			$countcons = count($cons);
+		}
 
 		for ($i=0; $i<$countcons; $i++) {
 			$con = $cons[$i];
@@ -1978,11 +2153,17 @@ function getCommunitiesNetworkData($url, $timeout=60,$withposts=false) {
 
 		if (!isset($results[0]->error)	&& isset($results[0]->data)) {
 			$metricdata = $results[0]->data;
-			$count = count($metricdata);
+			$count = 0;
+			if (is_countable($metricdata)) {
+				$count = count($metricdata);
+			}
 			$communitycount = $count;
 			for ($i=0; $i<$count; $i++) {
 				$nextcommunity = $metricdata[$i];
-				$countj = count($nextcommunity);
+				$countj = 0;
+				if (is_countable($nextcommunity)) {
+					$countj = count($nextcommunity);
+				}
 				for ($j=0; $j<$countj; $j++) {
 					$nodeid = $nextcommunity[$j];
 					if (!array_key_exists($nodeid, $metricarray) && $nodeid != 'null') {
@@ -1997,7 +2178,10 @@ function getCommunitiesNetworkData($url, $timeout=60,$withposts=false) {
 		$conSet = $reader->connectionSet;
 		$conSet->communitycount = $communitycount;
 		$cons = $conSet->connections;
-		$countcons = count($cons);
+		$countcons = 0;
+		if (is_countable($cons)) {
+			$countcons = count($cons);
+		}
 
 		for ($i=0; $i<$countcons; $i++) {
 			$con = $cons[$i];
@@ -2051,7 +2235,10 @@ function getMiniUserContributions($url, $timeout=60, $withvotes=false, $withpost
 	if (!$reader instanceof Hub_Error) {
 		$nodeSet = $reader->nodeSet;
 		$nodes = $nodeSet->nodes;
-		$count = count($nodes);
+		$count = 0;
+		if (is_countable($nodes)) {
+			$count = count($nodes);
+		}
 
 		for ($i=0; $i<$count; $i++) {
 			$node = $nodes[$i];
@@ -2138,7 +2325,10 @@ function getMiniUserViewings($url, $timeout=60, $withposts=false) {
 	if (!$reader instanceof Hub_Error) {
 		$nodeSet = $reader->nodeSet;
 		$nodes = $nodeSet->nodes;
-		$count = count($nodes);
+		$count = 0;
+		if (is_countable($nodes)) {
+			$count = count($nodes);
+		}
 
 		for ($i=0; $i<$count; $i++) {
 			$node = $nodes[$i];
@@ -2155,7 +2345,10 @@ function getMiniUserViewings($url, $timeout=60, $withposts=false) {
 
 	$viewDateArray = array();
 
-	$count = count($allViews);
+	$count = 0;
+	if (is_countable($allViews)) {
+		$count = count($allViews);
+	}
 	for ($i=0; $i<$count; $i++) {
 		$nextview = $allViews[$i];
 		if (isset($nextview)) {
@@ -2208,7 +2401,10 @@ function getMiniHealthParticipation($url, $timeout=60, $withposts=false) {
 	if (!$reader instanceof Hub_Error) {
 		$consSet = $reader->connectionSet;
 		$cons = $consSet->connections;
-		$count = count($cons);
+		$count = 0;
+		if (is_countable($cons)) {
+			$count = count($cons);
+		}
 		$userCheck = array();
 
 		for ($i=0; $i<$count;$i++) {
@@ -2263,7 +2459,10 @@ function getMiniHealthViewing($url, $timeout=60, $withposts=false) {
 	if (!$reader instanceof Hub_Error) {
 		$nodeSet = $reader->nodeSet;
 		$nodes = $nodeSet->nodes;
-		$count = count($nodes);
+		$count = 0;
+		if (is_countable($nodes)) {
+			$count = count($nodes);
+		}
 
 		$allViews = array();
 
@@ -2290,7 +2489,10 @@ function getMiniHealthViewing($url, $timeout=60, $withposts=false) {
 		$timeTwoWeeksAgo = strtotime("-2 week");
 		$timeFiveDaysAgo = strtotime("-5 day");
 
-		$countviews = count($allViews);
+		$countviews = 0;
+		if (is_countable($allViews)) {
+			$countviews = count($allViews);
+		}
 		for ($i=0; $i<$countviews; $i++) {
 			$nextview = $allViews[$i];
 			if (isset($nextview)) {
@@ -2364,7 +2566,10 @@ function getMiniHealthContribution($url, $timeout=60, $withvotes=false, $withpos
 		$timeTwoWeeksAgo = strtotime("-2 week");
 		$timeFiveDaysAgo = strtotime("-5 day");
 
-		$count = count($nodes);
+		$count = 0;
+		if (is_countable($nodes)) {
+			$count = count($nodes);
+		}
 		for ($i=0; $i<$count; $i++) {
 			$next = $nodes[$i];
 			if (isset($next)) {
@@ -2427,7 +2632,10 @@ function getMiniWordStats($url, $timeout=60, $withposts=false) {
 	if (!$reader instanceof Hub_Error) {
 		$nodeSet = $reader->nodeSet;
 		$nodes = $nodeSet->nodes;
-		$count = count($nodes);
+		$count = 0;
+		if (is_countable($nodes)) {
+			$count = count($nodes);
+		}
 
 		$minWordCount = 0;
 		$maxWordCount = 0;
@@ -2510,7 +2718,11 @@ function embedCountWords($str){
     if ($results === FALSE) {
     	return 0;
     } else {
-    	return count($results);
+		$count = 0;
+		if (is_countable($results)) {
+			$count = count($results);
+		}
+    	return $count;
     }
 }
 
@@ -2541,14 +2753,20 @@ function getAlertsData($url, $alerttypes, $timeout=60,$userids="",$root="") {
 	$data = array();
 	if (!$reader instanceof Hub_Error) {
 		$nodes = $reader->nodeSet->nodes;
-		$count = count($nodes);
+		$count = 0;
+		if (is_countable($nodes)) {
+			$count = count($nodes);
+		}
 		$nodeArray = array();
 		for ($i=0; $i<$count; $i++) {
 			$node = $nodes[$i];
 			$nodeArray[$node->nodeid] = $node;
 		}
 		$users = $reader->userSet->users;
-		$count = count($users);
+		$count = 0;
+		if (is_countable($users)) {
+			$count = count($users);
+		}
 		$userArray = array();
 
 		for ($i=0; $i<$count; $i++) {
@@ -2566,155 +2784,160 @@ function getAlertsData($url, $alerttypes, $timeout=60,$userids="",$root="") {
 
 		// {warnings: [string,* ], responses: [ result,* ] }
 		$replyObj = json_decode($reply);
-		$results = $replyObj->responses;
 
-		if (!isset($results[0]->error) && isset($results[0]->data)) {
-			$replydata = $results[0]->data;
+		if (isset($replyObj->responses)) {
+			$results = $replyObj->responses;
+			if (!isset($results[0]->error) && isset($results[0]->data)) {
+				$replydata = $results[0]->data;
 
-			//$useridlist = $results[0]->users;
-			//$typeslist = $results[0]->types;
-			/*
-			userAlert =
-			{
-			  user:userID,
-			  suggestions:[suggestion,*]
-			}
-
-			suggestion =
-			{
-			  @type:alertype,
-			  targetType:user | post,
-			  targetID:targetID,
-			  arguments:{argName:argValue,*}
-			}
-			*/
-
-			$alertArray = array(); //post by alert type
-			$userAlertArray = array(); // post by user by alert type
-			$finalNodeArray = new NodeSet();
-			$finalUserArray = new UserSet();
-
-			$count = count($replydata);
-			for ($i=0; $i<$count; $i++) {
-				$next = $replydata[$i];
-				$userid = $next->userID;
-				if ($userid != '*') {
-					$user = $userArray[$userid];
-					$finalUserArray->add($user);
+				//$useridlist = $results[0]->users;
+				//$typeslist = $results[0]->types;
+				/*
+				userAlert =
+				{
+				  user:userID,
+				  suggestions:[suggestion,*]
 				}
-				$suggestionsArray = $next->suggestions;
 
-				$countj = count($suggestionsArray);
-				for ($j=0; $j<$countj; $j++) {
-					$suggestion = $suggestionsArray[$j];
+				suggestion =
+				{
+				  @type:alertype,
+				  targetType:user | post,
+				  targetID:targetID,
+				  arguments:{argName:argValue,*}
+				}
+				*/
 
-					//error_log(print_r($next, true));
+				$alertArray = array(); //post by alert type
+				$userAlertArray = array(); // post by user by alert type
+				$finalNodeArray = new NodeSet();
+				$finalUserArray = new UserSet();
 
-					$alertype = $suggestion->{'@type'};
-					$nextpost = $suggestion->targetID;
-
-					//if (isset($suggestion->arguments)) {
-					//	$argumentsArray = $suggestion->arguments;
-					//}
-
-					$targetType = $suggestion->targetType;
-					if ($targetType == 'post' && isset($nodeArray[$nextpost])) {
-						$nextObj = $nodeArray[$nextpost];
-						$finalNodeArray->add($nextObj);
-					} else if ($targetType == 'user' && isset($userArray[$nextpost])){
-						$nextObj = $userArray[$nextpost];
-						$finalUserArray->add($nextObj);
+				$count = 0;
+				if (is_countable($replydata)) {
+					$count = count($replydata);
+				}
+				for ($i=0; $i<$count; $i++) {
+					$next = $replydata[$i];
+					$userid = $next->userID;
+					if ($userid != '*') {
+						$user = $userArray[$userid];
+						$finalUserArray->add($user);
 					}
+					$suggestionsArray = $next->suggestions;
 
-					if (!isset($nextObj)) {
-						continue;
+					$countj = 0;
+					if (is_countable($suggestionsArray)) {
+						$countj = count($suggestionsArray);
 					}
+					for ($j=0; $j<$countj; $j++) {
+						$suggestion = $suggestionsArray[$j];
 
-					switch ($alertype) {
-						// MAP ALERTS
-						case $CFG->ALERT_LURKING_USER;
-						case $CFG->ALERT_INACTIVE_USER;
-						case $CFG->ALERT_IGNORED_POST:
-						case $CFG->ALERT_MATURE_ISSUE:
-						case $CFG->ALERT_IMMATURE_ISSUE:
-						case $CFG->ALERT_ORPHANED_IDEA:
-						case $CFG->ALERT_EMERGING_WINNER:
-						case $CFG->ALERT_CONTENTIOUS_ISSUE:
-						case $CFG->ALERT_INCONSISTENT_SUPPORT:
-						case $CFG->ALERT_HOT_POST:
-						case $CFG->ALERT_CONTROVERSIAL_IDEA:
-						case $CFG->ALERT_USER_GONE_INACTIVE:
-						case $CFG->ALERT_WELL_EVALUATED_IDEA:
-						case $CFG->ALERT_POORLY_EVALUATED_IDEA:
-						case $CFG->ALERT_RATING_IGNORED_ARGUMENT:
-						case $CFG->ALERT_USER_IGNORED_COMPETITORS:
-						case $CFG->ALERT_USER_IGNORED_ARGUMENTS:
-						case $CFG->ALERT_USER_IGNORED_RESPONSES:
-							// Store data just by alert type
-							if (array_key_exists($alertype,$alertArray)) {
-								$array = $alertArray[$alertype];
-								array_push($array, $nextpost);
-								$alertArray[$alertype] = $array;
-							} else {
-								$array = array();
-								array_push($array, $nextpost);
-								$alertArray[$alertype] = $array;
-							}
-							break;
+						//error_log(print_r($next, true));
 
-						// USER SPECIFIC ALERTS
-						case $CFG->ALERT_UNSEEN_BY_ME:
-						case $CFG->ALERT_RESPONSE_TO_ME:
-						case $CFG->ALERT_UNRATED_BY_ME:
-						case $CFG->ALERT_INTERESTING_TO_ME:
-						case $CFG->ALERT_INTERESTING_TO_PEOPLE_LIKE_ME:
-						case $CFG->ALERT_SUPPORTED_BY_PEOPLE_LIKE_ME:
-						case $CFG->ALERT_PEOPLE_WITH_INTERESTS_LIKE_MINE:
-						case $CFG->ALERT_PEOPLE_WHO_AGREE_WITH_ME:
-						case $CFG->ALERT_UNSEEN_RESPONSE:
-						case $CFG->ALERT_UNSEEN_COMPETITOR:
+						$alertype = $suggestion->{'@type'};
+						$nextpost = $suggestion->targetID;
 
-							if ($userid != null && $userid != "") {
-								if (array_key_exists($userid, $userAlertArray)) {
-									$typesarray = $userAlertArray[$userid];
-									if (array_key_exists($alertype,$typesarray)) {
-										$postArray = $typesarray[$alertype];
-										array_push($postArray, $nextpost);
-										$typesarray[$alertype] = $postArray;
-										$userAlertArray[$userid] = $typesarray;
+						//if (isset($suggestion->arguments)) {
+						//	$argumentsArray = $suggestion->arguments;
+						//}
+
+						$targetType = $suggestion->targetType;
+						if ($targetType == 'post' && isset($nodeArray[$nextpost])) {
+							$nextObj = $nodeArray[$nextpost];
+							$finalNodeArray->add($nextObj);
+						} else if ($targetType == 'user' && isset($userArray[$nextpost])){
+							$nextObj = $userArray[$nextpost];
+							$finalUserArray->add($nextObj);
+						}
+
+						if (!isset($nextObj)) {
+							continue;
+						}
+
+						switch ($alertype) {
+							// MAP ALERTS
+							case $CFG->ALERT_LURKING_USER;
+							case $CFG->ALERT_INACTIVE_USER;
+							case $CFG->ALERT_IGNORED_POST:
+							case $CFG->ALERT_MATURE_ISSUE:
+							case $CFG->ALERT_IMMATURE_ISSUE:
+							case $CFG->ALERT_ORPHANED_IDEA:
+							case $CFG->ALERT_EMERGING_WINNER:
+							case $CFG->ALERT_CONTENTIOUS_ISSUE:
+							case $CFG->ALERT_INCONSISTENT_SUPPORT:
+							case $CFG->ALERT_HOT_POST:
+							case $CFG->ALERT_CONTROVERSIAL_IDEA:
+							case $CFG->ALERT_USER_GONE_INACTIVE:
+							case $CFG->ALERT_WELL_EVALUATED_IDEA:
+							case $CFG->ALERT_POORLY_EVALUATED_IDEA:
+							case $CFG->ALERT_RATING_IGNORED_ARGUMENT:
+							case $CFG->ALERT_USER_IGNORED_COMPETITORS:
+							case $CFG->ALERT_USER_IGNORED_ARGUMENTS:
+							case $CFG->ALERT_USER_IGNORED_RESPONSES:
+								// Store data just by alert type
+								if (array_key_exists($alertype,$alertArray)) {
+									$array = $alertArray[$alertype];
+									array_push($array, $nextpost);
+									$alertArray[$alertype] = $array;
+								} else {
+									$array = array();
+									array_push($array, $nextpost);
+									$alertArray[$alertype] = $array;
+								}
+								break;
+
+							// USER SPECIFIC ALERTS
+							case $CFG->ALERT_UNSEEN_BY_ME:
+							case $CFG->ALERT_RESPONSE_TO_ME:
+							case $CFG->ALERT_UNRATED_BY_ME:
+							case $CFG->ALERT_INTERESTING_TO_ME:
+							case $CFG->ALERT_INTERESTING_TO_PEOPLE_LIKE_ME:
+							case $CFG->ALERT_SUPPORTED_BY_PEOPLE_LIKE_ME:
+							case $CFG->ALERT_PEOPLE_WITH_INTERESTS_LIKE_MINE:
+							case $CFG->ALERT_PEOPLE_WHO_AGREE_WITH_ME:
+							case $CFG->ALERT_UNSEEN_RESPONSE:
+							case $CFG->ALERT_UNSEEN_COMPETITOR:
+
+								if ($userid != null && $userid != "") {
+									if (array_key_exists($userid, $userAlertArray)) {
+										$typesarray = $userAlertArray[$userid];
+										if (array_key_exists($alertype,$typesarray)) {
+											$postArray = $typesarray[$alertype];
+											array_push($postArray, $nextpost);
+											$typesarray[$alertype] = $postArray;
+											$userAlertArray[$userid] = $typesarray;
+										} else {
+											$postArray = array();
+											array_push($postArray, $nextpost);
+											$typesarray[$alertype] = $postArray;
+											$userAlertArray[$userid] = $typesarray;
+										}
 									} else {
+										$typesarray = array();
 										$postArray = array();
 										array_push($postArray, $nextpost);
 										$typesarray[$alertype] = $postArray;
 										$userAlertArray[$userid] = $typesarray;
 									}
-								} else {
-									$typesarray = array();
-									$postArray = array();
-									array_push($postArray, $nextpost);
-									$typesarray[$alertype] = $postArray;
-									$userAlertArray[$userid] = $typesarray;
 								}
-							}
-							break;
-						default:
-							// Do nothing
+								break;
+							default:
+								// Do nothing
+						}
 					}
 				}
+
+				$data = new alertdata();
+				$data->alertarray = $alertArray; //nodes by alert type
+				$data->userarray = $userAlertArray; // nodes by user by alert type
+				$data->nodes = $finalNodeArray;
+				$data->users = $finalUserArray;
+
+				//$data->users = $reader->userSet; //users
+			} else {
+				$data = new alertdata();
 			}
-
-			$data = new alertdata();
-			$data->alertarray = $alertArray; //nodes by alert type
-			$data->userarray = $userAlertArray; // nodes by user by alert type
-			$data->nodes = $finalNodeArray;
-			$data->users = $finalUserArray;
-
-			//$data->users = $reader->userSet; //users
-
-			//error_log(count($finalNodeArray->nodes));
-			//error_log(print_r($data, true));
-		} else {
-			$data = new alertdata();
 		}
 	}
 

@@ -894,15 +894,14 @@ function simpleBarChartTypes(container, data, width, height) {
 	});
 
 	var chart = nv.models.discreteBarChart()
+		  .options({duration: 350})
 	      .width(width)
 	      .height(height)
 		  .margin({top: 5, right: 10, bottom: 10, left: 25})
 		  .x(function(d) { return d.label })
 		  .y(function(d) { return d.value })
 		  .staggerLabels(false)    //Too many bars and not enough room? Try staggering labels.
-		  .tooltips(true)        //Do not show tooltips
 		  .showValues(false)       //...instead, show the bar value right on top of each bar.
-		  .transitionDuration(350)
 		  .showXAxis(false)
 		  ;
 
@@ -934,15 +933,14 @@ function simpleBarChartUsers(container, data, width, height) {
 	});
 
 	var chart = nv.models.discreteBarChart()
+		  .options({duration: 350})
 	      .width(width)
 	      .height(height)
 		  .margin({top: 5, right: 10, bottom: 10, left: 25})
 		  .x(function(d) { return d.label })
 		  .y(function(d) { return d.value })
 		  .staggerLabels(false)    //Too many bars and not enough room? Try staggering labels.
-		  .tooltips(true)        //Do not show tooltips
 		  .showValues(false)       //...instead, show the bar value right on top of each bar.
-		  .transitionDuration(350)
 		  .showXAxis(false)
 		  ;
 

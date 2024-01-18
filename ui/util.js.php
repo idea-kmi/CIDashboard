@@ -25,7 +25,8 @@
  /** @author Michelle Bachler, KMi, The Open University */
 
 header('Content-Type: text/javascript;');
-include_once('../config.php');
+include_once(__DIR__ . '/../config.php');
+
 
 // Colours for the vis node types
 echo "var challengebackpale = '".$CFG->challengebackpale."';";
@@ -454,12 +455,39 @@ function fadeMessage(messageStr) {
 }
 
 function fadein(){
-    new Effect.Opacity("message", {duration:1.0, from:0.0, to:1.0});
+	var element = document.getElementById("message");
+	element.style.opacity = 0.0;
+	fadeinloop();
+}
+
+function fadeinloop(){
+	var element = document.getElementById("message");
+
+	element.style.opacity += 0.1;
+	if(element.style.opacity > 1.0) {
+		element.style.opacity = 1.0;
+	} else {
+		setTimeout("fadeinloop()", 100);
+	}
 }
 
 function fadeout(){
-    new Effect.Opacity("message", {duration:1.5, from:1.0, to:0.0});
+	var element = document.getElementById("message");
+	element.style.opacity = 1.0;
+	fadeoutloop();
 }
+
+function fadeoutloop(){
+	var element = document.getElementById("message");
+
+	element.style.opacity -= 0.1;
+	if(element.style.opacity < 0.0) {
+		element.style.opacity = 0.0;
+	} else {
+		setTimeout("fadeoutloop()", 100);
+	}
+}
+
 
 function getLoading(infoText){
     var loadDiv = new Element("div",{'class':'loading'});
@@ -826,6 +854,15 @@ function textAreaPrompt(messageStr, text, connid, handler, refresher) {
     var buttonCancel = new Element('input', { 'style':'margin-left: 5px; margin-top: 5px; font-size: 8pt', 'type':'button', 'value':'<?php echo $LNG->FORM_BUTTON_CLOSE; ?>'});
 	Event.observe(buttonCancel,'click', textAreaCancel);
 
+	// To remove prototype - all needs to be re-written in plain javascript: e.g.
+    //var buttonCancel = document.createElement("input");
+    //buttonCancel.setAttribute('style', 'margin-left: 5px; margin-top: 5px; font-size: 8pt');
+    //buttonCancel.setAttribute('type', 'button)';
+    //buttonCancel.value = '<?php echo $LNG->FORM_BUTTON_CLOSE; ?>';
+	//buttonCancel.addEventListener("click",  function() {
+    //	textAreaCancel();
+	//});
+
 	$('prompttext').insert('<h2>'+messageStr+'</h2>');
 	$('prompttext').insert(textarea1);
 	if (connid != "") {
@@ -905,5 +942,26 @@ function postMessageToPage(source,eventname,action,targettype,target) {
 		message += '}';
 
 		top.postMessage(message,"*");
+	}
+}
+
+/**
+ * Add new new Script tag to the current HTML page dynamically to load a local javascript file on demand.
+ *
+ * @param url The url to add as the src on the new script tag
+ * @param id If given set as the id of the new script tag
+ */
+function addScriptDynamically(url, id) {
+
+	// only allow the import of local code;
+	if (url.indexOf(URL_ROOT) == 0) {
+		var headarea = document.getElementsByTagName("head").item(0);
+		var scriptobj = document.createElement("script");
+		scriptobj.setAttribute("type", "text/javascript");
+		scriptobj.setAttribute("src", url);
+		if (id) {
+			scriptobj.setAttribute("id", id);
+		}
+		headarea.appendChild(scriptobj);
 	}
 }

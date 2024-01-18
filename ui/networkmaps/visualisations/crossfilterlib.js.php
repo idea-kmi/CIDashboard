@@ -143,7 +143,7 @@ function displayActivityCrossFilterD3Vis(data, width) {
 		.margins({top: 10, left: 10, right: 15, bottom: 20})
 		.group(monthGroup)
 		.dimension(monthFilter)
-		.colors(colorbrewer.Blues[11])
+		.ordinalColors(colorbrewer.BrBG[11])
 		.label(function (d) { return d.key.split(".")[1]; })
 		.labelOffsetX(5)
 		.labelOffsetY(13)
@@ -178,7 +178,7 @@ function displayActivityCrossFilterD3Vis(data, width) {
 		.margins({top: 10, left: 10, right: 15, bottom: 20})
 		.group(dayOfWeekGroup)
 		.dimension(dayOfWeek)
-		.colors(dayscolor)
+		.ordinalColors(dayscolor)
 		.label(function (d) { return d.key.split(".")[1]; })
 		.labelOffsetX(5)
 		.labelOffsetY(13)
@@ -210,7 +210,7 @@ function displayActivityCrossFilterD3Vis(data, width) {
 		.margins({top: 10, left: 10, right: 15, bottom: 20})
 		.group(nodetypeGroup)
 		.dimension(nodetype)
-		.colors([issueback,solutionback,proback,conback,argumentback,ideaback])
+		.ordinalColors([issueback,solutionback,proback,conback,argumentback,ideaback])
 		.label(function (d) { return d.key.split(".")[1];  })
 		.labelOffsetX(5)
 		.labelOffsetY(20)
@@ -233,7 +233,7 @@ function displayActivityCrossFilterD3Vis(data, width) {
 		.margins({top: 10, left: 10, right: 15, bottom: 20})
 		.group(activitytypeGroup)
 		.dimension(activitytype)
-		.colors(activitycolor)
+		.ordinalColors(activitycolor)
 		.label(function (d) { return d.key; })
 		.labelOffsetX(5)
 		.labelOffsetY(20)
@@ -248,7 +248,7 @@ function displayActivityCrossFilterD3Vis(data, width) {
 		.width(180)
 		.height(180)
 		.transitionDuration(500)
-		.colors(activitycolor)
+		.ordinalColors(activitycolor)
 		// (optional) define color domain to match your data domain if you want to bind data or color
 		.colorDomain([-1750, 1644])
 		// (optional) define color value accessor
@@ -268,7 +268,7 @@ function displayActivityCrossFilterD3Vis(data, width) {
 	    .width(180)
 	    .height(180)
 	    .transitionDuration(500)
-		.colors(colorScale)
+		.ordinalColors(colorScale)
 	    .radius(90)
 	    .innerRadius(30)
 	    .dimension(nodetype)
@@ -489,7 +489,7 @@ function displayUserActivityCrossFilterD3Vis(data, width, userdata) {
 		.stack(usersGrouped, getNodeTitleAntecedence("Argument", false), function(d){return d.value.totalArgument;})
 		.stack(usersGrouped, getNodeTitleAntecedence("Idea", false), function(d){return d.value.totalIdea;})
 		.stack(usersGrouped, "<?php echo $LNG->STATS_ACTIVITY_VOTE; ?>", function(d){return d.value.totalVote;})
-		.colors([issueback, solutionback, proback, conback, argumentback, ideaback, voteback])
+		.ordinalColors([issueback, solutionback, proback, conback, argumentback, ideaback, voteback])
 		.dimension(user)
 		.elasticY(false)
 		.yAxisPadding(0)
@@ -582,33 +582,6 @@ function displayUserActivityCrossFilterD3Vis(data, width, userdata) {
 		.group(all);
 
 	dc.renderAll();
-
-	//ADD TOOLTIPS
-    /*var tipCrossFilter = d3.tip()
-		.attr('class', 'd3-tip')
-		.offset([10, 50])
-		.html(function(d) {
-			alert('d:'+d.toSource());
-			//var hint = '<div class="selectedback" style="padding:2px;border:1px solid dimgray">';
-			//if (d.id != d.name) {
-			//	hint += d.name + " (click to view)";
-			//} else {
-			//	hint += d.name;
-			//}
-			//hint += '</div>';
-
-			//return hint;
-		})
-
-	d3.select("svg").call(tipCrossFilter);
-    d3.select("#user-chart .bar")
-		.on('mouseover', function (d,i) {
-			tipCrossFilter.show(d)
-		})
-		.on('mouseout', function (d,i) {
-		  	tipCrossFilter.hide(d)
-		});
-	*/
 
 	/** LEGEND **/
 	var legend = d3LegendInactive();

@@ -24,7 +24,7 @@
  ********************************************************************************/
  /** Author: Michelle Bachler, KMi, The Open University **/
 
-include_once('../../../cidashboard/config.php');
+require_once(__DIR__ . '/../../../config.php');
 
 class catalyst_jsonld_reader {
 
@@ -203,7 +203,11 @@ class catalyst_jsonld_reader {
 			$this->processObject($item);
 
 			// PROCESS USERS INTO SET AND ADD ACTIVITIES AND PROFILE INFO
-			$countUsers = count($this->userArray);
+			$countUsers = 0;
+			if (is_countable($this->userArray)) {
+				$countUsers = count($this->userArray);
+			}
+
 			if ($countUsers > 0) {
 				foreach($this->userArray as $userid => $user) {
 
@@ -242,7 +246,10 @@ class catalyst_jsonld_reader {
 			}
 
 			// PROCESS NODES INTO SET AND ADD VOTES AND ACTIVITIES AND USERS
-			$countNodes = count($this->nodeArray);
+			$countNodes = 0;
+			if (is_countable($this->nodeArray)) {
+				$countNodes = count($this->nodeArray);
+			}
 			if ($countNodes > 0) {
 				foreach($this->nodeArray as $nodeid => $node) {
 					if (array_key_exists($nodeid, $this->nodeHistoryArray)) {
@@ -285,11 +292,17 @@ class catalyst_jsonld_reader {
 					$this->nodeSet->add($node);
 				}
 
-				$this->nodeSet->count = count($this->nodeSet->nodes);
+				$this->nodeSet->count = 0;
+				if (is_countable($this->nodeSet->nodes)) {
+					$this->nodeSet->count = count($this->nodeSet->nodes);
+				}
 				$this->nodeSet->totalno = $this->nodeSet->count;
 			}
 
-			$count = count($this->linkArray);
+			$count = 0;
+			if (is_countable($this->linkArray)) {
+				$count = count($this->linkArray);
+			}
 			if ($count > 0) {
 				// PREPROCESS to get linktype counts
 				for($i=0; $i<$count; $i++) {
@@ -382,7 +395,10 @@ class catalyst_jsonld_reader {
 					}
 				}
 
-				$this->connectionSet->count = count($this->connectionSet->connections);
+				$this->connectionSet->count = 0;
+				if (is_countable($this->connectionSet->connections)) {
+					$this->connectionSet->count= count($this->connectionSet->connections);
+				}
 				$this->connectionSet->totalno = $this->connectionSet->count;
 			}
 
@@ -397,7 +413,10 @@ class catalyst_jsonld_reader {
 
 	function processArray($graphid, $dataArray) {
 		if (is_array($dataArray)) {
-			$count2 = count($dataArray);
+			$count2 = 0;
+			if (is_countable($dataArray)) {
+				$count2 = count($dataArray);
+			}
 			for ($j=0; $j < $count2; $j++) {
 				$next = $dataArray[$j];
 				$this->processObject($next, $graphid);
@@ -652,7 +671,10 @@ class catalyst_jsonld_reader {
 				}
 			} else {
 				$ideaslist = $next->postLinkedToIdea;
-				$countideas = count($ideaslist);
+				$countideas = 0;
+				if (is_countable($ideaslist)) {
+					$countideas= count($ideaslist);
+				}
 				for ($i=0; $i<$countideas; $i++) {
 					$nextidea = $ideaslist[$i];
 					if (!in_array($id.$nextidea, $this->linkCheckArray)) {

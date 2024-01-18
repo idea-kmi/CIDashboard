@@ -45,12 +45,10 @@ if ($dashboard) {
 <script type='text/javascript'>
 var NODE_ARGS = new Array();
 
-Event.observe(window, 'load', function() {
-	NODE_ARGS['jsondata'] = <?php echo $json; ?>;
+document.addEventListener('DOMContentLoaded', function() {
+	NODE_ARGS['jsondata'] = <?php if ($json === FALSE || $json === "") { echo '""'; } else {echo $json;} ?>;
 
-	var bObj = new JSONscriptRequest('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-sunburstnetworkbranch.js.php"); ?>');
-    bObj.buildScriptTag();
-    bObj.addScriptTag();
+	addScriptDynamically('<?php echo $HUB_FLM->getCodeWebPath("ui/networkmaps/embed-sunburstnetworkbranch.js.php"); ?>', 'sunburstnetworkbranch-script');
 });
 </script>
 
