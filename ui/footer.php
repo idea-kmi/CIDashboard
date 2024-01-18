@@ -23,37 +23,64 @@
  *                                                                              *
  ********************************************************************************/
 ?>
-</div> <!-- end innertube -->
-</div> <!-- end content -->
-</div> <!-- end contentwrapper -->
-</div> <!-- end main -->
+		</div> <!-- end innertube -->
+		</div> <!-- end content -->
+		</div> <!-- end contentwrapper -->
+		</div> <!-- end main -->
 
-<div id="footer" style="height:40px;">
-	<div style="height:25px; margin-left:10px;margin-right: 30px; margin-top: 20px;">
-
-		<div style="float:right;border:margin-right:15px;">
-			<div style="clear:both;float:right; line-height:14px; margin-top:10px;">
-				<a href="<?php print($CFG->homeAddress);?>ui/pages/conditionsofuse.php"><?php echo $LNG->FOOTER_TERMS_LINK; ?></a> |
-				<a href="http://kmi.open.ac.uk/accessibility/"><?php echo $LNG->FOOTER_ACCESSIBILITY; ?></a> |
-				<a href="<?php print($CFG->homeAddress);?>ui/pages/privacy.php"><?php echo $LNG->FOOTER_PRIVACY_LINK; ?></a> |
-				<a href="mailto:<?php echo $CFG->EMAIL_REPLY_TO; ?>"><?php echo $LNG->FOOTER_CONTACT_LINK; ?></a>
+		<div id="footer" class="footerback footer bg-light border-top">
+			<div class="container-fluid">
+				<div class="d-flex d-column p-4 justify-content-between">
+					<div class="d-block px-4">
+						<span><?php echo $LNG->FOOTER_DEVELOPED_BY; ?> </span>
+						<a href="http://idea.kmi.open.ac.uk/" title="<?php echo $LNG->FOOTER_HINT; ?>">
+							<img alt="Idea logo" class="footer-logo" src="<?php echo $HUB_FLM->getImagePath('IDea-logo-URL-hi-res.png'); ?>" />
+						</a>
+					</div>
+					<div class="d-block px-4 mb-2 text-end">
+						<a href="<?php print($CFG->homeAddress);?>ui/pages/conditionsofuse.php"><?php echo $LNG->FOOTER_TERMS_LINK; ?></a> |
+						<a href="http://kmi.open.ac.uk/accessibility/"><?php echo $LNG->FOOTER_ACCESSIBILITY; ?></a> |
+						<a href="<?php print($CFG->homeAddress);?>ui/pages/privacy.php"><?php echo $LNG->FOOTER_PRIVACY_LINK; ?></a> |
+						<a href="mailto:<?php echo $CFG->EMAIL_REPLY_TO; ?>?subject=<?php echo $CFG->SITE_TITLE; ?>"><?php echo $LNG->FOOTER_CONTACT_LINK; ?></a>
+					</div>
+				</div>
+				<div class="d-block text-center"><small><a href="<?php echo $HUB_FLM->getCodeWebPath('ui/pages/releases.php'); ?>" target="blank">version: <?php echo $CFG->VERSION; ?></a></small></div>
 			</div>
 		</div>
+	</body>
 
-		<div style="float:left;">
-			<div style="display:flex;align-items:center;font-weight:bold;font-size:12pt;margin-top:10px;">
-				<span><?php echo $LNG->FOOTER_DEVELOPED_BY; ?></span>
-				<a href="https://idea.kmi.open.ac.uk">
-				<img border="0" style="height:60px;padding-left:10px;" alt="Idea logo" src="<?php echo $HUB_FLM->getImagePath('IDea-logo-URL-hi-res.png'); ?>" />
-				</a>
-			</div>
-		</div>
+	<script>
+		// COOKIES
+		document.addEventListener('DOMContentLoaded', function() {
+			if (!getCookie('cookieConsent')) {
+				document.getElementById('cookieConsent').style.display = 'block';
+			}
+		});
 
-	</div>
-</div>
+		document.getElementById('closeCookieConsent').addEventListener('click', function() {
+			setCookie('cookieConsent', true, 30);
+			document.getElementById('cookieConsent').style.display = 'none';
+		});
 
-<div style="margin:0 auto; margin-top:5px;margin-bottom:5px;width:95px;clear:both;font-style:italic;font-weight:bold"><a href="<?php echo $HUB_FLM->getCodeWebPath('ui/pages/releases.php'); ?>" target="blank">(v <?php echo $CFG->VERSION; ?>)</a></div>
+		function setCookie(name, value, days) {
+			var expires = '';
+			if (days) {
+				var date = new Date();
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // 30 days
+				expires = '; expires=' + date.toUTCString();
+			}
+			document.cookie = name + '=' + (value || '') + expires + '; path=/';
+		}
 
-</div>
-</body>
+		function getCookie(name) {
+			var nameEQ = name + '=';
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+			}
+			return null;
+		}		
+	</script>
 </html>

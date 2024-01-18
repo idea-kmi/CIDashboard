@@ -25,13 +25,13 @@
  /** Author: Michelle Bachler, KMi, The Open University **/
  ?>
 
-<div class="boxbackground" style="clear:both; float:left; width: 100%;">
+<div class="boxbackground d-flex flex-wrap gap-3">
 	<?php
 		include('minisdata.php');
 		$i = 0;
 		foreach($minidata as $item) {
 			$i++;
-			echo '<div style="float:left;padding:5px;padding-bottom:10px;"><img alt="'.$item[0].'" title="'.$item[0].'" style="float:left;height:60px;border:1px solid #e8e8e8;" border="0" src="'.$item[3].'" /></div>';
+			echo '<div class="border border-1"><img style="height: 60px;" id="largevisimage'.$item[1].'" alt="'.$item[0].'" title="'.$item[0].'" src="'.$item[3].'" /></div>';
 		}
 	?>
 </div>

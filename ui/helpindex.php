@@ -23,63 +23,67 @@
  *                                                                              *
  ********************************************************************************/
 ?>
-<div style="clear:both;float:left;width:100%">
-	<div id="tab-content-embed-viz-div" style="clear:both;float:left;width:100%;">
 
-		<div id="tabber" style="clear:both;float:left; width: 100%;margin-top:20px;">
-			<ul id="helptabs" class="tab2">
-				<li class="tab2"><a class="tab2" id="tab-help-movie" href="<?php echo $CFG->homeAddress; ?>#help-movie"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_MOVIE; ?></span></a></li>
-				<li class="tab2"><a class="tab2" id="tab-help-embed" href="<?php echo $CFG->homeAddress; ?>#help-embed"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_EMBED; ?></span></a></li>
-				<li class="tab2"><a class="tab2" id="tab-help-mini" href="<?php echo $CFG->homeAddress; ?>#help-mini"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_MINI; ?></span></a></li>
-				<li class="tab2"><a class="tab2" id="tab-help-alerts" href="<?php echo $CFG->homeAddress; ?>#help-alerts"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_ALERT; ?></span></a></li>
-				<li class="tab2"><a class="tab2" id="tab-help-cif" href="<?php echo $CFG->homeAddress; ?>#help-cif"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_CIF; ?></span></a></li>
-				<li class="tab2"><a class="tab2" id="tab-help-lang" href="<?php echo $CFG->homeAddress; ?>#help-lang"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_LANG; ?></span></a></li>
-				<li class="tab2"><a class="tab2" id="tab-help-user" href="<?php echo $CFG->homeAddress; ?>#help-user"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_USER; ?></span></a></li>
-			</ul>
+<div class="container-fluid">
+	<div class="row p-3">	
+		<div class="col-12">
+			<div id="tab-content-embed-viz-div">
 
-			<div id="tab-content-help" class="tabcontentinner">
+				<div id="tabber">
+					<ul id="helptabs" class="nav nav-tabs vistabs my-1" role="tablist">
+						<li class="nav-item"><a class="nav-link tab2" id="tab-help-movie" href="<?php echo $CFG->homeAddress; ?>#help-movie"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_MOVIE; ?></span></a></li>
+						<li class="nav-item"><a class="nav-link tab2" id="tab-help-embed" href="<?php echo $CFG->homeAddress; ?>#help-embed"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_EMBED; ?></span></a></li>
+						<li class="nav-item"><a class="nav-link tab2" id="tab-help-mini" href="<?php echo $CFG->homeAddress; ?>#help-mini"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_MINI; ?></span></a></li>
+						<li class="nav-item"><a class="nav-link tab2" id="tab-help-alerts" href="<?php echo $CFG->homeAddress; ?>#help-alerts"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_ALERT; ?></span></a></li>
+						<li class="nav-item"><a class="nav-link tab2" id="tab-help-cif" href="<?php echo $CFG->homeAddress; ?>#help-cif"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_CIF; ?></span></a></li>
+						<li class="nav-item"><a class="nav-link tab2" id="tab-help-lang" href="<?php echo $CFG->homeAddress; ?>#help-lang"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_LANG; ?></span></a></li>
+						<li class="nav-item"><a class="nav-link tab2" id="tab-help-user" href="<?php echo $CFG->homeAddress; ?>#help-user"><span class="tab2 tabinner"><?php echo $LNG->EMBED_INDEX_TAB_HELP_USER; ?></span></a></li>
+					</ul>
 
-				<div id='tab-content-help-movie-div'  class='tabcontent' style="display:none;">
-					<div class="tabline" style="height:2px;width:100%"></div>
-					<?php
-						include('ui/helpmovies.php');
-					?>
-				</div>
-				<div id='tab-content-help-embed-div'  class='tabcontent' style="display:none;">
-					<div class="tabline" style="height:2px;width:100%"></div>
-					<?php
-						include('ui/helpembed.php');
-					?>
-				</div>
-				<div id='tab-content-help-mini-div'  class='tabcontent' style="display:none;">
-					<div class="tabline" style="height:2px;width:100%"></div>
-					<?php
-						include('ui/helpmini.php');
-					?>
-				</div>
-				<div id='tab-content-help-alerts-div'  class='tabcontent' style="display:none;">
-					<div class="tabline" style="height:2px;width:100%"></div>
-					<?php
-						include('ui/helpalerts.php');
-					?>
-				</div>
-				<div id='tab-content-help-cif-div'  class='tabcontent' style="display:none;">
-					<div class="tabline" style="height:2px;width:100%"></div>
-					<?php
-						include('ui/helpcif.php');
-					?>
-				</div>
-				<div id='tab-content-help-lang-div'  class='tabcontent' style="display:none;">
-					<div class="tabline" style="height:2px;width:100%"></div>
-					<?php
-						include('ui/helplang.php');
-					?>
-				</div>
-				<div id='tab-content-help-user-div'  class='tabcontent' style="display:none;">
-					<div class="tabline" style="height:2px;width:100%"></div>
-					<?php
-						include('ui/helpuser.php');
-					?>
+					<div id="tab-content-help" class="tabcontentinner">
+						<div id='tab-content-help-movie-div'  class='tabcontent' style="display:none;">
+							<div class="tabline"></div>
+							<?php
+								include('ui/helpmovies.php');
+							?>
+						</div>
+						<div id='tab-content-help-embed-div'  class='tabcontent' style="display:none;">
+							<div class="tabline"></div>
+							<?php
+								include('ui/helpembed.php');
+							?>
+						</div>
+						<div id='tab-content-help-mini-div'  class='tabcontent' style="display:none;">
+							<div class="tabline"></div>
+							<?php
+								include('ui/helpmini.php');
+							?>
+						</div>
+						<div id='tab-content-help-alerts-div'  class='tabcontent' style="display:none;">
+							<div class="tabline"></div>
+							<?php
+								include('ui/helpalerts.php');
+							?>
+						</div>
+						<div id='tab-content-help-cif-div'  class='tabcontent' style="display:none;">
+							<div class="tabline"></div>
+							<?php
+								include('ui/helpcif.php');
+							?>
+						</div>
+						<div id='tab-content-help-lang-div'  class='tabcontent' style="display:none;">
+							<div class="tabline"></div>
+							<?php
+								include('ui/helplang.php');
+							?>
+						</div>
+						<div id='tab-content-help-user-div'  class='tabcontent' style="display:none;">
+							<div class="tabline"></div>
+							<?php
+								include('ui/helpuser.php');
+							?>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

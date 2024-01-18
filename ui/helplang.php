@@ -1,36 +1,36 @@
 <?php
-/********************************************************************************
- *                                                                              *
- *  (c) Copyright 2015 The Open University UK                                   *
- *                                                                              *
- *  This software is freely distributed in accordance with                      *
- *  the GNU Lesser General Public (LGPL) license, version 3 or later            *
- *  as published by the Free Software Foundation.                               *
- *  For details see LGPL: http://www.fsf.org/licensing/licenses/lgpl.html       *
- *               and GPL: http://www.fsf.org/licensing/licenses/gpl-3.0.html    *
- *                                                                              *
- *  This software is provided by the copyright holders and contributors "as is" *
- *  and any express or implied warranties, including, but not limited to, the   *
- *  implied warranties of merchantability and fitness for a particular purpose  *
- *  are disclaimed. In no event shall the copyright owner or contributors be    *
- *  liable for any direct, indirect, incidental, special, exemplary, or         *
- *  consequential damages (including, but not limited to, procurement of        *
- *  substitute goods or services; loss of use, data, or profits; or business    *
- *  interruption) however caused and on any theory of liability, whether in     *
- *  contract, strict liability, or tort (including negligence or otherwise)     *
- *  arising in any way out of the use of this software, even if advised of the  *
- *  possibility of such damage.                                                 *
- *                                                                              *
- ********************************************************************************/
- /** Author: Michelle Bachler, KMi, The Open University **/
- ?>
+	/********************************************************************************
+	 *                                                                              *
+	 *  (c) Copyright 2015 The Open University UK                                   *
+	 *                                                                              *
+	 *  This software is freely distributed in accordance with                      *
+	 *  the GNU Lesser General Public (LGPL) license, version 3 or later            *
+	 *  as published by the Free Software Foundation.                               *
+	 *  For details see LGPL: http://www.fsf.org/licensing/licenses/lgpl.html       *
+	 *               and GPL: http://www.fsf.org/licensing/licenses/gpl-3.0.html    *
+	 *                                                                              *
+	 *  This software is provided by the copyright holders and contributors "as is" *
+	 *  and any express or implied warranties, including, but not limited to, the   *
+	 *  implied warranties of merchantability and fitness for a particular purpose  *
+	 *  are disclaimed. In no event shall the copyright owner or contributors be    *
+	 *  liable for any direct, indirect, incidental, special, exemplary, or         *
+	 *  consequential damages (including, but not limited to, procurement of        *
+	 *  substitute goods or services; loss of use, data, or profits; or business    *
+	 *  interruption) however caused and on any theory of liability, whether in     *
+	 *  contract, strict liability, or tort (including negligence or otherwise)     *
+	 *  arising in any way out of the use of this software, even if advised of the  *
+	 *  possibility of such damage.                                                 *
+	 *                                                                              *
+	 ********************************************************************************/
+	/** Author: Michelle Bachler, KMi, The Open University **/
+?>
 
-<div style="background:transparent;clear:both; float:left; width: 100%;">
-	<div style="float:left;clear:both;margin-top:10px;margin-bottom:10px;"><?php echo $LNG->HELP_LANG_MESSAGE; ?></div>
+<div class="py-3">
+	<p><?php echo $LNG->HELP_LANG_MESSAGE; ?></p>
 
-	<h3 style="float:left;margin-top:10px;"><?php echo $LNG->HELP_LANG_NODE_TITLE; ?></h3>
+	<h3><?php echo $LNG->HELP_LANG_NODE_TITLE; ?></h3>
 
-	<table style="float:left;width:100%;border-collapse:collapse;border:1px solid #C0C0C0" border="1">
+	<table class="table table-sm table-bordered table-striped">
 		<tr>
 			<td><b><?php echo $LNG->HELP_LANG_COLUMN_TERM; ?></b></td>
 			<td><b><?php echo $LNG->HELP_LANG_COLUMN_CIF; ?></b></td>
@@ -117,11 +117,10 @@
 		</tr>
 	</table>
 
-	<h3 style="float:left;margin-top:10px;"><?php echo $LNG->HELP_LANG_LINK_TITLE; ?></h3>
+	<h3><?php echo $LNG->HELP_LANG_LINK_TITLE; ?></h3>
+	<p><?php echo $LNG->HELP_LANG_LINK_MESSAGE; ?></p>
 
-	<div style="float:left;clear:both;margin-bottom:5px;"><?php echo $LNG->HELP_LANG_LINK_MESSAGE; ?></div>
-
-	<table style="clear:both;float:left;width:100%;border-collapse:collapse;border:1px solid #C0C0C0" border="1">
+	<table class="table table-sm table-bordered table-striped">
 		<tr>
 			<td><b><?php echo $LNG->HELP_LANG_COLUMN_TERM; ?></b></td>
 			<td><b><?php echo $LNG->HELP_LANG_COLUMN_CIF; ?></b></td>
@@ -179,223 +178,222 @@
 		</tr>
 	</table>
 
-	<div style="clear:both;float:left;margin-top:30px;"><?php echo $LNG->HELP_LANG_MESSAGE2; ?></div>
+	<p class="mt-4"><?php echo $LNG->HELP_LANG_MESSAGE2; ?></p>
 
-	<div style="clear:both;float:left;color:black;clear:both;float:left;">
-	<pre>
-[
-    {
-  	"term": "CHALLENGE_NAME",
-	"label": [
-	      {
-	         "language": "en",
-	         "singular": "Challenge",
-	         "plural": "Challenges"
-	      }
+	<div class="bg-light border border-1 mb-3">
+        <pre class="mt-4 font-monospace">
+	[
+		{
+		"term": "CHALLENGE_NAME",
+		"label": [
+			{
+				"language": "en",
+				"singular": "Challenge",
+				"plural": "Challenges"
+			}
+		]
+		},
+		{
+		"term": "ISSUE_NAME",
+		"label": [
+			{
+				"language": "en",
+			"singular": "Issue",
+			"plural": "Issues"
+			}
+		]
+		},
+		{
+		"term": "SOLUTION_NAME",
+		"label": [
+			{
+				"language": "en",
+			"singular": "Idea",
+			"plural": "Ideas"
+			}
+		]
+		},
+		{
+		"term": "ARGUMENT_NAME",
+		"label": [
+			{
+				"language": "en",
+			"singular": "Argument",
+			"plural": "Arguments"
+			}
+		]
+		},
+		{
+		"term": "PRO_NAME",
+		"label": [
+			{
+				"language": "en",
+			"singular": "Supporting Argument",
+			"plural": "Supporting Arguments"
+			}
+		]
+		},
+		{
+		"term": "CON_NAME",
+		"label": [
+			{
+				"language": "en",
+			"singular": "Counter Argument",
+			"plural": "Counter Arguments"
+			}
+		]
+		},
+		{
+		"term": "RESOURCE_NAME",
+		"label": [
+			{
+				"language": "en",
+			"singular": "Url",
+			"plural": "Urls"
+			}
+		]
+		},
+		{
+		"term": "COMMENT_NAME",
+		"label": [
+			{
+				"language": "en",
+			"singular": "Comment",
+			"plural": "Comments"
+			}
+		]
+		},
+		{
+		"term": "IDEA_NAME",
+		"label": [
+			{
+				"language": "en",
+			"singular": "Note",
+			"plural": "Notes"
+			}
+		]
+		},
+		{
+		"term": "DECISION_NAME",
+		"label": [
+			{
+				"language": "en",
+			"singular": "Decision",
+			"plural": "Decisions"
+			}
+		]
+		},
+		{
+		"term": "MAP_NAME",
+		"label": [
+			{
+				"language": "en",
+			"singular": "Map",
+			"plural": "Maps"
+			}
+		]
+		},
+		{
+		"term": "DEBATE_NAME",
+		"label": [
+			{
+				"language": "en",
+			"singular": "Conversation",
+			"plural": "Conversations"
+			}
+		]
+		},
+		{
+		"term": "LINK_ISSUE_CHALLENGE",
+		"label": [
+			{
+				"language": "en",
+			"text": "is related to"
+			}
+		]
+		},
+		{
+		"term": "LINK_SOLUTION_ISSUE",
+		"label": [
+			{
+				"language": "en",
+			"text": "responds to"
+			}
+		]
+		},
+		{
+		"term": "LINK_ISSUE_SOLUTION",
+		"label": [
+			{
+				"language": "en",
+			"text": "responds to"
+			}
+		]
+		},
+		{
+		"term": "LINK_PRO_SOLUTION",
+		"label": [
+			{
+				"language": "en",
+			"text": "supports"
+			}
+		]
+		},
+		{
+		"term": "LINK_CON_SOLUTION",
+		"label": [
+			{
+				"language": "en",
+			"text": "challenges"
+			}
+		]
+		},
+		{
+		"term": "LINK_RESOURCE_NODE",
+		"label": [
+			{
+				"language": "en",
+			"text": "is related to"
+			}
+		]
+		},
+		{
+		"term": "LINK_COMMENT_NODE",
+		"label": [
+			{
+				"language": "en",
+			"text": "is related to"
+			}
+		]
+		},
+		{
+		"term": "LINK_COMMENT_COMMENT",
+		"label": [
+			{
+				"language": "en",
+			"text": "responds to"
+			}
+		]
+		},
+		{
+		"term": "LINK_IDEA_NODE",
+		"label": [
+			{
+				"language": "en",
+			"text": "responds to"
+			}
+		]
+		},
+		{
+		"term": "LINK_DECISION_ISSUE",
+		"label": [
+			{
+				"language": "en",
+			"text": "responds to"
+			}
+		]
+		}
 	]
-    },
-    {
-  	"term": "ISSUE_NAME",
-	"label": [
-	      {
-	        "language": "en",
-	 	"singular": "Issue",
-	 	"plural": "Issues"
-	      }
-	]
-    },
-    {
-  	"term": "SOLUTION_NAME",
-	"label": [
-	      {
-	        "language": "en",
-	 	"singular": "Idea",
-	 	"plural": "Ideas"
-	      }
-	]
-    },
-    {
-  	"term": "ARGUMENT_NAME",
-	"label": [
-	      {
-	        "language": "en",
-	 	"singular": "Argument",
-	 	"plural": "Arguments"
-	      }
-	]
-    },
-    {
-  	"term": "PRO_NAME",
-	"label": [
-	      {
-	        "language": "en",
-	 	"singular": "Supporting Argument",
-	 	"plural": "Supporting Arguments"
-	      }
-	]
-    },
-    {
-  	"term": "CON_NAME",
-	"label": [
-	      {
-	        "language": "en",
-	 	"singular": "Counter Argument",
-	 	"plural": "Counter Arguments"
-	      }
-	]
-    },
-    {
-  	"term": "RESOURCE_NAME",
-	"label": [
-	      {
-	        "language": "en",
-	 	"singular": "Url",
-	 	"plural": "Urls"
-	      }
-	]
-    },
-    {
-  	"term": "COMMENT_NAME",
-	"label": [
-	      {
-	        "language": "en",
-	 	"singular": "Comment",
-	 	"plural": "Comments"
-	      }
-	]
-    },
-    {
-  	"term": "IDEA_NAME",
-	"label": [
-	      {
-	        "language": "en",
-	 	"singular": "Note",
-	 	"plural": "Notes"
-	      }
-	]
-    },
-    {
-  	"term": "DECISION_NAME",
-	"label": [
-	      {
-	        "language": "en",
-	 	"singular": "Decision",
-	 	"plural": "Decisions"
-	      }
-	]
-    },
-    {
-  	"term": "MAP_NAME",
-	"label": [
-	      {
-	        "language": "en",
-	 	"singular": "Map",
-	 	"plural": "Maps"
-	      }
-	]
-    },
-    {
-  	"term": "DEBATE_NAME",
-	"label": [
-	      {
-	        "language": "en",
-	 	"singular": "Conversation",
-	 	"plural": "Conversations"
-	      }
-	]
-    },
-    {
-  	"term": "LINK_ISSUE_CHALLENGE",
-	"label": [
-	      {
-	        "language": "en",
-	 	"text": "is related to"
-	      }
-	]
-    },
-    {
-  	"term": "LINK_SOLUTION_ISSUE",
-	"label": [
-	      {
-	        "language": "en",
-	 	"text": "responds to"
-	      }
-	]
-    },
-    {
-  	"term": "LINK_ISSUE_SOLUTION",
-	"label": [
-	      {
-	        "language": "en",
-	 	"text": "responds to"
-	      }
-	]
-    },
-    {
-  	"term": "LINK_PRO_SOLUTION",
-	"label": [
-	      {
-	        "language": "en",
-	 	"text": "supports"
-	      }
-	]
-    },
-    {
-  	"term": "LINK_CON_SOLUTION",
-	"label": [
-	      {
-	        "language": "en",
-	 	"text": "challenges"
-	      }
-	]
-    },
-    {
-  	"term": "LINK_RESOURCE_NODE",
-	"label": [
-	      {
-	        "language": "en",
-	 	"text": "is related to"
-	      }
-	]
-    },
-    {
-  	"term": "LINK_COMMENT_NODE",
-	"label": [
-	      {
-	        "language": "en",
-	 	"text": "is related to"
-	      }
-	]
-    },
-    {
-  	"term": "LINK_COMMENT_COMMENT",
-	"label": [
-	      {
-	        "language": "en",
-	 	"text": "responds to"
-	      }
-	]
-    },
-    {
-  	"term": "LINK_IDEA_NODE",
-	"label": [
-	      {
-	        "language": "en",
-	 	"text": "responds to"
-	      }
-	]
-    },
-    {
-  	"term": "LINK_DECISION_ISSUE",
-	"label": [
-	      {
-	        "language": "en",
-	 	"text": "responds to"
-	      }
-	]
-    }
-]
-
-	</pre>
+		</pre>
 	</div>
 </div>

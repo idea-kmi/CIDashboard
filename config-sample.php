@@ -92,7 +92,6 @@ $CFG->GOOGLE_ANALYTICS_DOMAIN = "";
 // Google Analytics 4
 $CFG->GOOGLE_SITE_TAG = "";
 
-
 /** LANGUAGE **/
 // This string indicates what language the interface text should use.
 // The name must correspnd to a folder in the 'language' folder where the translated texts should exist.

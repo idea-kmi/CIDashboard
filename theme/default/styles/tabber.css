@@ -23,207 +23,55 @@
  ********************************************************************************/
  /** Author: Michelle Bachler, KMi, The Open University **/
 
-#tabber {
-	width:100%;
-}
+#tabber { width:100%; }
 
-#tabber .tabcontent{
-	clear: both;
-	float:left;
-	height: 100%;	
-	min-height:400px;
-	margin: 0px;
-	width:100%; 
-}
+#tabber .main-nav { background-color: transparent; }
+#tabber .main-nav li.nav-item { background-color: transparent; }
+#tabber .main-nav li.nav-item a.tab { background-color: transparent; }
+#tabber .main-nav li.nav-item a.tab.current { background-color: transparent; }
+#tabber .main-nav li.nav-item a.tab span.tab { background-color: transparent; display: block; padding: 2px 10px; }
+ 
+#tabber .main-nav li.nav-item a.tab span { border-bottom: 1px solid transparent; color: #696969; padding-bottom: 1px; }
+#tabber .main-nav li.nav-item a.tab.current span,
+#tabber .main-nav li.nav-item a.tab.active span,
+#tabber .main-nav li.nav-item a.tab:hover span { border-bottom: 1px solid; text-decoration: none; }
 
-#tabber .currentpage {
-   color: #27318B; 
-   padding: 3px; 
-   border: 1px solid #84B839; 
-   font-weight: bold;
-}
+#tabber .main-nav li.nav-item a.tab:hover span.tabitem { color: #A6156C; }
+#tabber .main-nav li.nav-item a.tab.current span.tabitem,
+#tabber .main-nav li.nav-item a.tab.active span.tabitem { color: #A6156C; }
 
-.tabline {
-	background: #80B906;
-}
+#tabber .tabcontent { background: #fff; }
 
-/** MAIN OUTER TAB BAR **/
+#tabber .currentpage { color: #4E725F; font-weight: bold; background-color: #e9ecef }
 
-#tabber ul.tab {
-	clear:both;
-	float:left;
-	width:100%;
-	margin:0;
-	padding:0px 0px 0px 0px;
-	list-style:none;
-	background:#4E725F
-}
+#tabber a.current { color: #4e247b; }
 
-#tabber li.tab {
-	font-weight: bold;
-	display:inline;
-	padding:0;
-	margin:0px;
-}
+#tabber a.unselected span.tab { color: white;  background: #4E725F; }
 
-#tabber a.tab {
-	font-size: 10pt;
-	padding: 0px;
-}
+#tabber a.current span.tab { color: white; background: #7FAE0E; }
 
-#tabber span.tab {
-	float: left;
-	display:block;
-	padding:6px;
-	padding-left:12px;
-	padding-right:12px;
-	font-size: 12pt;
-	cursor:pointer;
-}
+#tabber a.tab:hover span.tabouter { background:#7FAE0E; color:white; }
 
-#tabber a.current {
-	color: #4e247b;	
-}
+#tabber a.current span.tabouter { background:#7FAE0E; color:white; }
 
-#tabber a.unselected span.tab {
-	color: white; 
-	background: #4E725F;
-}
+.vistabs { margin-bottom: 20px; margin-top: 40px; }
+.vistabs .nav-link { background-color: #eee; border-color: #dee2e6 #dee2e6 #fff; }
+.vistabs .nav-link:hover { color: #fff; background-color: #4E725F; border-color: #dee2e6 #dee2e6 #fff; }
+.vistabs .nav-link:hover span { color: #fff; }
+.vistabs .nav-link.current { color: #fff; background-color: #4E725F; border-color: #dee2e6 #dee2e6 #fff; }
+.vistabs .nav-link.current span { color: #fff; }
 
-#tabber a.current span.tab {
-	color: white; 
-	background: #7FAE0E;
-}
+.dash-message { font-size: 0.6em !important; margin-left: 10px; }
 
-#tabber a.tab:hover span.tabouter {
-	background:#7FAE0E;
-	color:white;
-}
+.sortabledashboard { background-color: #eee; min-height:160px; }
+.sortabledashboard .visdash { background-color: #fff; border: 1px solid #bbb; padding: 5px; width:150px; height:150px; cursor: pointer; }
 
-#tabber a.current span.tabouter {
-	background:#7FAE0E;
-	color:white;
-}
+.vis-tree .idea-list-li { border: 1px solid #bbb; padding: 5px; }
+.vis-tree .idea-list-li h2 { font-size: 1.1em; font-weight: bold; }
+.vis-tree .idea-list-li img { max-width: 150px; }
+.vis-tree .viscard-footer { font-size: 0.8em; }
+.vis-tree .viscard-footer .form-check { cursor: pointer; }
 
-/** INNER TAB BAR **/
+.tabline { background-color: #4E725F; }
 
-#tabber ul.tab2 {
-	clear:both;
-	float:left;
-	width:100%;		
-	margin:0;
-	padding:0px 0px 0px 0px;
-	list-style:none;
-}
-
-#tabber li.tab2 {
-	font-weight: bold;
-	display:inline;
-	padding:0;
-	margin:0px;
-}
-
-#tabber span.tab2 {
-	float: left;
-	display:block;
-	padding:3px;
-	padding-left:6px;
-	padding-right:6px;
-	cursor:pointer;
-	margin-right:6px;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
-	-moz-border-radius-topleft: 6px;
-	-moz-border-radius-toprifght: 6px;
-}
-
-#tabber a.tab:hover span.tab2 {
-	font-size: 11pt;
-	color: #7FAE0E;	
-}
-
-#tabber a.unselected span.tab2 {
-	font-size: 11pt;
-	color: #4E725F; 
-	background: #E1E5E1; /*#4E725F;*/
-}
-
-#tabber a.current span.tab2 {
-	font-size: 11pt;
-	color: white; 
-	background: #4E725F;
-}
-
-#tabber a.tab:hover span.tabinner {
-	font-size: 11pt;
-	background:#7FAE0E;
-	color:white;
-}
-
-#tabber a.current span.tabinner {
-	font-size: 11pt;
-	background:#7FAE0E;
-	color:white;
-}
-
-/** CIDASHBOARD **/
-#tabber ul.tab3 {
-	clear:both;
-	float:left;
-	width:100%;
-				
-	background: #E8E8E8;
-	background: -o-linear-gradient(top, #ffffff, #E8E8E8);
-	background: -moz-linear-gradient(top, #ffffff, #E8E8E8);
-	background: -webkit-gradient(linear,
-                left top, left bottom, from(#ffffff), to(#E8E8E8));
-	filter: progid:DXImageTransform.Microsoft.Gradient(
-                StartColorStr='#ffffff  ', EndColorStr='#E8E8E8', GradientType=0);
-	background: linear-gradient(to bottom, #ffffff, #E8E8E8);
-
-	margin:0;
-	padding:0px 0px 0px 0px;
-	list-style:none;
-}
-
-#tabber li.tab3 {
-	font-weight: bold;
-	display:inline;
-	padding:0;
-	margin:0px;
-}
-
-#tabber span.tab3 {
-	float: left;
-	display:block;
-
-	padding:6px;
-	padding-left:10px;
-	padding-right:10px;
-	font-size: 10pt;
-	
-	background: #E8E8E8;
-	background: -o-linear-gradient(top, #ffffff, #E8E8E8);
-	background: -moz-linear-gradient(top, #ffffff, #E8E8E8);
-	background: -webkit-gradient(linear,
-                left top, left bottom, from(#ffffff), to(#E8E8E8));
-	filter: progid:DXImageTransform.Microsoft.Gradient(
-                StartColorStr='#ffffff  ', EndColorStr='#E8E8E8', GradientType=0);
-	background: linear-gradient(to bottom, #ffffff, #E8E8E8);
-		
-	cursor:pointer;
-}
-
-#tabber a.unselected span.tab3 {
-	color: dimgray; 
-}
-
-#tabber a.current span.tab3 {
-	text-decoration:underline;
-	color: #4e247b; 
-}
-
-#tabber a.tab3:hover span.tab3 {
-	text-decoration:underline;
-	color: #4e247b;	
-}
+.vis-alert-img { max-width: unset !important; }

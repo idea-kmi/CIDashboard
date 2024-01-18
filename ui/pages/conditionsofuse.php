@@ -25,10 +25,15 @@
 	include_once("../../config.php");
 
 	include_once($HUB_FLM->getCodeDirPath("ui/header.php"));
+?>
 
-	echo '<h1>'.$LNG->PAGE_CONDITIONS_OF_USE_TITLE.'</h1>';
+<div class="container-fluid">
+	<div class="page m-4">
+		<h1><?php echo $LNG->PAGE_CONDITIONS_OF_USE_TITLE; ?></h1>
+		<?php echo $LNG->PAGE_CONDITIONS_OF_USE_BODY; ?>
+	</div>
+</div>
 
-	echo $LNG->PAGE_CONDITIONS_OF_USE_BODY;
-
+<?php
 	include_once($HUB_FLM->getCodeDirPath("ui/footer.php"));
 ?>
