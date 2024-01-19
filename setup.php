@@ -1,7 +1,7 @@
 <?php
 /********************************************************************************
  *                                                                              *
- *  (c) Copyright 2015 The Open University UK                                   *
+ *  (c) Copyright 2015 - 2014 The Open University UK                            *
  *                                                                              *
  *  This software is freely distributed in accordance with                      *
  *  the GNU Lesser General Public (LGPL) license, version 3 or later            *
@@ -22,9 +22,16 @@
  *  possibility of such damage.                                                 *
  *                                                                              *
  ********************************************************************************/
-/** @author Michelle Bachler, KMi, The Open University */
+/** Author: Michelle Bachler, KMi, The Open University **/
 
 $CFG->VERSION = '1.0';
+
+/** UNTIL PHP 7.3 - supply own function **/
+if (!function_exists('is_countable')) {
+    function is_countable($var) {
+        return (is_array($var) || $var instanceof Countable);
+    }
+}
 
 /** SETUP THE FILE LOCATION MANAGER **/
 	unset($HUB_FLM);
@@ -87,10 +94,16 @@ $CFG->VERSION = '1.0';
 
 
 /** SETUP THE CACHE MANAGER **/
-	if ($CFG->hasMemcacheManager) {
-		unset($HUB_CACHE);
+	unset($HUB_CACHE);
+	if ($CFG->hasAPCuCacheManager) {
+		require_once("core/apcucachemanager.class.php");
+		$HUB_CACHE = new APCuCacheManager();
+	} else if ($CFG->hasMemcacheManager) {
 		require_once("core/memcachemanager.class.php");
-		$HUB_CACHE = new MemcacheManager();
-		global $HUB_CACHE;
+		if(class_exists('Memcache')){
+			$HUB_CACHE = new MemcacheManager();
+		}
 	}
+	global $HUB_CACHE;
+
 ?>
