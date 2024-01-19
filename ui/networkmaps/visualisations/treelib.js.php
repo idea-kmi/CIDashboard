@@ -77,7 +77,7 @@ function displayPlainTreeD3Vis(container, json, width, height) {
 		// Normalize for fixed-depth.
 		nodes.forEach(function(d) { d.y = d.depth * 180; });
 
-		// Update the nodes�
+		// Update the nodes...
 		var node = vis.selectAll("g.nodez")
 		  .data(nodes, function(d) { return d.id || (d.id = ++i); });
 
@@ -122,7 +122,7 @@ function displayPlainTreeD3Vis(container, json, width, height) {
 		nodeExit.select("text")
 		  .style("fill-opacity", 1e-6);
 
-		// Update the links�
+		// Update the links...
 		var link = vis.selectAll("path.link")
 		  .data(tree.links(nodes), function(d) { return d.target.id; });
 
@@ -463,7 +463,7 @@ function displayTreeZoomD3Vis(container, json, width, height) {
             //d.y = (d.depth * 300); //500px per level.
         //});
 
-        // Update the nodes�
+        // Update the nodes...
         node = svgGroup.selectAll("g.nodez")
             .data(nodes, function(d) {
                 return d.id || (d.id = ++i);
@@ -558,7 +558,7 @@ function displayTreeZoomD3Vis(container, json, width, height) {
 
         nodeExit.selectAll("text.nodeText").style("fill-opacity", 0);
 
-        // Update the links�
+        // Update the links...
         var linkcount;
         var link = svgGroup.selectAll("path.link")
             .data(links, function(d) {
@@ -966,7 +966,7 @@ function displayTreeZoomD3VisPosts(container, json, width, height) {
 			d.y = (d.depth * 300); //500px per level.
 		});
 
-        // Update the nodes�
+        // Update the nodes...
         node = svgGroup.selectAll("g.nodez")
             .data(nodes, function(d) {
                 return d.id || (d.id = ++i);
@@ -1065,7 +1065,7 @@ function displayTreeZoomD3VisPosts(container, json, width, height) {
         nodeExit.selectAll("circle.nodeCircle").attr("r", 0);
         nodeExit.selectAll("text.nodeText").style("fill-opacity", 0);
 
-        // Update the links�
+        // Update the links...
         var linkcount;
         var link = svgGroup.selectAll("path.link")
             .data(links, function(d) {
