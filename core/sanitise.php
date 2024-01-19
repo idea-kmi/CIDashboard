@@ -340,7 +340,7 @@ function clean_text($text) {
     $config->set('HTML.FlashAllowFullScreen', true);
 
 
-    $config->set('Filter.YouTube', true);
+    //$config->set('Filter.YouTube', true);
 
     //$config->set('HTML.Allowed', 'object[id|codebase|align|classid|width|height|data],param[name|value],embed[src|quality|bgcolor|name|align|pluginspage|type|allowscriptaccess|width|height|wmode|flashvars]');
 
