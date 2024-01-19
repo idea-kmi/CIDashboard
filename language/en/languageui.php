@@ -45,6 +45,7 @@ $LNG->FOOTER_PRIVACY_LINK = 'Privacy';
 $LNG->FOOTER_CONTACT_LINK = 'Contact';
 $LNG->FOOTER_DEVELOPED_BY = 'Developed By';
 $LNG->FOOTER_ACCESSIBILITY = 'Accessibility';
+$LNG->FOOTER_HINT = 'Collective Intelligence and Online Deliberation Research Website';
 
 $LNG->POPUPS_BLOCK = 'You appear to have blocked popup windows.\n\n Please alter your browser settings to allow this site to open popup windows.';
 $LNG->FORM_BUTTON_CLOSE = 'Close';
