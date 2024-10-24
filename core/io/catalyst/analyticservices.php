@@ -147,7 +147,7 @@ function callAnalyticsAPIWithURL($method, $requests, $url, $timeout=60) {
 	$postfields['requests'] = $requests;
 	$postfields['recency'] = $timeout;
 
-	//error_log(print_r($postfields, true));
+	error_log(print_r($postfields, true));
 
     curl_setopt($curl, CURLOPT_URL, $serviceRootAnalytics);
 	curl_setopt($curl, CURLOPT_POSTFIELDS, $postfields);
@@ -161,8 +161,8 @@ function callAnalyticsAPIWithURL($method, $requests, $url, $timeout=60) {
 	$httpCode = curl_getinfo( $curl, CURLINFO_HTTP_CODE );
 	curl_close($curl);
 
-	//error_log(print_r("RESPONSE=".$response, true));
-	//error_log("code=".$httpCode);
+	error_log(print_r("RESPONSE=".$response, true));
+	error_log("code=".$httpCode);
 
 	if($httpCode != 200 || $response === false) {
 		return false;
@@ -220,7 +220,7 @@ function callAnalyticsAPIWithJson($method, $requests, $jsondata, $timeout=60) {
 	$httpCode = curl_getinfo( $curl, CURLINFO_HTTP_CODE );
 	curl_close($curl);
 
-	//error_log(print_r($response, true));
+	error_log(print_r($response, true));
 
 	if($httpCode != 200 || $response === false) {
 		return false;

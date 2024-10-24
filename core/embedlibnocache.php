@@ -1078,7 +1078,7 @@ function getNetworkDataD32($url, $timeout=60, $withposts=false) {
 			$json .=  '"nodetypename": "Group"';
 			if ($count > 0) {
 				$json .=  ',"children": [';
-				//error_log("Count=".$count);
+				error_log("Count=".$count);
 				for ($i=0; $i<$count; $i++) {
 					$node = $topNodes[$i];
 					$json = addNextNetworkDataD3Depth2($json, $node, 1, $i, $treeArray, $checkArray);
@@ -1959,7 +1959,7 @@ function getUserActivityAnalysisData($url, $timeout=60, $withposts=false) {
 							//error_log("userid".$activityuser->userid);
 							$userid = $activityuser->userid;
 						}
-						//error_log($userid);
+						error_log($userid);
 
 						$username = "";
 						if (!in_array($userid, $usersCheck)) {

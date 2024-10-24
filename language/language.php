@@ -67,9 +67,6 @@ loadLanguageFile('pages/cookies.php');
 /** LOAD PRIVACY STATEMENT (MUCH HTML INCLUDED) **/
 loadLanguageFile('pages/privacy.php');
 
-/** LOAD ACCESSIBILITY STATEMENT (MUCH HTML INCLUDED) **/
-loadLanguageFile('pages/accessibility.php');
-
 /** LOAD HELP (MUCH HTML INCLUDED) **/
 loadLanguageFile('pages/help.php');
 
