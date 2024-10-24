@@ -86,7 +86,7 @@ a.active:hover { color: #a91a70; text-decoration: none; }
 
 ol li { vertical-align:top;	}
 
-table { color: #696969; font-size: 0.9em; }
+table { color: #696969; font-size: 0.9em; border: 1px solid black; }
 table tr { color: #696969 !important; }
 
 /****************************************/
@@ -96,3 +96,27 @@ table tr { color: #696969 !important; }
 .page { margin-left:20px; margin-right:20px; }
 .paraindent1 {  }
 .paraindent2 { margin-left: 48.0pt; text-indent: -18.0pt; }
+
+/*******************/
+/** Cookies pages **/
+/*******************/
+.cookies {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+.cookies td, #cookies th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+.cookies tr:nth-child(even){background-color: #f2f2f2;}
+.cookies tr:hover {background-color: #ddd;}
+  
+.cookies th {
+    padding:8px;
+    text-align: left;
+    background-color: #4E725F;
+    color: white;
+}

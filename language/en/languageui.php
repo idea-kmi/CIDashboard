@@ -43,6 +43,7 @@ $LNG->HEADER_ADMIN_PAGE_LINK_HINT = 'Go to the Admin page';
 $LNG->FOOTER_TERMS_LINK = 'Terms of Use';
 $LNG->FOOTER_PRIVACY_LINK = 'Privacy';
 $LNG->FOOTER_CONTACT_LINK = 'Contact';
+$LNG->FOOTER_COOKIES_LINK = 'Cookies';
 $LNG->FOOTER_DEVELOPED_BY = 'Developed By';
 $LNG->FOOTER_ACCESSIBILITY = 'Accessibility';
 $LNG->FOOTER_HINT = 'Collective Intelligence and Online Deliberation Research Website';
