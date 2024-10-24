@@ -55,7 +55,7 @@ if ($userurl != "") {
 <!-- meta http-equiv="refresh" content="0; URL='<?php echo $finalurl; ?>'" / -->
 
 <div style="float:left;margin-top:10px;">
-	<iframe src="<?php echo $finalurl; ?>" width="600" height="1000"  style="overflow:auto" scrolling="no" frameborder="0"></iframe>
+	<iframe title="<?php echo $LNG->IFRAME_EDGE_SENSE;?>" src="<?php echo $finalurl; ?>" width="600" height="1000"  style="overflow:auto" scrolling="no" frameborder="0"></iframe>
 </div>
 
 <?php

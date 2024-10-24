@@ -138,7 +138,7 @@
 	<div>
 		<h3><?php echo $LNG->HELP_EMBED_LARGE_EXAMPLE; ?></h3>
 		<div id="tab-content-vis-message"></div>
-		<iframe id="largeexample" src="" width="1000" height="1000" frameborder="0"></iframe>
+		<iframe title="<?php echo $LNG->HELP_EMBED_LARGE_EXAMPLE; ?>" id="largeexample" src="" width="1000" height="1000" frameborder="0"></iframe>
 	</div>
 
 	<div>
@@ -177,6 +177,6 @@
 	<div class="mt-3 pt-2">
 		<h3><?php echo $LNG->HELP_EMBED_LARGE_DASH_EXAMPLE; ?></h3>
 		<div id="tab-content-visdash-message"></div>
-		<iframe id="largedashexample" src="" height="1000" style="overflow:auto" scrolling="auto" frameborder="0" class="w-100 border border-1"></iframe>
+		<iframe title="<?php echo $LNG->HELP_EMBED_LARGE_DASH_EXAMPLE; ?>" id="largedashexample" src="" height="1000" style="overflow:auto" scrolling="auto" frameborder="0" class="w-100 border border-1"></iframe>
 	</div>
 </div>

@@ -23,6 +23,8 @@
  *                                                                              *
  ********************************************************************************/
  /** Author: Michelle Bachler, KMi, The Open University **/
+
+ include_once(__DIR__ . '/../config.php');
  ?>
 
 <div class="py-3">
@@ -145,6 +147,6 @@
 	<div class="mt-3 py-3">
 		<h3><?php echo $LNG->HELP_EMBED_ALERTS_EXAMPLE; ?></h3>
 		<div id="tab-content-alerts-message"></div>
-		<iframe id="alertsexample" src="" width="500" height="300" style="overflow:auto" scrolling="auto" frameborder="0"></iframe>
+		<iframe title="<?php echo $LNG->HELP_EMBED_ALERTS_EXAMPLE;?>" id="alertsexample" src="" width="500" height="300" style="overflow:auto" scrolling="auto" frameborder="0"></iframe>
 	</div>
 </div>
