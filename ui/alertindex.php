@@ -155,7 +155,7 @@
 		var url = createAlertEmbedLink(stub, id);
 		width = 500;
 		height = 300;
-		var code = '<iframe src="'+url+'" width="'+width+'" height="'+height+'" style="overflow:auto" scrolling="auto" frameborder="0"></iframe>';
+		var code = '<iframe title="<?php echo $LNG->IFRAME_ALERT_EMBED; ?>" src="'+url+'" width="'+width+'" height="'+height+'" style="overflow:auto" scrolling="auto" frameborder="0"></iframe>';
 		if (code) {
 			textAreaPrompt('<?php echo $LNG->EMBED_INDEX_CODE_MESSAGE; ?>', code, "", "", "");
 		}

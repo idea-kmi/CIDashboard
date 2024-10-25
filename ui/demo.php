@@ -32,7 +32,7 @@
 
 	$demourl = $CFG->homeAddress.'testing/designcommunity.json';
 	$iframesrc = "";
-	$iframesrc = '<iframe src="'.$url.'lang='.$lang.'&url='.urlencode($demourl).'" width="100%" height="1000"  style="overflow:auto" scrolling="auto" frameborder="1"></iframe>';
+	$iframesrc = '<iframe title="'.$LNG->IFRAME_DEMO.'" src="'.$url.'lang='.$lang.'&url='.urlencode($demourl).'" width="100%" height="1000"  style="overflow:auto" scrolling="auto" frameborder="1"></iframe>';
 
 	include_once($HUB_FLM->getCodeDirPath("ui/header.php"));
 ?>

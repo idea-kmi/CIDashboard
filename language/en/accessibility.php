@@ -23,22 +23,12 @@
  *                                                                              *
  ********************************************************************************/
 
-require_once(__DIR__ . '/../config.php');
+// ACESSIBILITY ADDITIONS
 
-$url = required_param("url", PARAM_URL);
-$title = required_param("title",PARAM_TEXT);
-$width = optional_param("width", 500, PARAM_INT);
-$height = optional_param("height", 500, PARAM_INT);
+// Iframes
+$LNG->IFRAME_DEMO = "Demo Design Community visualisation";
+$LNG->IFRAME_EDGE_SENSE = "Edge Sense History visualisation";
+$LNG->IFRAME_ALERT_PREVIEW = "Alert Preview visualisation";
+$LNG->IFRAME_ALERT_EMBED = "Alert Embedded Visualisation";
 
-include_once($HUB_FLM->getCodeDirPath("ui/header.php"));
-?>
 
-<div style="margin-left:10px;margin-top:20px;">
-	<div style="float:left;">
-		<iframe title="<?php echo $LNG->IFRAME_ALERT_PREVIEW; ?>" src="<?php echo $url; ?>" style="border:1px;overflow:auto" scrolling="auto" width="<?php echo $width; ?>" height="<?php echo $height; ?>"  style="overflow:none" scrolling="no" frameborder="0"></iframe>
-	</div>
-</div>
-
-<?php
-include_once($HUB_FLM->getCodeDirPath("ui/footer.php"));
-?>
