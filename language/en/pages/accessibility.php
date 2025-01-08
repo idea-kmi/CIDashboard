@@ -165,34 +165,38 @@ $LNG->PAGE_ACCESSIBILITY_BODY .= "
 
 <h6><strong>Current Accessibility issues:</strong></h6>
 
-** TBC - with site specific issues **
-
 <h4>Level A</h4>
 <ul>
-<li></li>
-<li></li>
+	<li>Elements with <code>role=tablist</code> must contain or own an element with <code>role=tab</code> and must not contain elements with other roles.</li>
+	<li>Identify row and column headers in data tables using <code>th</code> elements, and mark layout tables with <code>role=presentation</code>.</li>
+	<li><code>img</code> elements must have an accessible name.</li>
+	<li>Some pages have the same <code>title</code>, so the title cannot be used to distinguish pages.</li>
+	<li>Some elements use JavaScript to behave like a link. Links like this cannot be tabbed to from the keyboard and are not read out when screen readers list the links on a page.</li>
+	<li>Use HTML headings instead of applying CSS heading styles to non-headings.</li>
+	<li>Use semantic markup like <code>strong</code> instead of using the CSS <code>font-weight</code> property.</li>
 </ul>
 
 <h4>Level AA</h4>
 <ul>
-<li></li>
-<li></li>
+	<li>If you set any of the colors on the <code>body</code> or <code>a</code> elements you must set all of them.</li>
+	<li>Need to provide two or more ways to reach each page: via links, search, a site map or table of contents.</li>
 </ul>
 
 <h4>Level AAA</h4>
 <ul>
-<li></li>
-<li></li>
+	<li>Clickable targets must be at least 44 by 44 CSS pixels.</li>
+	<li>Each section of content should begin with a heading element ( <code>h1</code>, <code>h2</code>, <code>h3</code>), but this page has no headings.</li>
+	<li>Ensure that text and background colors have a 7:1 contrast ratio.</li>
 </ul>
 ";
 
 $LNG->PAGE_ACCESSIBILITY_BODY .= "
 <h2>Preparation of this accessibility statement</h2>
 
-<p>This statement was prepared on **report date**. It was last reviewed on **report date**.</p>
-<p>This website was last tested on **report date**. The test was carried out by Digital Development Services (STEM-TS).</p>
+<p>This statement was prepared on <strong>29th October 2024</strong>. It was last reviewed on <strong>29th October 2024</strong>.</p>
+<p>This website was last tested on <strong>29th October 2024</strong>. The test was carried out by Digital Development Services (STEM-TS).</p>
 <p>You can read the full accessibility test report: 
-<a href=\"***url to report***\" data-type=\"attachment\">".$CFG->SITE_TITLE." accessibility report &#8211; **report date**</a>.</p>
+<a href=\"".$CFG->homeAddress."CIDashboard_OpenUniversity_Accessibility_Report_Oct2024.pdf\" data-type=\"attachment\">".$CFG->SITE_TITLE." accessibility report &#8211; <strong>29th October 2024</strong></a>.</p>
 ";
 
 $LNG->PAGE_ACCESSIBILITY_BODY .= '<p>&nbsp;</p>';
