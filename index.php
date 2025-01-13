@@ -311,12 +311,12 @@
 
 <div id="tabber">
 	<ul class="nav nav-tabs p-3 main-nav bg-light" id="tabs" role="tablist">
-		<li class="nav-item" role="presentation"><a class="tab h5" id="tab-home" href="<?php echo $CFG->homeAddress; ?>index.php#home-list"><span class="tab tabitem"><?php echo $LNG->EMBED_INDEX_TAB_HOME; ?></span></a></li>
-		<li class="nav-item" role="presentation"><a class="tab h5" id="tab-vis" href="<?php echo $CFG->homeAddress; ?>#vis"><span class="tab tabitem"><?php echo $LNG->EMBED_INDEX_TAB_LARGE_VIS; ?></span></a></li>
-		<li class="nav-item" role="presentation"><a class="tab h5" id="tab-mini" href="<?php echo $CFG->homeAddress; ?>#mini"><span class="tab tabitem"><?php echo $LNG->EMBED_INDEX_TAB_MINI_VIS; ?></span></a></li>
-		<li class="nav-item" role="presentation"><a class="tab h5" id="tab-alert" href="<?php echo $CFG->homeAddress; ?>#alert"><span class="tab tabitem"><?php echo $LNG->EMBED_INDEX_TAB_ALERT_VIS; ?></span></a></li>
-		<li class="nav-item" role="presentation"><a class="tab h5" id="tab-about" href="<?php echo $CFG->homeAddress; ?>#about"><span class="tab tabitem"><?php echo $LNG->EMBED_INDEX_TAB_ABOUT; ?></span></a></li>
-		<li class="nav-item" role="presentation"><a class="tab h5" id="tab-help" href="<?php echo $CFG->homeAddress; ?>#help"><span class="tab tabitem"><?php echo $LNG->EMBED_INDEX_TAB_HELP; ?></span></a></li>
+		<li role="button" tabindex="0" class="nav-item" role="presentation"><a class="tab h5" id="tab-home" href="<?php echo $CFG->homeAddress; ?>index.php#home-list"><span class="tab tabitem"><?php echo $LNG->EMBED_INDEX_TAB_HOME; ?></span></a></li>
+		<li role="button" tabindex="0" class="nav-item" role="presentation"><a class="tab h5" id="tab-vis" href="<?php echo $CFG->homeAddress; ?>#vis"><span class="tab tabitem"><?php echo $LNG->EMBED_INDEX_TAB_LARGE_VIS; ?></span></a></li>
+		<li role="button" tabindex="0" class="nav-item" role="presentation"><a class="tab h5" id="tab-mini" href="<?php echo $CFG->homeAddress; ?>#mini"><span class="tab tabitem"><?php echo $LNG->EMBED_INDEX_TAB_MINI_VIS; ?></span></a></li>
+		<li role="button" tabindex="0" class="nav-item" role="presentation"><a class="tab h5" id="tab-alert" href="<?php echo $CFG->homeAddress; ?>#alert"><span class="tab tabitem"><?php echo $LNG->EMBED_INDEX_TAB_ALERT_VIS; ?></span></a></li>
+		<li role="button" tabindex="0" class="nav-item" role="presentation"><a class="tab h5" id="tab-about" href="<?php echo $CFG->homeAddress; ?>#about"><span class="tab tabitem"><?php echo $LNG->EMBED_INDEX_TAB_ABOUT; ?></span></a></li>
+		<li role="button" tabindex="0" class="nav-item" role="presentation"><a class="tab h5" id="tab-help" href="<?php echo $CFG->homeAddress; ?>#help"><span class="tab tabitem"><?php echo $LNG->EMBED_INDEX_TAB_HELP; ?></span></a></li>
 	</ul>
 
 	<div id="tabs-content">

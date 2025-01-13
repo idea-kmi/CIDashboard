@@ -91,17 +91,17 @@
 		<tr>
 			<td>url</td>
 			<td><?php echo $LNG->HELP_EMBED_TABLE_URL_USE; ?></td>
-			<td><span class="active" onclick="setTabPushed($('tab-help-cif'),'help-cif');"><?php echo $LNG->HELP_EMBED_TABLE_URL_INFO; ?></span></td>
+			<td><span role="button" tableindex="0" class="active" onclick="setTabPushed($('tab-help-cif'),'help-cif');"><?php echo $LNG->HELP_EMBED_TABLE_URL_INFO; ?></span></td>
 		</tr>
 		<tr>
 			<td>userurl</td>
 			<td><?php echo $LNG->HELP_EMBED_TABLE_USERURL_USE; ?></td>
-			<td><span class="active" onclick="setTabPushed($('tab-help-user'),'help-user');"><?php echo $LNG->HELP_EMBED_TABLE_USERURL_INFO; ?></span></td>
+			<td><span role="button" tableindex="0" class="active" onclick="setTabPushed($('tab-help-user'),'help-user');"><?php echo $LNG->HELP_EMBED_TABLE_USERURL_INFO; ?></span></td>
 		</tr>
 		<tr>
 			<td>langurl</td>
 			<td><?php echo $LNG->HELP_EMBED_TABLE_LANGURL_USE; ?></td>
-			<td><span class="active" onclick="setTabPushed($('tab-help-lang'),'help-lang');"><?php echo $LNG->HELP_EMBED_TABLE_LANGURL_INFO; ?></span></td>
+			<td><span role="button" tableindex="0" class="active" onclick="setTabPushed($('tab-help-lang'),'help-lang');"><?php echo $LNG->HELP_EMBED_TABLE_LANGURL_INFO; ?></span></td>
 		</tr>
 		<tr>
 			<td>timeout</td>
