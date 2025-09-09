@@ -67,6 +67,14 @@
 			window.name="cidashboardmain";
 		</script>
 
+        <script type="text/javascript">
+			function init(){
+				document.getElementById('cookie-policy-link').focus();
+			}
+			window.onload = init;
+		</script>
+
+
 		<?php
 			if ($CFG->GOOGLE_ANALYTICS_ON) {
 				include_once($HUB_FLM->getCodeDirPath("ui/analyticstracking.php"));
@@ -75,17 +83,35 @@
 	</head>
 
 	<body>
+
+		<div class="alert alert-warning text-center" role="alert" style="margin-top: 20px;">
+			<h4 class="alert-heading">⚠️ Important Notice: Site Retirement</h4>
+			<p>
+				It is with a heavy heart that we announce the retirement of this research site after more than a decade of service.
+				The underlying code has become outdated and increasingly difficult to maintain securely, and we are no longer able to keep the site online.
+			</p>
+			<p>
+				We are incredibly proud of the role this tool has played in supporting research and collaboration over the years. 
+				Thank you to everyone who has used it.
+			</p>
+			<p>
+				The site will be taken offline on <strong>10th October 2025</strong>.
+			</p>
+			<hr>
+			<p class="mb-0">Thank you for being part of this journey.</p>
+		</div>
+
 		<div class="alert alert-dark alert-dismissible fade show m-0 fixed-bottom" role="alert" id="cookieConsent" style="display: none;">
 			<div style="display: flex; align-items: center; flex-direction: column;">
 				We use essential cookies to handle sessions, and Google Analytics cookies to gather data on how you use this site.<br/>
 				<div>This data is extremely valuable for our research and helps us improve our analysis.</div>				
+				<a id="cookie-policy-link" style="margin-top:5px;" href="<?php echo $CFG->homeAddress; ?>ui/pages/cookies.php">Read our cookie policy</a>
 				<div>
 					Are you happy to help with our research by allowing Google Analytics cookies? 
 					<button type="button" class="cookieConsentButton" data-bs-dismiss="alert" aria-label="Yes" id="acceptAnlyticsCookies">Yes</button>
 					<button type="button" class="cookieConsentButton" data-bs-dismiss="alert" aria-label="No" id="declineAnlyticsCookies">No</button>
 				</div>
 				<br/>
-				<a href="ui/pages/cookies.php">Read our cookie policy</a>
 			</div>
 		</div>
 		
