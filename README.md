@@ -1,4 +1,4 @@
-# CIDashboard
+![CIDashbaord Logo](docs/images/evidence-hub-logo-header.png)
 
 > **Important**  
 > This code base was developed as part of research conducted at the Knowledge Media Institute at The Open University. This code base is no longer in active development. The majority of the code was originally developed between 2012 and 2015 with various updates and tweaks over the following years, so a lot of the code is old in style and development practices.
@@ -30,7 +30,7 @@ Start by opening `docs/index.html` and reading the notes.
 
 ## Screenshots
 
-- **Homepage**  
+- **Overview of Visualisations from the hompage**  
   ![Sreengrab of the homepage](docs/images/homepage.png)
 
 - **Large Visualisations page**  
@@ -45,7 +45,7 @@ Start by opening `docs/index.html` and reading the notes.
 
 ## Research
 
-The CI Dashboard came from research on Contested Collective Intelligence carried out by the [IDea group](https://idea.kmi.opena Institute.
+The CI Dashboard came from research on Contested Collective Intelligence carried out by the [IDea group](https://idea.kmi.open) from the Knowledge Media Institute.
 
 Contested Collective Intelligence (CCI) is a specific form of CI that emerges through structured discourse and argumentation. Mostly facilitated by argumentation-based online discussion tools, CCI aims at supporting collective sensemaking of complex societal dilemmas and seeks to improve our collective capability to face complex problems by talking to each other and debating online.
 
