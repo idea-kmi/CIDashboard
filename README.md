@@ -73,7 +73,7 @@ The Collective Intelligence Dashboard was an analytics visualisation service pro
 - **DebateHub** - a hub for structured debates  
 - **LiteMap** - a debate mapping tool
 
-Communication between the analytics visualisation provider and the platforms was based on a standardised data format - the [Catalyst Interchange Format (CIF)](http://purl.org/catalyst/jsonldrms of RDF and is serialised as JSON-LD. It provides a standardised description of online conversations. The CI Dashboard used the CIF data either directly to generate visualisations, or it requested CI statistics from the CATALYST metric service. That service calculated CI specific metrics from the CIF data and provided these to the CI Dashboard.
+Communication between the analytics visualisation provider and the platforms was based on a standardised data format - the [Catalyst Interchange Format (CIF)](http://purl.org/catalyst/jsonldrms) of RDF and is serialised as JSON-LD. It provides a standardised description of online conversations. The CI Dashboard used the CIF data either directly to generate visualisations, or it requested CI statistics from the CATALYST metric service. That service calculated CI specific metrics from the CIF data and provided these to the CI Dashboard.
 
 Below are some key CIF concepts extracted from the interoperability specification:
 
@@ -89,6 +89,9 @@ It goes on to say:
 >
 > - It is widely used by existing Collective Intelligence software  
 > - Many systems not using IBIS could transform at least a subset of their data into meaningful IBIS
+
+## Acknowledgments
+CIDashboard’s design, development and testing was undertaken as part of the FP7 Project Catalyst on Collective Applied Intelligence and Analytics for Social Innovation  - by the Knowledge Media Institute team (Anna De Liddo, and Michelle Bachler) at the Open University. We are indebted to Harriett Cornish for graphic design.
 
 ## Repository
 
