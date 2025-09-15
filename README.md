@@ -30,16 +30,16 @@ Start by opening `docs/index.html` and reading the notes.
 
 ## Screenshots
 
-- **Overview of Visualisations from the hompage**  
+### Overview of Visualisations from the hompage
   ![Sreengrab of the homepage](docs/images/homepage.png)
 
-- **Large Visualisations page**  
+### Large Visualisations page
   ![Screengrab of the LargeVisualisation page](docs/images/large-viz.png)
 
-- **Mini Visualisations page**  
+### Mini Visualisations page ###
   ![Screengrab of the Mini Visualisation page](docs/images/mini-viz.png)
 
-- **Alerts page**  
+### Alerts page ###
   ![Screengrab of the Alerts page](docs/images/alerts.png)
 
 
