@@ -95,7 +95,7 @@ CIDashboard’s design, development and testing was undertaken as part of the FP
 
 ## Repository
 
-- Open source code: https://github.com/idea-kmi/CIDashboard
+[Open Source code]( https://github.com/idea-kmi/CIDashboard)
 
 ## Status
 
