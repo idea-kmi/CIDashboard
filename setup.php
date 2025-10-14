@@ -24,7 +24,7 @@
  ********************************************************************************/
 /** Author: Michelle Bachler, KMi, The Open University **/
 
-$CFG->VERSION = '1.0';
+$CFG->VERSION = '2.1';
 
 /** UNTIL PHP 7.3 - supply own function **/
 if (!function_exists('is_countable')) {
